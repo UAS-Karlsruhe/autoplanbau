@@ -104,6 +104,30 @@
                 </frame>
             </frame>
         </frame>
+        <frame id="_44c5dd77-4d5c-4ee9-aae4-5503560f9281" name="Kreis_Aufnahme_A">
+            <transformation a="0.0" b="0.0" c="0.0" x="0.0" y="0.0" z="0.0"/>
+            <additionalInformation>
+                <info key="LastModificationTime" type="java.lang.Long" value="1645539332453"/>
+            </additionalInformation>
+        </frame>
+        <frame id="_db818737-bbbf-47b4-8b22-e59425694249" name="Kreis_Zentrum_A">
+            <transformation a="0.0" b="0.0" c="0.0" x="0.0" y="0.0" z="0.0"/>
+            <additionalInformation>
+                <info key="LastModificationTime" type="java.lang.Long" value="1645539357784"/>
+            </additionalInformation>
+        </frame>
+        <frame id="_ac5f8401-b3f8-4bf7-90ef-25255b03299d" name="Kreis_Zentrum_Schublade">
+            <transformation a="0.0" b="0.0" c="0.0" x="0.0" y="0.0" z="0.0"/>
+            <additionalInformation>
+                <info key="LastModificationTime" type="java.lang.Long" value="1645539391785"/>
+            </additionalInformation>
+        </frame>
+        <frame id="_e5564b70-d6eb-49b6-85a0-6ac9f7b3006b" name="Kreis_Ablage_Schublade">
+            <transformation a="0.0" b="0.0" c="0.0" x="0.0" y="0.0" z="0.0"/>
+            <additionalInformation>
+                <info key="LastModificationTime" type="java.lang.Long" value="1645539420201"/>
+            </additionalInformation>
+        </frame>
     </world>
     <objectTemplates>
         <workpieceTemplate class="" name="Item">
@@ -119,6 +143,17 @@
                 <info key="ID" type="java.lang.String" value="93f9fdf3-dd9a-4238-a1e2-3bb6ac7cad1f"/>
             </additionalInformation>
             <loadData cogA="0.0" cogB="0.0" cogC="0.0" cogX="0.0" cogY="0.0" cogZ="0.0" inertiaX="0.0" inertiaY="0.0" inertiaZ="0.0" mass="0.0"/>
+        </toolTemplate>
+        <toolTemplate class="" defaultMotionFrameRef="/TCP_Gripper" name="Kreisprozess_Gripper">
+            <frames>
+                <frame id="_b4eff070-bf79-457a-b0c7-78218fe1b454" name="TCP_Gripper">
+                    <transformation a="0.0" b="0.0" c="0.0" x="0.0" y="0.0" z="118.0"/>
+                </frame>
+            </frames>
+            <additionalInformation>
+                <info key="ID" type="java.lang.String" value="5fca80f9-c29c-435c-af33-47b86d7e470d"/>
+            </additionalInformation>
+            <loadData cogA="0.0" cogB="0.0" cogC="0.0" cogX="-44.6" cogY="-46.4" cogZ="149.8" inertiaX="0.0" inertiaY="0.0" inertiaZ="0.0" mass="0.6"/>
         </toolTemplate>
     </objectTemplates>
 </RoboticsAPIData>

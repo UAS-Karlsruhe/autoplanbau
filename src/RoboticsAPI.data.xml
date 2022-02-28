@@ -272,6 +272,48 @@
                 </redundancy>
             </redundancyData>
         </frame>
+        <frame id="_4e4b8c94-8a7a-437e-ae9a-d579b0ac74c2" name="Kreis_Schub_auf_0">
+            <transformation a="0.0" b="0.0" c="0.0" x="0.0" y="0.0" z="0.0"/>
+            <additionalInformation>
+                <info key="LastModificationTime" type="java.lang.Long" value="1646053734030"/>
+            </additionalInformation>
+        </frame>
+        <frame id="_05b34132-3b91-42f2-81f0-bb2d77082364" name="Kreis_Schub_auf_1">
+            <transformation a="0.0" b="0.0" c="0.0" x="0.0" y="0.0" z="0.0"/>
+            <additionalInformation>
+                <info key="LastModificationTime" type="java.lang.Long" value="1646053783674"/>
+            </additionalInformation>
+        </frame>
+        <frame id="_2834f7c8-d20d-48d7-9fff-b196c9714e25" name="Kreis_Schub_auf_2">
+            <transformation a="0.0" b="0.0" c="0.0" x="0.0" y="0.0" z="0.0"/>
+            <additionalInformation>
+                <info key="LastModificationTime" type="java.lang.Long" value="1646053797953"/>
+            </additionalInformation>
+        </frame>
+        <frame id="_0ac9d67f-f2d7-4011-8323-d5c60b05494c" name="Kreis_Schub_auf_3">
+            <transformation a="0.0" b="0.0" c="0.0" x="0.0" y="0.0" z="0.0"/>
+            <additionalInformation>
+                <info key="LastModificationTime" type="java.lang.Long" value="1646053809488"/>
+            </additionalInformation>
+        </frame>
+        <frame id="_36df5ae6-49ad-4ec7-9bdb-4c3082121c2f" name="Kreis_Schub_auf_4">
+            <transformation a="0.0" b="0.0" c="0.0" x="0.0" y="0.0" z="0.0"/>
+            <additionalInformation>
+                <info key="LastModificationTime" type="java.lang.Long" value="1646053832978"/>
+            </additionalInformation>
+        </frame>
+        <frame id="_0853866b-0593-4538-ae28-ceb040f3680b" name="Kreis_Schub_auf_5">
+            <transformation a="0.0" b="0.0" c="0.0" x="0.0" y="0.0" z="0.0"/>
+            <additionalInformation>
+                <info key="LastModificationTime" type="java.lang.Long" value="1646053847607"/>
+            </additionalInformation>
+        </frame>
+        <frame id="_98eb7686-5b55-4499-bd45-50072ce33b44" name="Kreis_Schub_auf_6">
+            <transformation a="0.0" b="0.0" c="0.0" x="0.0" y="0.0" z="0.0"/>
+            <additionalInformation>
+                <info key="LastModificationTime" type="java.lang.Long" value="1646053856919"/>
+            </additionalInformation>
+        </frame>
     </world>
     <objectTemplates>
         <workpieceTemplate class="" name="Item">

@@ -256,6 +256,12 @@
                 </redundancy>
             </redundancyData>
         </frame>
+        <frame id="_4283123f-1dc1-425f-9ea3-b9c8a729e617" name="Kreis_Schub_zu_5a">
+            <transformation a="0.0" b="0.0" c="0.0" x="0.0" y="0.0" z="0.0"/>
+            <additionalInformation>
+                <info key="LastModificationTime" type="java.lang.Long" value="1646046832654"/>
+            </additionalInformation>
+        </frame>
     </world>
     <objectTemplates>
         <workpieceTemplate class="" name="Item">

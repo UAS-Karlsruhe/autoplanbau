@@ -224,6 +224,18 @@
                 </redundancy>
             </redundancyData>
         </frame>
+        <frame id="_f6385ed8-6873-42b5-8cec-f3c5edeee941" name="Kreis_Schub_zu_0">
+            <transformation a="0.0" b="0.0" c="0.0" x="0.0" y="0.0" z="0.0"/>
+            <additionalInformation>
+                <info key="LastModificationTime" type="java.lang.Long" value="1646046118630"/>
+            </additionalInformation>
+        </frame>
+        <frame id="_7c8bf5e3-b0ea-4cea-840b-c312350e21cd" name="Kreis_Schub_zu_3a">
+            <transformation a="0.0" b="0.0" c="0.0" x="0.0" y="0.0" z="0.0"/>
+            <additionalInformation>
+                <info key="LastModificationTime" type="java.lang.Long" value="1646046157366"/>
+            </additionalInformation>
+        </frame>
     </world>
     <objectTemplates>
         <workpieceTemplate class="" name="Item">

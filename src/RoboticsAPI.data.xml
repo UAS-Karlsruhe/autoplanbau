@@ -273,22 +273,52 @@
             </redundancyData>
         </frame>
         <frame id="_4e4b8c94-8a7a-437e-ae9a-d579b0ac74c2" name="Kreis_Schub_auf_0">
-            <transformation a="0.0" b="0.0" c="0.0" x="0.0" y="0.0" z="0.0"/>
+            <transformation a="1.5926282275250634" b="-0.49615887487997257" c="-1.6688764815173265" x="-890.1272722523095" y="4.429427732824732" z="45.79978709967379"/>
             <additionalInformation>
-                <info key="LastModificationTime" type="java.lang.Long" value="1646053734030"/>
+                <info key="LastModificationTime" type="java.lang.Long" value="1646062853581"/>
+                <info base="LBR_iiwa_7_R800_1" controller="KUKA_Sunrise_Cabinet_1" device="LBR_iiwa_7_R800_1" tcpName="Kreisprozess_Gripper/TCP_Gripper" tool="Kreisprozess_Gripper" type="com.kuka.roboticsAPI.deviceModel.TeachInformation">
+                    <tcpTransformation a="0.0" b="0.0" c="0.0" x="0.0" y="0.0" z="118.0"/>
+                </info>
             </additionalInformation>
+            <redundancyData>
+                <redundancy transformationProviderName="KUKA_Sunrise_Cabinet_1/LBR_iiwa_7_R800_1" type="com.kuka.roboticsAPI.deviceModel.LBRE1Redundancy">
+                    <info type="com.kuka.roboticsAPI.deviceModel.StatusTurnRedundancy$StatusParameter" value="1" valueType="java.lang.Integer"/>
+                    <info type="com.kuka.roboticsAPI.deviceModel.StatusTurnRedundancy$TurnParameter" value="19" valueType="java.lang.Integer"/>
+                    <info type="com.kuka.roboticsAPI.deviceModel.LBRE1Redundancy$E1Parameter" value="0.1118773534364147" valueType="java.lang.Double"/>
+                </redundancy>
+            </redundancyData>
         </frame>
         <frame id="_05b34132-3b91-42f2-81f0-bb2d77082364" name="Kreis_Schub_auf_1">
-            <transformation a="0.0" b="0.0" c="0.0" x="0.0" y="0.0" z="0.0"/>
+            <transformation a="1.5927211127078331" b="-0.4961680972803886" c="-1.6690262664811006" x="-991.2766180515165" y="4.445191938734111" z="45.73001401960533"/>
             <additionalInformation>
-                <info key="LastModificationTime" type="java.lang.Long" value="1646053783674"/>
+                <info key="LastModificationTime" type="java.lang.Long" value="1646062732859"/>
+                <info base="LBR_iiwa_7_R800_1" controller="KUKA_Sunrise_Cabinet_1" device="LBR_iiwa_7_R800_1" tcpName="Kreisprozess_Gripper/TCP_Gripper" tool="Kreisprozess_Gripper" type="com.kuka.roboticsAPI.deviceModel.TeachInformation">
+                    <tcpTransformation a="0.0" b="0.0" c="0.0" x="0.0" y="0.0" z="118.0"/>
+                </info>
             </additionalInformation>
+            <redundancyData>
+                <redundancy transformationProviderName="KUKA_Sunrise_Cabinet_1/LBR_iiwa_7_R800_1" type="com.kuka.roboticsAPI.deviceModel.LBRE1Redundancy">
+                    <info type="com.kuka.roboticsAPI.deviceModel.StatusTurnRedundancy$StatusParameter" value="1" valueType="java.lang.Integer"/>
+                    <info type="com.kuka.roboticsAPI.deviceModel.StatusTurnRedundancy$TurnParameter" value="19" valueType="java.lang.Integer"/>
+                    <info type="com.kuka.roboticsAPI.deviceModel.LBRE1Redundancy$E1Parameter" value="0.11183007563038745" valueType="java.lang.Double"/>
+                </redundancy>
+            </redundancyData>
         </frame>
         <frame id="_2834f7c8-d20d-48d7-9fff-b196c9714e25" name="Kreis_Schub_auf_2">
-            <transformation a="0.0" b="0.0" c="0.0" x="0.0" y="0.0" z="0.0"/>
+            <transformation a="1.5927583410993746" b="-0.496173781727783" c="-1.6690677910600416" x="-890.130491948335" y="4.439015172103089" z="45.758670511598865"/>
             <additionalInformation>
-                <info key="LastModificationTime" type="java.lang.Long" value="1646053797953"/>
+                <info key="LastModificationTime" type="java.lang.Long" value="1646062786001"/>
+                <info base="LBR_iiwa_7_R800_1" controller="KUKA_Sunrise_Cabinet_1" device="LBR_iiwa_7_R800_1" tcpName="Kreisprozess_Gripper/TCP_Gripper" tool="Kreisprozess_Gripper" type="com.kuka.roboticsAPI.deviceModel.TeachInformation">
+                    <tcpTransformation a="0.0" b="0.0" c="0.0" x="0.0" y="0.0" z="118.0"/>
+                </info>
             </additionalInformation>
+            <redundancyData>
+                <redundancy transformationProviderName="KUKA_Sunrise_Cabinet_1/LBR_iiwa_7_R800_1" type="com.kuka.roboticsAPI.deviceModel.LBRE1Redundancy">
+                    <info type="com.kuka.roboticsAPI.deviceModel.StatusTurnRedundancy$StatusParameter" value="1" valueType="java.lang.Integer"/>
+                    <info type="com.kuka.roboticsAPI.deviceModel.StatusTurnRedundancy$TurnParameter" value="19" valueType="java.lang.Integer"/>
+                    <info type="com.kuka.roboticsAPI.deviceModel.LBRE1Redundancy$E1Parameter" value="0.11182642047460145" valueType="java.lang.Double"/>
+                </redundancy>
+            </redundancyData>
         </frame>
         <frame id="_0ac9d67f-f2d7-4011-8323-d5c60b05494c" name="Kreis_Schub_auf_3">
             <transformation a="0.0" b="0.0" c="0.0" x="0.0" y="0.0" z="0.0"/>

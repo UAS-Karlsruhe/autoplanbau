@@ -68,10 +68,18 @@ public class Einfache_Lego_Positionierung extends RoboticsAPIApplication {
 		lBR_iiwa_7_R800_1.move(ptp(0, 0, 0, 0, 0, 0, 0));
 		*/
 		
+		
+		// Aufnahme Förderband
+		
+		lBR_iiwa_7_R800_1.move(ptp(0, 0, 0, 0, 0, 0, 0));
+		gripper.openGripper();
+		
+		
+		
 		// Schublade öffnen
 		
 		//lBR_iiwa_7_R800_1.move(ptp(0, 0, 0, 0, 0, 0, 0));
-		
+		/*
 		gripper.openGripper();
 		
 		lBR_iiwa_7_R800_1.move(ptp(getApplicationData().getFrame("/Kreis_Schub_auf_5")));
@@ -79,7 +87,7 @@ public class Einfache_Lego_Positionierung extends RoboticsAPIApplication {
 		gripper.closeGripper();
 		lBR_iiwa_7_R800_1.move(ptp(getApplicationData().getFrame("/Kreis_Schub_auf_5")));
 		gripper.openGripper();
-		
+		*/
 		
 		
 		//lBR_iiwa_7_R800_1.move(ptp(getApplicationData().getFrame("/Kreis_Schub_auf_0")));

@@ -374,6 +374,18 @@
                 <info key="LastModificationTime" type="java.lang.Long" value="1646053856919"/>
             </additionalInformation>
         </frame>
+        <frame id="_bbdbab2f-1ae6-4b61-855c-8e3aa7532e3d" name="Kreis_Band_1">
+            <transformation a="0.0" b="0.0" c="0.0" x="0.0" y="0.0" z="0.0"/>
+            <additionalInformation>
+                <info key="LastModificationTime" type="java.lang.Long" value="1646065011188"/>
+            </additionalInformation>
+        </frame>
+        <frame id="_75eb586e-f7e0-4887-8529-95d5ee481064" name="Kreis_Band_2">
+            <transformation a="0.0" b="0.0" c="0.0" x="0.0" y="0.0" z="0.0"/>
+            <additionalInformation>
+                <info key="LastModificationTime" type="java.lang.Long" value="1646065083210"/>
+            </additionalInformation>
+        </frame>
     </world>
     <objectTemplates>
         <workpieceTemplate class="" name="Item">

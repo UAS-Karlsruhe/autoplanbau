@@ -70,6 +70,13 @@ public class Einfache_Lego_Positionierung extends RoboticsAPIApplication {
 		
 		
 		
+		
+		
+		
+		
+		
+		
+		
 		/*
 		// Ausgangsposition
 		

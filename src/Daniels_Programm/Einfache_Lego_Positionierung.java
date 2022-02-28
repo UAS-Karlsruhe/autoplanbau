@@ -70,8 +70,9 @@ public class Einfache_Lego_Positionierung extends RoboticsAPIApplication {
 		
 		// Schublade öffnen
 		
-		lBR_iiwa_7_R800_1.move(ptp(0, 0, 0, 0, 0, 0, 0));
+		//lBR_iiwa_7_R800_1.move(ptp(0, 0, 0, 0, 0, 0, 0));
 		
+		gripper.closeGripper();
 		gripper.openGripper();
 		
 		lBR_iiwa_7_R800_1.move(ptp(getApplicationData().getFrame("/Kreis_Schub_auf_0")));

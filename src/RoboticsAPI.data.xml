@@ -128,6 +128,24 @@
                 <info key="LastModificationTime" type="java.lang.Long" value="1645539420201"/>
             </additionalInformation>
         </frame>
+        <frame id="_7e784fe4-74c7-4dcb-8a7f-dd36554670fb" name="Kreis_Schub_zu_1">
+            <transformation a="0.0" b="0.0" c="0.0" x="0.0" y="0.0" z="0.0"/>
+            <additionalInformation>
+                <info key="LastModificationTime" type="java.lang.Long" value="1646040400430"/>
+            </additionalInformation>
+        </frame>
+        <frame id="_dacec5b0-d4b5-41da-8681-673e492027cc" name="Kreis_Schub_zu_2">
+            <transformation a="0.0" b="0.0" c="0.0" x="0.0" y="0.0" z="0.0"/>
+            <additionalInformation>
+                <info key="LastModificationTime" type="java.lang.Long" value="1646040415857"/>
+            </additionalInformation>
+        </frame>
+        <frame id="_b9f8d3f6-d323-406d-ba0f-e2e251b1e0a7" name="Kreis_Schub_zu_3">
+            <transformation a="0.0" b="0.0" c="0.0" x="0.0" y="0.0" z="0.0"/>
+            <additionalInformation>
+                <info key="LastModificationTime" type="java.lang.Long" value="1646040430633"/>
+            </additionalInformation>
+        </frame>
     </world>
     <objectTemplates>
         <workpieceTemplate class="" name="Item">

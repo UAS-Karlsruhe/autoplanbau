@@ -74,6 +74,11 @@ public class Einfache_Lego_Positionierung extends RoboticsAPIApplication {
 		
 		gripper.openGripper();
 		
+		lBR_iiwa_7_R800_1.move(ptp(getApplicationData().getFrame("/Kreis_Schub_auf_0")));
+		lBR_iiwa_7_R800_1.move(lin(getApplicationData().getFrame("/Kreis_Schub_auf_1")));
+		gripper.closeGripper();
+		lBR_iiwa_7_R800_1.move(lin(getApplicationData().getFrame("/Kreis_Schub_auf_0")));
+		
 		
 		
 		

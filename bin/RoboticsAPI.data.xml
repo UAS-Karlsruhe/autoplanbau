@@ -444,6 +444,12 @@
                 <info key="LastModificationTime" type="java.lang.Long" value="1646129368812"/>
             </additionalInformation>
         </frame>
+        <frame id="_4cde0433-0184-4fe0-94ac-e53721f85d2a" name="Kreis_Tisch_4">
+            <transformation a="0.0" b="0.0" c="0.0" x="0.0" y="0.0" z="0.0"/>
+            <additionalInformation>
+                <info key="LastModificationTime" type="java.lang.Long" value="1646131358679"/>
+            </additionalInformation>
+        </frame>
     </world>
     <objectTemplates>
         <workpieceTemplate class="" name="Item">

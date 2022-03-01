@@ -100,9 +100,9 @@ public class Einfache_Lego_Positionierung extends RoboticsAPIApplication {
 		
 		// Aufnahme Förderband
 		
-		gripper.openGripper();
-		lBR_iiwa_7_R800_1.move(ptp(0, 0, 0, 0, 0, 0, 0));
-		gripper.openGripper();
+		//gripper.openGripper();
+		//lBR_iiwa_7_R800_1.move(ptp(0, 0, 0, 0, 0, 0, 0));
+		//gripper.openGripper();
 		
 		lBR_iiwa_7_R800_1.move(ptp(getApplicationData().getFrame("/Kreis_Band_1")));
 		lBR_iiwa_7_R800_1.move(lin(getApplicationData().getFrame("/Kreis_Band_2")));
@@ -115,12 +115,12 @@ public class Einfache_Lego_Positionierung extends RoboticsAPIApplication {
 		
 		// Ablage Beistelltisch, Duplo-Stein 2
 		
-		//lBR_iiwa_7_R800_1.move(ptp(getApplicationData().getFrame("/Kreis_Tisch_3")));
-		//lBR_iiwa_7_R800_1.move(lin(getApplicationData().getFrame("/Kreis_Tisch_4")));
-		//gripper.openGripper();
-		//lBR_iiwa_7_R800_1.move(lin(getApplicationData().getFrame("/Kreis_Tisch_3")));		
+		lBR_iiwa_7_R800_1.move(ptp(getApplicationData().getFrame("/Kreis_Tisch_3")));
+		lBR_iiwa_7_R800_1.move(lin(getApplicationData().getFrame("/Kreis_Tisch_4")));
+		gripper.openGripper();
+		lBR_iiwa_7_R800_1.move(lin(getApplicationData().getFrame("/Kreis_Tisch_3")));		
 		
-		
+		lBR_iiwa_7_R800_1.move(ptp(0, 0, 0, 0, 0, 0, 0));
 		
 		
 		// Schublade öffnen

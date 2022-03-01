@@ -4,6 +4,8 @@ package Daniels_Programm;
 
 //Implementierung der zur Roboterprogrammierung benötigten Klassen
 import javax.inject.Inject;
+
+import com.kuka.common.ThreadUtil;
 import com.kuka.roboticsAPI.applicationModel.IApplicationData;
 import com.kuka.roboticsAPI.applicationModel.RoboticsAPIApplication;
 import static com.kuka.roboticsAPI.motionModel.BasicMotions.*;
@@ -68,6 +70,7 @@ public class Einfache_Lego_Positionierung extends RoboticsAPIApplication {
 		gripper.closeGripper();
 		logger.info("Schublade schließen");
 		lBR_iiwa_7_R800_1.move(lin(getApplicationData().getFrame("/Kreis_Schub_zu_1")));
+		ThreadUtil.milliSleep(4000);
 		lBR_iiwa_7_R800_1.move(lin(getApplicationData().getFrame("/Kreis_Schub_zu_2")));
 		lBR_iiwa_7_R800_1.move(lin(getApplicationData().getFrame("/Kreis_Schub_zu_3a")));
 		lBR_iiwa_7_R800_1.move(ptp(getApplicationData().getFrame("/Kreis_Schub_zu_4")));
@@ -87,6 +90,7 @@ public class Einfache_Lego_Positionierung extends RoboticsAPIApplication {
 		gripper.openGripper();
 		logger.info("Baustein aufnehmen");
 		lBR_iiwa_7_R800_1.move(lin(getApplicationData().getFrame("/Kreis_Band_2")));
+		ThreadUtil.milliSleep(2000);
 		gripper.closeGripper();
 		lBR_iiwa_7_R800_1.move(lin(getApplicationData().getFrame("/Kreis_Band_1")));
 		//gripper.openGripper();

@@ -167,16 +167,25 @@ public class Kreisprozess extends RoboticsAPIApplication {
 		
 		// Aufnahme Beistelltisch, Baustein 1
 		
-		//gripper.openGripper();
 		lBR_iiwa_7_R800_1.move(ptp(0, 0, 0, 0, 0, 0, 0));
 		
 		lBR_iiwa_7_R800_1.move(ptp(getApplicationData().getFrame("/Kreis_Tisch_1")));
+		gripper.openGripper();
 		logger.info("Baustein aufnehmen");
 		lBR_iiwa_7_R800_1.move(lin(getApplicationData().getFrame("/Kreis_Tisch_2")));
-		gripper.openGripper();
+		gripper.closeGripper();
 		lBR_iiwa_7_R800_1.move(lin(getApplicationData().getFrame("/Kreis_Tisch_1")));
 		
 		
+		// Ablage Schublade, Baustein 1
+		
+		lBR_iiwa_7_R800_1.move(ptp(0, 0, 0, 0, 0, 0, 0));
+		
+		lBR_iiwa_7_R800_1.move(ptp(getApplicationData().getFrame("/Kreis_Schub_Ablage_1")));
+		logger.info("Baustein ablegen");
+		lBR_iiwa_7_R800_1.move(lin(getApplicationData().getFrame("/Kreis_Schub_Ablage_2")));
+		gripper.openGripper();
+		lBR_iiwa_7_R800_1.move(lin(getApplicationData().getFrame("/Kreis_Schub_Ablage_2")));
 		
 		
 		

@@ -1,3 +1,5 @@
+//Einbinden des Grippers mit Info-Meldungen
+
 package Kreis_Programm;
 
 import javax.inject.Inject;
@@ -6,14 +8,14 @@ import com.kuka.roboticsAPI.geometricModel.Tool;
 import com.kuka.task.ITaskLogger;
 import com.kuka.generated.ioAccess.GripperIOGroup;
 
-public class Programm extends Tool {
+public class Greifer extends Tool {
 	@Inject
 	private ITaskLogger logger;
 	
 	@Inject
 	private GripperIOGroup io;
 
-	public Programm(String name) {
+	public Greifer(String name) {
 		super(name);
 		// TODO Automatisch generierter Konstruktorstub
 	}

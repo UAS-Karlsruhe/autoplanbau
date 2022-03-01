@@ -1,41 +1,42 @@
-//Namen des Pakets in der die Roboterapplikation liegt
-package Kreis_Programm;
+// Hauptprogramm Kreisprozess
+
+package Kreis_Programm; // Namen des Pakets in der die Roboterapplikation liegt
 
 
 //Implementierung der zur Roboterprogrammierung benötigten Klassen
 import javax.inject.Inject;
 
 import com.kuka.common.ThreadUtil;
-import com.kuka.roboticsAPI.applicationModel.IApplicationData;
+//import com.kuka.roboticsAPI.applicationModel.IApplicationData;
 import com.kuka.roboticsAPI.applicationModel.RoboticsAPIApplication;
 import static com.kuka.roboticsAPI.motionModel.BasicMotions.*;
 
 import com.kuka.roboticsAPI.deviceModel.LBR;
-import com.kuka.roboticsAPI.geometricModel.Frame;
-import com.kuka.roboticsAPI.geometricModel.Tool;
-import com.kuka.roboticsAPI.geometricModel.Workpiece;
-import com.kuka.roboticsAPI.geometricModel.math.Transformation;
-import com.kuka.roboticsAPI.motionModel.IMotion;
-import com.kuka.roboticsAPI.motionModel.PTP;
-import com.kuka.roboticsAPI.sensorModel.DataRecorder;
-import com.kuka.roboticsAPI.sensorModel.ForceSensorData;
+//import com.kuka.roboticsAPI.geometricModel.Frame;
+//import com.kuka.roboticsAPI.geometricModel.Tool;
+//import com.kuka.roboticsAPI.geometricModel.Workpiece;
+//import com.kuka.roboticsAPI.geometricModel.math.Transformation;
+//import com.kuka.roboticsAPI.motionModel.IMotion;
+//import com.kuka.roboticsAPI.motionModel.PTP;
+//import com.kuka.roboticsAPI.sensorModel.DataRecorder;
+//import com.kuka.roboticsAPI.sensorModel.ForceSensorData;
 import com.kuka.task.ITaskLogger;
-import com.sun.org.apache.xpath.internal.operations.Bool;
+//import com.sun.org.apache.xpath.internal.operations.Bool;
 
 
 public class Kreisprozess extends RoboticsAPIApplication {
 	//Erzeugen einer Instanz des LBR´S (Deklarationsbereich)
 	private LBR lBR_iiwa_7_R800_1;
 	
-	@Inject
-	private IApplicationData data;
+	//@Inject
+	//private IApplicationData data;
 	//private ITaskLogger logger;
 	
 	@Inject
 	private ITaskLogger logger;
 	
 	@Inject 
-	private Programm gripper;
+	private Greifer gripper;
 	
 
 	//Implementierung von Anfangwerten, die nicht im Deklarationsbereich hinterlegt wurden

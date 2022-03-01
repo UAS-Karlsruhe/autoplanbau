@@ -75,7 +75,7 @@ public class Einfache_Lego_Positionierung extends RoboticsAPIApplication {
 		lBR_iiwa_7_R800_1.move(lin(getApplicationData().getFrame("/Kreis_Schub_zu_5a")));
 		lBR_iiwa_7_R800_1.move(lin(getApplicationData().getFrame("/Kreis_Schub_zu_6")));
 		
-		//lBR_iiwa_7_R800_1.move(ptp(0, 0, 0, 0, 0, 0, 0));
+		lBR_iiwa_7_R800_1.move(ptp(0, 0, 0, 0, 0, 0, 0));
 		
 		
 		// Aufnahme Förderband
@@ -83,9 +83,9 @@ public class Einfache_Lego_Positionierung extends RoboticsAPIApplication {
 		//gripper.openGripper();
 		//lBR_iiwa_7_R800_1.move(ptp(0, 0, 0, 0, 0, 0, 0));
 		
-		gripper.openGripper();
 		
 		lBR_iiwa_7_R800_1.move(ptp(getApplicationData().getFrame("/Kreis_Band_1")));
+		gripper.openGripper();
 		logger.info("Baustein aufnehmen");
 		lBR_iiwa_7_R800_1.move(lin(getApplicationData().getFrame("/Kreis_Band_2")));
 		gripper.closeGripper();
@@ -95,10 +95,10 @@ public class Einfache_Lego_Positionierung extends RoboticsAPIApplication {
 		//lBR_iiwa_7_R800_1.move(ptp(0, 0, 0, 0, 0, 0, 0));
 		
 		
-		// Ablage Beistelltisch, Duplo-Stein 1
+		// Ablage Beistelltisch, Baustein 1
 		
 		lBR_iiwa_7_R800_1.move(ptp(getApplicationData().getFrame("/Kreis_Tisch_1")));
-		logger.info("Duplo-Stein 1 ablegen");
+		logger.info("Baustein 1 ablegen");
 		lBR_iiwa_7_R800_1.move(lin(getApplicationData().getFrame("/Kreis_Tisch_2")));
 		gripper.openGripper();
 		lBR_iiwa_7_R800_1.move(lin(getApplicationData().getFrame("/Kreis_Tisch_1")));
@@ -120,10 +120,10 @@ public class Einfache_Lego_Positionierung extends RoboticsAPIApplication {
 		//lBR_iiwa_7_R800_1.move(ptp(0, 0, 0, 0, 0, 0, 0));
 		
 		
-		// Ablage Beistelltisch, Duplo-Stein 2
+		// Ablage Beistelltisch, Baustein 2
 		
 		lBR_iiwa_7_R800_1.move(ptp(getApplicationData().getFrame("/Kreis_Tisch_3")));
-		logger.info("Duplo-Stein 2 ablegen");
+		logger.info("Baustein 2 ablegen");
 		lBR_iiwa_7_R800_1.move(lin(getApplicationData().getFrame("/Kreis_Tisch_4")));
 		gripper.openGripper();
 		lBR_iiwa_7_R800_1.move(lin(getApplicationData().getFrame("/Kreis_Tisch_3")));		

@@ -446,6 +446,30 @@
                 </redundancy>
             </redundancyData>
         </frame>
+        <frame id="_6ceb62b0-eed1-4ea8-987a-69eb27cad28a" name="Kreis_Schub_Ablage_1">
+            <transformation a="0.0" b="0.0" c="0.0" x="0.0" y="0.0" z="0.0"/>
+            <additionalInformation>
+                <info key="LastModificationTime" type="java.lang.Long" value="1646146065086"/>
+            </additionalInformation>
+        </frame>
+        <frame id="_ead91ba4-da1b-47a3-8b0a-5980f96265e0" name="Kreis_Schub_Ablage_2">
+            <transformation a="0.0" b="0.0" c="0.0" x="0.0" y="0.0" z="0.0"/>
+            <additionalInformation>
+                <info key="LastModificationTime" type="java.lang.Long" value="1646146082240"/>
+            </additionalInformation>
+        </frame>
+        <frame id="_b1905791-8dba-4d6b-b421-8808f84e7346" name="Kreis_Schub_Ablage_3">
+            <transformation a="0.0" b="0.0" c="0.0" x="0.0" y="0.0" z="0.0"/>
+            <additionalInformation>
+                <info key="LastModificationTime" type="java.lang.Long" value="1646146095712"/>
+            </additionalInformation>
+        </frame>
+        <frame id="_b6d1e1cb-b3b6-4180-9402-e7f7d9d4c5e4" name="Kreis_Schub_Ablage_4">
+            <transformation a="0.0" b="0.0" c="0.0" x="0.0" y="0.0" z="0.0"/>
+            <additionalInformation>
+                <info key="LastModificationTime" type="java.lang.Long" value="1646146105071"/>
+            </additionalInformation>
+        </frame>
     </world>
     <objectTemplates>
         <workpieceTemplate class="" name="Item">

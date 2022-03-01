@@ -51,14 +51,13 @@ public class Kreisprozess extends RoboticsAPIApplication {
 	
 	// To do
 	// Aufnahme Förderband in Funktion auslagern
-	// Info-Meldungen integrieren
 	
 	
 
 	// Beginn Hauptprogramm
 	
 	public void run() {
-		
+		/* // hier
 		
 		// Ausgangsposition
 		
@@ -135,6 +134,8 @@ public class Kreisprozess extends RoboticsAPIApplication {
 		lBR_iiwa_7_R800_1.move(ptp(0, 0, 0, 0, 0, 0, 0));
 		
 		
+		*/ //hier
+		
 		// Schublade öffnen
 		
 		//lBR_iiwa_7_R800_1.move(ptp(0, 0, 0, 0, 0, 0, 0));
@@ -164,9 +165,16 @@ public class Kreisprozess extends RoboticsAPIApplication {
 		
 		
 		
+		// Aufnahme Beistelltisch, Baustein 1
 		
+		lBR_iiwa_7_R800_1.move(ptp(0, 0, 0, 0, 0, 0, 0));
+		gripper.openGripper();
 		
-		
+		lBR_iiwa_7_R800_1.move(ptp(getApplicationData().getFrame("/Kreis_Tisch_1")));
+		logger.info("Baustein aufnehmen");
+		lBR_iiwa_7_R800_1.move(lin(getApplicationData().getFrame("/Kreis_Tisch_2")));
+		gripper.closeGripper();
+		lBR_iiwa_7_R800_1.move(lin(getApplicationData().getFrame("/Kreis_Tisch_1")));
 		
 		
 		

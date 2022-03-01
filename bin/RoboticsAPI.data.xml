@@ -104,30 +104,6 @@
                 </frame>
             </frame>
         </frame>
-        <frame id="_44c5dd77-4d5c-4ee9-aae4-5503560f9281" name="Kreis_Aufnahme_A">
-            <transformation a="0.0" b="0.0" c="0.0" x="0.0" y="0.0" z="0.0"/>
-            <additionalInformation>
-                <info key="LastModificationTime" type="java.lang.Long" value="1645539332453"/>
-            </additionalInformation>
-        </frame>
-        <frame id="_db818737-bbbf-47b4-8b22-e59425694249" name="Kreis_Zentrum_A">
-            <transformation a="0.0" b="0.0" c="0.0" x="0.0" y="0.0" z="0.0"/>
-            <additionalInformation>
-                <info key="LastModificationTime" type="java.lang.Long" value="1645539357784"/>
-            </additionalInformation>
-        </frame>
-        <frame id="_ac5f8401-b3f8-4bf7-90ef-25255b03299d" name="Kreis_Zentrum_Schublade">
-            <transformation a="0.0" b="0.0" c="0.0" x="0.0" y="0.0" z="0.0"/>
-            <additionalInformation>
-                <info key="LastModificationTime" type="java.lang.Long" value="1645539391785"/>
-            </additionalInformation>
-        </frame>
-        <frame id="_e5564b70-d6eb-49b6-85a0-6ac9f7b3006b" name="Kreis_Ablage_Schublade">
-            <transformation a="0.0" b="0.0" c="0.0" x="0.0" y="0.0" z="0.0"/>
-            <additionalInformation>
-                <info key="LastModificationTime" type="java.lang.Long" value="1645539420201"/>
-            </additionalInformation>
-        </frame>
         <frame id="_7e784fe4-74c7-4dcb-8a7f-dd36554670fb" name="Kreis_Schub_zu_1">
             <transformation a="-2.6473361340788064" b="0.24971766488701833" c="-3.029567160476181" x="-380.6887094004954" y="8.001409893071791" z="202.35217777693086"/>
             <additionalInformation>

@@ -1,4 +1,4 @@
-package Daniels_Programm;
+package Kreis_Programm;
 
 import javax.inject.Inject;
 
@@ -6,14 +6,14 @@ import com.kuka.roboticsAPI.geometricModel.Tool;
 import com.kuka.task.ITaskLogger;
 import com.kuka.generated.ioAccess.GripperIOGroup;
 
-public class CPfefferGripper extends Tool {
+public class Programm extends Tool {
 	@Inject
 	private ITaskLogger logger;
 	
 	@Inject
 	private GripperIOGroup io;
 
-	public CPfefferGripper(String name) {
+	public Programm(String name) {
 		super(name);
 		// TODO Automatisch generierter Konstruktorstub
 	}

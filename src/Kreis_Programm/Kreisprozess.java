@@ -1,5 +1,5 @@
 //Namen des Pakets in der die Roboterapplikation liegt
-package Daniels_Programm;
+package Kreis_Programm;
 
 
 //Implementierung der zur Roboterprogrammierung benötigten Klassen
@@ -23,7 +23,7 @@ import com.kuka.task.ITaskLogger;
 import com.sun.org.apache.xpath.internal.operations.Bool;
 
 
-public class Einfache_Lego_Positionierung extends RoboticsAPIApplication {
+public class Kreisprozess extends RoboticsAPIApplication {
 	//Erzeugen einer Instanz des LBR´S (Deklarationsbereich)
 	private LBR lBR_iiwa_7_R800_1;
 	
@@ -35,7 +35,7 @@ public class Einfache_Lego_Positionierung extends RoboticsAPIApplication {
 	private ITaskLogger logger;
 	
 	@Inject 
-	private CPfefferGripper gripper;
+	private Programm gripper;
 	
 
 	//Implementierung von Anfangwerten, die nicht im Deklarationsbereich hinterlegt wurden
@@ -70,7 +70,6 @@ public class Einfache_Lego_Positionierung extends RoboticsAPIApplication {
 		gripper.closeGripper();
 		logger.info("Schublade schließen");
 		lBR_iiwa_7_R800_1.move(lin(getApplicationData().getFrame("/Kreis_Schub_zu_1")));
-		ThreadUtil.milliSleep(4000);
 		lBR_iiwa_7_R800_1.move(lin(getApplicationData().getFrame("/Kreis_Schub_zu_2")));
 		lBR_iiwa_7_R800_1.move(lin(getApplicationData().getFrame("/Kreis_Schub_zu_3a")));
 		lBR_iiwa_7_R800_1.move(ptp(getApplicationData().getFrame("/Kreis_Schub_zu_4")));
@@ -90,7 +89,7 @@ public class Einfache_Lego_Positionierung extends RoboticsAPIApplication {
 		gripper.openGripper();
 		logger.info("Baustein aufnehmen");
 		lBR_iiwa_7_R800_1.move(lin(getApplicationData().getFrame("/Kreis_Band_2")));
-		ThreadUtil.milliSleep(2000);
+		ThreadUtil.milliSleep(2000); // 2 Sekunden warten
 		gripper.closeGripper();
 		lBR_iiwa_7_R800_1.move(lin(getApplicationData().getFrame("/Kreis_Band_1")));
 		//gripper.openGripper();
@@ -116,6 +115,7 @@ public class Einfache_Lego_Positionierung extends RoboticsAPIApplication {
 		lBR_iiwa_7_R800_1.move(ptp(getApplicationData().getFrame("/Kreis_Band_1")));
 		logger.info("Baustein aufnehmen");
 		lBR_iiwa_7_R800_1.move(lin(getApplicationData().getFrame("/Kreis_Band_2")));
+		ThreadUtil.milliSleep(2000); // 2 Sekunden warten
 		gripper.closeGripper();
 		lBR_iiwa_7_R800_1.move(lin(getApplicationData().getFrame("/Kreis_Band_1")));
 		//gripper.openGripper();

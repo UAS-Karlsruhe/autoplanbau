@@ -164,7 +164,7 @@ public class Kreisprozess extends RoboticsAPIApplication {
 		//gripper.openGripper();
 		
 		
-		
+		/* //hier
 		// Aufnahme Beistelltisch, Baustein 1
 		
 		lBR_iiwa_7_R800_1.move(ptp(0, 0, 0, 0, 0, 0, 0));
@@ -186,6 +186,34 @@ public class Kreisprozess extends RoboticsAPIApplication {
 		lBR_iiwa_7_R800_1.move(lin(getApplicationData().getFrame("/Kreis_Schub_Ablage_2")));
 		gripper.openGripper();
 		lBR_iiwa_7_R800_1.move(lin(getApplicationData().getFrame("/Kreis_Schub_Ablage_1")));
+		
+		*/ //hier
+		
+		// Aufnahme Beistelltisch, Baustein 2
+		
+		lBR_iiwa_7_R800_1.move(ptp(0, 0, 0, 0, 0, 0, 0));
+		
+		lBR_iiwa_7_R800_1.move(ptp(getApplicationData().getFrame("/Kreis_Tisch_3")));
+		gripper.openGripper();
+		logger.info("Baustein aufnehmen");
+		lBR_iiwa_7_R800_1.move(lin(getApplicationData().getFrame("/Kreis_Tisch_4")));
+		gripper.closeGripper();
+		lBR_iiwa_7_R800_1.move(lin(getApplicationData().getFrame("/Kreis_Tisch_3")));
+		
+		
+		// Ablage Schublade, Baustein 2
+		
+		lBR_iiwa_7_R800_1.move(ptp(0, 0, 0, 0, 0, 0, 0));
+		
+		lBR_iiwa_7_R800_1.move(ptp(getApplicationData().getFrame("/Kreis_Schub_Ablage_1")));
+		logger.info("Baustein ablegen");
+		lBR_iiwa_7_R800_1.move(lin(getApplicationData().getFrame("/Kreis_Schub_Ablage_2")));
+		gripper.openGripper();
+		lBR_iiwa_7_R800_1.move(lin(getApplicationData().getFrame("/Kreis_Schub_Ablage_1")));
+		
+		
+		
+		
 		
 		
 		

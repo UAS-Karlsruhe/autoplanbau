@@ -42,6 +42,12 @@ public class Einfache_Lego_Positionierung extends RoboticsAPIApplication {
 	}
 	
 	
+	
+	// To do
+	// Aufnahme Förderband in Funktion auslagern
+	// Info-Meldungen integrieren
+	
+	
 
 	// Beginn Hauptprogramm
 	

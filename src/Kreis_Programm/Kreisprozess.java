@@ -185,7 +185,7 @@ public class Kreisprozess extends RoboticsAPIApplication {
 		logger.info("Baustein ablegen");
 		lBR_iiwa_7_R800_1.move(lin(getApplicationData().getFrame("/Kreis_Schub_Ablage_2")));
 		gripper.openGripper();
-		lBR_iiwa_7_R800_1.move(lin(getApplicationData().getFrame("/Kreis_Schub_Ablage_2")));
+		lBR_iiwa_7_R800_1.move(lin(getApplicationData().getFrame("/Kreis_Schub_Ablage_1")));
 		
 		
 		

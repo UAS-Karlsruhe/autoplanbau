@@ -78,9 +78,20 @@ public class Einfache_Lego_Positionierung extends RoboticsAPIApplication {
 		lBR_iiwa_7_R800_1.move(lin(getApplicationData().getFrame("/Kreis_Band_2")));
 		gripper.closeGripper();
 		lBR_iiwa_7_R800_1.move(lin(getApplicationData().getFrame("/Kreis_Band_1")));
-		gripper.openGripper();
+		//gripper.openGripper();
 		
 		lBR_iiwa_7_R800_1.move(ptp(0, 0, 0, 0, 0, 0, 0));
+		
+		
+		// Ablage Beistelltisch
+		
+		//lBR_iiwa_7_R800_1.move(ptp(getApplicationData().getFrame("/Kreis_Tisch_1")));
+		//lBR_iiwa_7_R800_1.move(lin(getApplicationData().getFrame("/Kreis_Tisch_2")));
+		//gripper.openGripper();
+		//lBR_iiwa_7_R800_1.move(lin(getApplicationData().getFrame("/Kreis_Tisch_1")));
+		
+		
+		
 		
 		
 		// Schublade öffnen

@@ -406,6 +406,24 @@
                 </redundancy>
             </redundancyData>
         </frame>
+        <frame id="_aec7b458-1730-4ce7-b706-6bbef3fa79d4" name="Kreis_Tisch_1">
+            <transformation a="0.0" b="0.0" c="0.0" x="0.0" y="0.0" z="0.0"/>
+            <additionalInformation>
+                <info key="LastModificationTime" type="java.lang.Long" value="1646129346419"/>
+            </additionalInformation>
+        </frame>
+        <frame id="_921e9af0-d9b5-44a5-a0f2-0b9f37bacf41" name="Kreis_Tisch_2">
+            <transformation a="0.0" b="0.0" c="0.0" x="0.0" y="0.0" z="0.0"/>
+            <additionalInformation>
+                <info key="LastModificationTime" type="java.lang.Long" value="1646129357995"/>
+            </additionalInformation>
+        </frame>
+        <frame id="_0ce06ccd-3a0f-4a53-a65c-d2e165e2bb7f" name="Kreis_Tisch_3">
+            <transformation a="0.0" b="0.0" c="0.0" x="0.0" y="0.0" z="0.0"/>
+            <additionalInformation>
+                <info key="LastModificationTime" type="java.lang.Long" value="1646129368812"/>
+            </additionalInformation>
+        </frame>
     </world>
     <objectTemplates>
         <workpieceTemplate class="" name="Item">

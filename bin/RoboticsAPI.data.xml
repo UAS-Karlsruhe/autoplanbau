@@ -527,18 +527,18 @@
             </redundancyData>
         </frame>
         <frame id="_04f90e01-c8fa-4387-9348-8a294bfffa54" name="test2">
-            <transformation a="1.5553520591357333" b="-0.5286790782176934" c="-1.579650462075563" x="-830.4150196877493" y="12.80051206051123" z="34.72462867440686"/>
+            <transformation a="2.0216585193899457" b="-0.27208820299186715" c="-2.638665764484627" x="-865.3878972265048" y="10.872345939984394" z="175.30813347226794"/>
             <additionalInformation>
-                <info key="LastModificationTime" type="java.lang.Long" value="1646232873619"/>
+                <info key="LastModificationTime" type="java.lang.Long" value="1646236844658"/>
                 <info base="LBR_iiwa_7_R800_1" controller="KUKA_Sunrise_Cabinet_1" device="LBR_iiwa_7_R800_1" tcpName="Flange" tool="Flange" type="com.kuka.roboticsAPI.deviceModel.TeachInformation">
                     <tcpTransformation a="0.0" b="0.0" c="0.0" x="0.0" y="0.0" z="0.0"/>
                 </info>
             </additionalInformation>
             <redundancyData>
                 <redundancy transformationProviderName="KUKA_Sunrise_Cabinet_1/LBR_iiwa_7_R800_1" type="com.kuka.roboticsAPI.deviceModel.LBRE1Redundancy">
-                    <info type="com.kuka.roboticsAPI.deviceModel.StatusTurnRedundancy$StatusParameter" value="1" valueType="java.lang.Integer"/>
-                    <info type="com.kuka.roboticsAPI.deviceModel.StatusTurnRedundancy$TurnParameter" value="7" valueType="java.lang.Integer"/>
-                    <info type="com.kuka.roboticsAPI.deviceModel.LBRE1Redundancy$E1Parameter" value="-0.008212669484539593" valueType="java.lang.Double"/>
+                    <info type="com.kuka.roboticsAPI.deviceModel.StatusTurnRedundancy$StatusParameter" value="5" valueType="java.lang.Integer"/>
+                    <info type="com.kuka.roboticsAPI.deviceModel.StatusTurnRedundancy$TurnParameter" value="39" valueType="java.lang.Integer"/>
+                    <info type="com.kuka.roboticsAPI.deviceModel.LBRE1Redundancy$E1Parameter" value="-0.012403972418033465" valueType="java.lang.Double"/>
                 </redundancy>
             </redundancyData>
         </frame>

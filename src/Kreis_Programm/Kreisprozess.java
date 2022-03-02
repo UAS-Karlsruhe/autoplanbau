@@ -186,6 +186,8 @@ public class Kreisprozess extends RoboticsAPIApplication {
 		gripper.openGripper();
 		lBR_iiwa_7_R800_1.move(lin(getApplicationData().getFrame("/Kreis_Schub_Ablage_1")));
 		
+		lBR_iiwa_7_R800_1.move(ptp(0, 0, 0, 0, 0, 0, 0));
+		
 		/*
 		// Aufnahme Beistelltisch, Baustein 2
 		

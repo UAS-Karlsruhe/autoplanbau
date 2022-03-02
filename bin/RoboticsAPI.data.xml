@@ -718,6 +718,12 @@
                 </redundancy>
             </redundancyData>
         </frame>
+        <frame id="_48de6c66-b642-48ec-ab21-9a9ea5e86662" name="w1">
+            <transformation a="0.0" b="0.0" c="0.0" x="0.0" y="0.0" z="0.0"/>
+            <additionalInformation>
+                <info key="LastModificationTime" type="java.lang.Long" value="1646237854711"/>
+            </additionalInformation>
+        </frame>
     </world>
     <objectTemplates>
         <workpieceTemplate class="" name="Item">

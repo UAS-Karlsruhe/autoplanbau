@@ -510,6 +510,36 @@
                 </redundancy>
             </redundancyData>
         </frame>
+        <frame id="_fb32f95c-1f35-44a9-addf-7b2eb940a8a8" name="test1">
+            <transformation a="0.0" b="0.0" c="0.0" x="0.0" y="0.0" z="0.0"/>
+            <additionalInformation>
+                <info key="LastModificationTime" type="java.lang.Long" value="1646228582919"/>
+            </additionalInformation>
+        </frame>
+        <frame id="_04f90e01-c8fa-4387-9348-8a294bfffa54" name="test2">
+            <transformation a="0.0" b="0.0" c="0.0" x="0.0" y="0.0" z="0.0"/>
+            <additionalInformation>
+                <info key="LastModificationTime" type="java.lang.Long" value="1646228603992"/>
+            </additionalInformation>
+        </frame>
+        <frame id="_60269151-42f8-440f-9ba8-91c046d63a0d" name="test3">
+            <transformation a="0.0" b="0.0" c="0.0" x="0.0" y="0.0" z="0.0"/>
+            <additionalInformation>
+                <info key="LastModificationTime" type="java.lang.Long" value="1646228616616"/>
+            </additionalInformation>
+        </frame>
+        <frame id="_a9f2fd9e-3785-4b8f-abbf-75ad6b6edc4b" name="test4">
+            <transformation a="0.0" b="0.0" c="0.0" x="0.0" y="0.0" z="0.0"/>
+            <additionalInformation>
+                <info key="LastModificationTime" type="java.lang.Long" value="1646228629024"/>
+            </additionalInformation>
+        </frame>
+        <frame id="_f7a28500-f850-4ee3-b6d4-f770adfed217" name="test5">
+            <transformation a="0.0" b="0.0" c="0.0" x="0.0" y="0.0" z="0.0"/>
+            <additionalInformation>
+                <info key="LastModificationTime" type="java.lang.Long" value="1646228640439"/>
+            </additionalInformation>
+        </frame>
     </world>
     <objectTemplates>
         <workpieceTemplate class="" name="Item">

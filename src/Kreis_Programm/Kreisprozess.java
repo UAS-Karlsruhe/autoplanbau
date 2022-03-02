@@ -57,7 +57,7 @@ public class Kreisprozess extends RoboticsAPIApplication {
 	// Beginn Hauptprogramm
 	
 	public void run() {
-		/* // hier
+
 		
 		// Ausgangsposition
 		
@@ -67,6 +67,7 @@ public class Kreisprozess extends RoboticsAPIApplication {
 		// Schublade schließen
 		
 		lBR_iiwa_7_R800_1.move(ptp(getApplicationData().getFrame("/Kreis_Schub_zu_0")));
+		getApplicationControl().pause();
 		gripper.closeGripper();
 		logger.info("Schublade schließen");
 		lBR_iiwa_7_R800_1.move(lin(getApplicationData().getFrame("/Kreis_Schub_zu_1")));
@@ -105,7 +106,7 @@ public class Kreisprozess extends RoboticsAPIApplication {
 		gripper.openGripper();
 		lBR_iiwa_7_R800_1.move(lin(getApplicationData().getFrame("/Kreis_Tisch_1")));
 		
-		
+		/*
 		// Aufnahme Förderband
 		
 		//gripper.openGripper();
@@ -132,9 +133,7 @@ public class Kreisprozess extends RoboticsAPIApplication {
 		lBR_iiwa_7_R800_1.move(lin(getApplicationData().getFrame("/Kreis_Tisch_3")));		
 		
 		lBR_iiwa_7_R800_1.move(ptp(0, 0, 0, 0, 0, 0, 0));
-		
-		
-		*/ //hier
+		*/
 		
 		// Schublade öffnen
 		
@@ -164,7 +163,6 @@ public class Kreisprozess extends RoboticsAPIApplication {
 		//gripper.openGripper();
 		
 		
-		/* //hier
 		// Aufnahme Beistelltisch, Baustein 1
 		
 		lBR_iiwa_7_R800_1.move(ptp(0, 0, 0, 0, 0, 0, 0));
@@ -187,8 +185,7 @@ public class Kreisprozess extends RoboticsAPIApplication {
 		gripper.openGripper();
 		lBR_iiwa_7_R800_1.move(lin(getApplicationData().getFrame("/Kreis_Schub_Ablage_1")));
 		
-		*/ //hier
-		
+		/*
 		// Aufnahme Beistelltisch, Baustein 2
 		
 		lBR_iiwa_7_R800_1.move(ptp(0, 0, 0, 0, 0, 0, 0));
@@ -210,6 +207,20 @@ public class Kreisprozess extends RoboticsAPIApplication {
 		lBR_iiwa_7_R800_1.move(lin(getApplicationData().getFrame("/Kreis_Schub_Ablage_4")));
 		gripper.openGripper();
 		lBR_iiwa_7_R800_1.move(lin(getApplicationData().getFrame("/Kreis_Schub_Ablage_3")));
+		*/
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
 		
 		
 		

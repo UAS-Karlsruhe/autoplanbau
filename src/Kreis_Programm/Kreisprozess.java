@@ -6,7 +6,7 @@ package Kreis_Programm; // Namen des Pakets in der die Roboterapplikation liegt
 //Implementierung der zur Roboterprogrammierung benötigten Klassen
 import javax.inject.Inject;
 
-import com.kuka.common.ThreadUtil;
+//import com.kuka.common.ThreadUtil;
 //import com.kuka.roboticsAPI.applicationModel.IApplicationData;
 import com.kuka.roboticsAPI.applicationModel.RoboticsAPIApplication;
 import static com.kuka.roboticsAPI.motionModel.BasicMotions.*;

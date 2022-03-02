@@ -153,12 +153,22 @@ public class Kreisprozess extends RoboticsAPIApplication {
 		lBR_iiwa_7_R800_1.move(ptp(0, 0, 0, 0, 0, 0, 0));
 		gripper.openGripper();
 		
-		lBR_iiwa_7_R800_1.move(ptp(getApplicationData().getFrame("/Kreis_Schub_auf_5")));
+		lBR_iiwa_7_R800_1.move(ptp(getApplicationData().getFrame("/test2")));
 		logger.info("Schublade öffnen");
-		lBR_iiwa_7_R800_1.move(ptp(getApplicationData().getFrame("/Kreis_Schub_auf_4")));
+		lBR_iiwa_7_R800_1.move(lin(getApplicationData().getFrame("/test1")));
 		gripper.closeGripper();
-		lBR_iiwa_7_R800_1.move(ptp(getApplicationData().getFrame("/Kreis_Schub_auf_5")));
+		lBR_iiwa_7_R800_1.move(lin(getApplicationData().getFrame("/test2")));
 		gripper.openGripper();
+		
+		
+		
+		//lBR_iiwa_7_R800_1.move(ptp(getApplicationData().getFrame("/Kreis_Schub_auf_5")));
+		//logger.info("Schublade öffnen");
+		//lBR_iiwa_7_R800_1.move(ptp(getApplicationData().getFrame("/Kreis_Schub_auf_4")));
+		//gripper.closeGripper();
+		//lBR_iiwa_7_R800_1.move(ptp(getApplicationData().getFrame("/Kreis_Schub_auf_5")));
+		//gripper.openGripper();
+		
 		
 		
 		

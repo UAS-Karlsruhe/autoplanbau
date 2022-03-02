@@ -65,14 +65,10 @@ public class Kreisprozess extends RoboticsAPIApplication {
 		gripper.openGripper();
 
 		// Schublade schließen
-		
+		/*
 		lBR_iiwa_7_R800_1.move(ptp(getApplicationData().getFrame("/Kreis_Schub_zu_0")));
-		getApplicationControl().pause();
-
-		logger.info("Schublade schließen");
 		gripper.closeGripper();
-		gripper.openGripper();
-		
+		logger.info("Schublade schließen");
 		lBR_iiwa_7_R800_1.move(lin(getApplicationData().getFrame("/Kreis_Schub_zu_1")));
 		lBR_iiwa_7_R800_1.move(lin(getApplicationData().getFrame("/Kreis_Schub_zu_2")));
 		lBR_iiwa_7_R800_1.move(lin(getApplicationData().getFrame("/Kreis_Schub_zu_3a")));
@@ -81,7 +77,7 @@ public class Kreisprozess extends RoboticsAPIApplication {
 		lBR_iiwa_7_R800_1.move(lin(getApplicationData().getFrame("/Kreis_Schub_zu_6")));
 		
 		lBR_iiwa_7_R800_1.move(ptp(0, 0, 0, 0, 0, 0, 0));
-		
+		*/
 		
 		// Aufnahme Förderband
 		
@@ -92,8 +88,9 @@ public class Kreisprozess extends RoboticsAPIApplication {
 		lBR_iiwa_7_R800_1.move(ptp(getApplicationData().getFrame("/Kreis_Band_1")));
 		gripper.openGripper();
 		logger.info("Baustein aufnehmen");
+		getApplicationControl().pause(); // Seite 549 --> Start Taste muss gedrückt werden
 		lBR_iiwa_7_R800_1.move(lin(getApplicationData().getFrame("/Kreis_Band_2")));
-		ThreadUtil.milliSleep(2000); // 2 Sekunden warten
+		//ThreadUtil.milliSleep(2000); // 2 Sekunden warten
 		gripper.closeGripper();
 		lBR_iiwa_7_R800_1.move(lin(getApplicationData().getFrame("/Kreis_Band_1")));
 		//gripper.openGripper();
@@ -118,8 +115,9 @@ public class Kreisprozess extends RoboticsAPIApplication {
 		
 		lBR_iiwa_7_R800_1.move(ptp(getApplicationData().getFrame("/Kreis_Band_1")));
 		logger.info("Baustein aufnehmen");
+		getApplicationControl().pause(); // Seite 549 --> Start Taste muss gedrückt werden
 		lBR_iiwa_7_R800_1.move(lin(getApplicationData().getFrame("/Kreis_Band_2")));
-		ThreadUtil.milliSleep(2000); // 2 Sekunden warten
+		//ThreadUtil.milliSleep(2000); // 2 Sekunden warten
 		gripper.closeGripper();
 		lBR_iiwa_7_R800_1.move(lin(getApplicationData().getFrame("/Kreis_Band_1")));
 		//gripper.openGripper();

@@ -161,8 +161,8 @@ public class Kreisprozess extends RoboticsAPIApplication {
 		lBR_iiwa_7_R800_1.move(lin(getApplicationData().getFrame("/u1")));
 		lBR_iiwa_7_R800_1.move(lin(getApplicationData().getFrame("/u2")));
 		lBR_iiwa_7_R800_1.move(lin(getApplicationData().getFrame("/u3")));
-		//gripper.openGripper();
-		
+		gripper.openGripper();
+		lBR_iiwa_7_R800_1.move(lin(getApplicationData().getFrame("/v1")));
 		
 		
 		//lBR_iiwa_7_R800_1.move(ptp(getApplicationData().getFrame("/Kreis_Schub_auf_5")));

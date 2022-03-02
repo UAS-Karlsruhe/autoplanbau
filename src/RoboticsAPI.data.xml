@@ -590,6 +590,24 @@
                 </redundancy>
             </redundancyData>
         </frame>
+        <frame id="_b0501191-cca8-428c-bf63-fd9d6ffff0a7" name="u1">
+            <transformation a="0.0" b="0.0" c="0.0" x="0.0" y="0.0" z="0.0"/>
+            <additionalInformation>
+                <info key="LastModificationTime" type="java.lang.Long" value="1646234175921"/>
+            </additionalInformation>
+        </frame>
+        <frame id="_a42ee6e5-0f1f-4109-807d-4feb453c528b" name="u2">
+            <transformation a="0.0" b="0.0" c="0.0" x="0.0" y="0.0" z="0.0"/>
+            <additionalInformation>
+                <info key="LastModificationTime" type="java.lang.Long" value="1646234185736"/>
+            </additionalInformation>
+        </frame>
+        <frame id="_70a8dbc5-f7aa-47c1-9dcf-5bd4d090ef39" name="u3">
+            <transformation a="0.0" b="0.0" c="0.0" x="0.0" y="0.0" z="0.0"/>
+            <additionalInformation>
+                <info key="LastModificationTime" type="java.lang.Long" value="1646234193001"/>
+            </additionalInformation>
+        </frame>
     </world>
     <objectTemplates>
         <workpieceTemplate class="" name="Item">

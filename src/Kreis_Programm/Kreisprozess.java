@@ -71,6 +71,7 @@ public class Kreisprozess extends RoboticsAPIApplication {
 
 		logger.info("Schublade schlieﬂen");
 		gripper.closeGripper();
+		gripper.openGripper();
 		
 		lBR_iiwa_7_R800_1.move(lin(getApplicationData().getFrame("/Kreis_Schub_zu_1")));
 		lBR_iiwa_7_R800_1.move(lin(getApplicationData().getFrame("/Kreis_Schub_zu_2")));

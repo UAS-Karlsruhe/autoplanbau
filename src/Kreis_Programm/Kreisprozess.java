@@ -151,7 +151,7 @@ public class Kreisprozess extends RoboticsAPIApplication {
 		// Schublade öffnen
 		
 		gripper.openGripper();
-		lBR_iiwa_7_R800_1.move(ptp(0, 0, 0, 0, 0, 0, 0));
+		//lBR_iiwa_7_R800_1.move(ptp(0, 0, 0, 0, 0, 0, 0));
 		
 		lBR_iiwa_7_R800_1.move(ptp(getApplicationData().getFrame("/test1")));
 		logger.info("Schublade öffnen");

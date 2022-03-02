@@ -61,7 +61,6 @@ public class Kreisprozess extends RoboticsAPIApplication {
 		
 		// Ausgangsposition
 
-		/* //hier
 		
 		lBR_iiwa_7_R800_1.move(ptp(0, 0, 0, 0, 0, 0, 0));
 		gripper.openGripper();
@@ -111,7 +110,6 @@ public class Kreisprozess extends RoboticsAPIApplication {
 		lBR_iiwa_7_R800_1.move(lin(getApplicationData().getFrame("/Kreis_Tisch_1")));
 		
 		
-		*/ //hier
 		
 		
 		/*
@@ -195,7 +193,6 @@ public class Kreisprozess extends RoboticsAPIApplication {
 		//gripper.openGripper();
 		
 		
-		/*//hier
 		
 		
 		// Aufnahme Beistelltisch, Baustein 1
@@ -222,7 +219,6 @@ public class Kreisprozess extends RoboticsAPIApplication {
 		
 		lBR_iiwa_7_R800_1.move(ptp(0, 0, 0, 0, 0, 0, 0));
 		
-		*/ //hier
 		
 		
 		/*

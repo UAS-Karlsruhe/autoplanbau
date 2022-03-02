@@ -65,7 +65,7 @@ public class Kreisprozess extends RoboticsAPIApplication {
 		gripper.openGripper();
 
 		// Schublade schließen
-		/*
+		
 		lBR_iiwa_7_R800_1.move(ptp(getApplicationData().getFrame("/Kreis_Schub_zu_0")));
 		gripper.closeGripper();
 		logger.info("Schublade schließen");
@@ -77,7 +77,7 @@ public class Kreisprozess extends RoboticsAPIApplication {
 		lBR_iiwa_7_R800_1.move(lin(getApplicationData().getFrame("/Kreis_Schub_zu_6")));
 		
 		lBR_iiwa_7_R800_1.move(ptp(0, 0, 0, 0, 0, 0, 0));
-		*/
+		
 		
 		// Aufnahme Förderband
 		

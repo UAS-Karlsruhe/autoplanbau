@@ -44,7 +44,7 @@ public class Kreisprozess extends RoboticsAPIApplication {
 		lBR_iiwa_7_R800_1.move(ptp(0, 0, 0, 0, 0, 0, 0));
 		gripper.openGripper();
 		
-		
+		/*hier
 		// Schublade schlieﬂen
 		
 		lBR_iiwa_7_R800_1.move(ptp(getApplicationData().getFrame("/Kreis_Schub_zu_0")));
@@ -87,7 +87,7 @@ public class Kreisprozess extends RoboticsAPIApplication {
 		gripper.openGripper();
 		lBR_iiwa_7_R800_1.move(lin(getApplicationData().getFrame("/Kreis_Tisch_1")).setJointVelocityRel(0.1));
 		
-		
+		*///hier
 		// ------------------------------------------------------------------------------------------
 		/*
 		

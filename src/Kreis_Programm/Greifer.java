@@ -1,6 +1,6 @@
 // Einbinden des Greifers mit Info-Meldungen
 
-package Kreis_Programm;
+package Kreis_Programm; // Name des Pakets in der die Roboterapplikation liegt
 
 import javax.inject.Inject;
 

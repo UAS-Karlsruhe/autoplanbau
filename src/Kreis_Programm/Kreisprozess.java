@@ -145,7 +145,8 @@ public class Kreisprozess extends RoboticsAPIApplication {
 		lBR_iiwa_7_R800_1.move(lin(getApplicationData().getFrame("/v3")).setJointVelocityRel(0.1));
 		lBR_iiwa_7_R800_1.move(lin(getApplicationData().getFrame("/v4")).setJointVelocityRel(0.2));
 		lBR_iiwa_7_R800_1.move(ptp(getApplicationData().getFrame("/v5")).setJointVelocityRel(0.1));
-		
+		lBR_iiwa_7_R800_1.move(ptp(getApplicationData().getFrame("/test2")).setJointVelocityRel(0.1));
+
 		lBR_iiwa_7_R800_1.move(ptp(getApplicationData().getFrame("/w1")).setJointVelocityRel(0.1));
 		
 		lBR_iiwa_7_R800_1.move(ptp(0, 0, 0, 0, 0, 0, 0));

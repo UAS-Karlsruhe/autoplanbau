@@ -47,7 +47,7 @@ public class Kreisprozess extends RoboticsAPIApplication {
 		
 		// Schublade schlieﬂen
 		
-		lBR_iiwa_7_R800_1.move(ptp(getApplicationData().getFrame("/Kreis_Schub_zu_0")).setJointVelocityRel(0.5));
+		lBR_iiwa_7_R800_1.move(ptp(getApplicationData().getFrame("/Kreis_Schub_zu_0")).setJointVelocityRel(0.1));
 		lBR_iiwa_7_R800_1.move(ptp(0, 0, 0, 0, 0, 0, 0).setJointVelocityRel(1));
 		gripper.closeGripper();
 		logger.info("Schublade schlieﬂen");

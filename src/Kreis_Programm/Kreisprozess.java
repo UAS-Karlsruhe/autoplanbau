@@ -44,11 +44,10 @@ public class Kreisprozess extends RoboticsAPIApplication {
 		lBR_iiwa_7_R800_1.move(ptp(0, 0, 0, 0, 0, 0, 0));
 		gripper.openGripper();
 		
-		
+		/*hier
 		// Schublade schließen
 		
-		lBR_iiwa_7_R800_1.move(ptp(getApplicationData().getFrame("/Kreis_Schub_zu_0")).setJointVelocityRel(0.1));
-		lBR_iiwa_7_R800_1.move(ptp(0, 0, 0, 0, 0, 0, 0).setJointVelocityRel(1));
+		lBR_iiwa_7_R800_1.move(ptp(getApplicationData().getFrame("/Kreis_Schub_zu_0")));
 		gripper.closeGripper();
 		logger.info("Schublade schließen");
 		lBR_iiwa_7_R800_1.move(lin(getApplicationData().getFrame("/Kreis_Schub_zu_1")));
@@ -87,7 +86,7 @@ public class Kreisprozess extends RoboticsAPIApplication {
 		lBR_iiwa_7_R800_1.move(lin(getApplicationData().getFrame("/Kreis_Tisch_2")));
 		gripper.openGripper();
 		lBR_iiwa_7_R800_1.move(lin(getApplicationData().getFrame("/Kreis_Tisch_1")));
-		
+		*///hier
 		
 		
 		// ------------------------------------------------------------------------------------------
@@ -135,10 +134,10 @@ public class Kreisprozess extends RoboticsAPIApplication {
 		
 		lBR_iiwa_7_R800_1.move(ptp(getApplicationData().getFrame("/test1")));
 		logger.info("Schublade öffnen");
-		lBR_iiwa_7_R800_1.move(lin(getApplicationData().getFrame("/test4"))); // langsam Anfahren
+		lBR_iiwa_7_R800_1.move(lin(getApplicationData().getFrame("/test4")).setJointVelocityRel(0.1)); // langsam Anfahren
 		gripper.closeGripper();
-		lBR_iiwa_7_R800_1.move(ptp(getApplicationData().getFrame("/test3")));
-		lBR_iiwa_7_R800_1.move(ptp(getApplicationData().getFrame("/u1")));
+		lBR_iiwa_7_R800_1.move(ptp(getApplicationData().getFrame("/test3")).setJointVelocityRel(0.1));
+		lBR_iiwa_7_R800_1.move(ptp(getApplicationData().getFrame("/u1")).setJointVelocityRel(0.1));
 		lBR_iiwa_7_R800_1.move(ptp(getApplicationData().getFrame("/u2")));
 		lBR_iiwa_7_R800_1.move(ptp(getApplicationData().getFrame("/u3")));
 		gripper.openGripper();

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <ConfigurationProject>
     <TopologyItem itemPath="com.kuka/Project" name="Project" selectedVersion="1" uniqueID="">
-        <TopologyItem itemPath="com.kuka/ControllerLBR5" name="KUKA_Sunrise_Cabinet_1" selectedVersion="1" uniqueID="af46f8b5-925c-453a-98a5-f08c37051dec">
+        <TopologyItem itemPath="com.kuka/ControllerLBR5" name="Mirko_Sunrise_FRI_Cabinet" selectedVersion="1" uniqueID="af46f8b5-925c-453a-98a5-f08c37051dec">
             <Interface id="com.kuka/ControllerLBR5/Controller" version="0.1.0"/>
             <Interface id="com.kuka/Controller/USB" version="0.2.0"/>
             <Interface id="com.kuka/Controller/EtherCATCTRLBUS" version="0.1.0"/>
@@ -147,9 +147,6 @@
             <SoftwareItem autoSelected="true" canChangeSelection="true" displayName="DiagnoseManager" installItem="true" installedVersion="1" itemPath="com.kuka/DiagnoseManager" selectedVersion="1" usage="Library">
                 <Interface id="com.kuka/DiagnoseManager/DiagnoseManager" version="0.8.4"/>
             </SoftwareItem>
-            <SoftwareItem autoSelected="true" canChangeSelection="true" displayName="DirectServoSupport" installItem="true" installedVersion="1" itemPath="com.kuka/DirectServoSupport" selectedVersion="1" usage="Library">
-                <Interface id="com.kuka/DirectServoSupport/DirectServoSupport" version="0.1.0"/>
-            </SoftwareItem>
             <SoftwareItem autoSelected="true" canChangeSelection="true" displayName="EtherCATWrapper" installItem="true" installedVersion="1" itemPath="com.kuka/EtherCATWrapper" selectedVersion="1" usage="Library">
                 <Interface id="com.kuka/EtherCATWrapper/EtherCATWrapperBase" version="0.8.4"/>
             </SoftwareItem>
@@ -207,12 +204,11 @@
             <SoftwareItem autoSelected="true" canChangeSelection="true" displayName="Java Runtime Environment" installItem="true" installedVersion="6.45" itemPath="com.kuka/JRE" selectedVersion="6.45" usage="Library">
                 <Interface id="com.oracle/Java/JRE" version="6.0.450"/>
             </SoftwareItem>
-            <SoftwareItem autoSelected="true" canChangeSelection="true" displayName="JointOTGSupport" installItem="true" installedVersion="1" itemPath="com.kuka/JointOTGSupport" selectedVersion="1" usage="Library">
-                <Interface id="com.kuka/JointOTGSupport/GSRecorder" version="0.1.0"/>
-                <Interface id="com.kuka/JointOTGSupport/JointOTGSupport" version="0.1.0"/>
-            </SoftwareItem>
             <SoftwareItem autoSelected="true" canChangeSelection="true" displayName="KUKA Option Network Interface" installItem="true" installedVersion="1" itemPath="com.kuka/KONISupport" selectedVersion="1" usage="Library">
                 <Interface id="com.kuka/KONISupport/KONISupport" version="0.1.0"/>
+                <Property displayName="IP" key="KONI_IP" optional="true" showInEditor="true" type="String">
+                    <Value>172.31.0.149</Value>
+                </Property>
             </SoftwareItem>
             <SoftwareItem autoSelected="true" canChangeSelection="true" displayName="KrcDiag" installItem="true" installedVersion="8.5.8.9" itemPath="com.kuka/KrcDiag" selectedVersion="8.5.8.9" usage="Library">
                 <Interface id="com.kuka/KrcDiag/KrcDiag" version="8.5.8"/>
@@ -281,7 +277,7 @@
                 <Interface id="com.kuka/ProfinetDriver/ProfinetDriver" version="0.4.1"/>
                 <Interface id="com.kuka/ProfinetSupport/Profinet" version="0.1.0"/>
             </SoftwareItem>
-            <SoftwareItem autoSelected="false" canChangeSelection="true" displayName="Robotics API" installItem="true" installedVersion="1.0.0" itemPath="com.kuka/RAPI" selectedVersion="1.0.0" usage="Feature">
+            <SoftwareItem autoSelected="true" canChangeSelection="true" displayName="Robotics API" installItem="true" installedVersion="1.0.0" itemPath="com.kuka/RAPI" selectedVersion="1.0.0" usage="Feature">
                 <Interface id="com.kuka/RAPI/RAPI" version="1.0.0"/>
             </SoftwareItem>
             <SoftwareItem autoSelected="true" canChangeSelection="true" displayName="RAPI20" installItem="false" installedVersion="NONE" itemPath="com.kuka/RAPI20" selectedVersion="NONE" usage="Feature"/>
@@ -354,9 +350,6 @@
             </SoftwareItem>
             <SoftwareItem autoSelected="true" canChangeSelection="true" displayName="SmartPad Updater" installItem="true" installedVersion="1" itemPath="com.kuka/SmartPadUpdater" selectedVersion="1" usage="Library">
                 <Interface id="com.kuka/SmartPadUpdater/SmartPadUpdater" version="0.1.0"/>
-            </SoftwareItem>
-            <SoftwareItem autoSelected="true" canChangeSelection="true" displayName="SmartServoLINSupport" installItem="true" installedVersion="1" itemPath="com.kuka/SmartServoLINSupport" selectedVersion="1" usage="Library">
-                <Interface id="com.kuka/SmartServoLINSupport/SmartServoLINSupport" version="0.1.0"/>
             </SoftwareItem>
             <SoftwareItem autoSelected="true" canChangeSelection="true" displayName="StartKRC" installItem="true" installedVersion="1" itemPath="com.kuka/StartKRC" selectedVersion="1" usage="Library">
                 <Interface id="com.kuka/StartKRC/StartKRC" version="0.1.0"/>
@@ -607,17 +600,6 @@
                 <Interface id="com.kuka/Bundle/com.kuka.configuration.manager" version="2.0.1"/>
             </SoftwareItem>
             <SoftwareItem autoSelected="true" canChangeSelection="true" displayName="com.kuka.connectionLib" installItem="true" installedVersion="NONE" itemPath="com.kuka/com.kuka.connectionLib" selectedVersion="NONE" usage="Library"/>
-            <SoftwareItem autoSelected="true" canChangeSelection="true" displayName="com.kuka.connectivity.common.JniExtractor" installItem="true" installedVersion="1.15.0.Con1-17-0_2" itemPath="com.kuka/com.kuka.connectivity.common.JniExtractor" selectedVersion="1.15.0.Con1-17-0_2" usage="Library">
-                <Interface id="com.kuka/Bundle/com.kuka.connectivity.common.JniExtractor" version="1.15.0"/>
-            </SoftwareItem>
-            <SoftwareItem autoSelected="true" canChangeSelection="true" displayName="Direct Servo Motion Extension" installItem="true" installedVersion="1.15.0.Con1-17-0_2" itemPath="com.kuka/com.kuka.connectivity.directServo" selectedVersion="1.15.0.Con1-17-0_2" usage="Feature">
-                <Interface id="com.kuka/OSGi/com.kuka.connectivity.controllerModel.directServo" version="1.15.0"/>
-                <Interface id="com.kuka/OSGi/com.kuka.connectivity.motionModel.directServo" version="1.15.0"/>
-                <Interface id="com.kuka/Bundle/com.kuka.connectivity.directServo" version="1.15.0"/>
-            </SoftwareItem>
-            <SoftwareItem autoSelected="true" canChangeSelection="true" displayName="Direct Servo Motion Example Applications" installItem="true" installedVersion="1.15.0.Con1-17-0_2" itemPath="com.kuka/com.kuka.connectivity.directServo.exampleApplications" selectedVersion="1.15.0.Con1-17-0_2" usage="Feature">
-                <Interface id="com.kuka/Bundle/com.kuka.connectivity.directServo.exampleApplications" version="1.15.0"/>
-            </SoftwareItem>
             <SoftwareItem autoSelected="true" canChangeSelection="true" displayName="Fast Robot Interface Extension" installItem="true" installedVersion="1.15.1.Con1-17-0_2" itemPath="com.kuka/com.kuka.connectivity.fastRobotInterface" selectedVersion="1.15.1.Con1-17-0_2" usage="Feature">
                 <Interface id="com.kuka/Bundle/com.kuka.connectivity.fastRobotInterface" version="1.15.1"/>
                 <Interface id="com.kuka/OSGi/com.kuka.connectivity.fastRobotInterface" version="1.15.1"/>
@@ -632,24 +614,6 @@
             </SoftwareItem>
             <SoftwareItem autoSelected="true" canChangeSelection="true" displayName="Fast Robot Interface Extension Example Applications" installItem="true" installedVersion="1.15.0.Con1-17-0_2" itemPath="com.kuka/com.kuka.connectivity.fastRobotInterface.exampleApplications" selectedVersion="1.15.0.Con1-17-0_2" usage="Feature">
                 <Interface id="com.kuka/Bundle/com.kuka.connectivity.fastRobotInterface.exampleApplications" version="1.15.0"/>
-            </SoftwareItem>
-            <SoftwareItem autoSelected="true" canChangeSelection="true" displayName="Smart Servo Motion Extension" installItem="true" installedVersion="1.17.0.Con1-17-0_2" itemPath="com.kuka/com.kuka.connectivity.smartServo" selectedVersion="1.17.0.Con1-17-0_2" usage="Feature">
-                <Interface id="com.kuka/OSGi/com.kuka.connectivity.motionModel.smartServo" version="1.15.0"/>
-                <Interface id="com.kuka/OSGi/com.kuka.connectivity.userInterface.smartServo" version="1.15.0"/>
-                <Interface id="com.kuka/OSGi/com.kuka.connectivity.controllerModel.sunrise.smartServo" version="1.15.0"/>
-                <Interface id="com.kuka/Bundle/com.kuka.connectivity.smartServo" version="1.17.0"/>
-                <Interface id="com.kuka/OSGi/com.kuka.connectivity.params.smartServo" version="1.15.0"/>
-            </SoftwareItem>
-            <SoftwareItem autoSelected="true" canChangeSelection="true" displayName="Smart Servo Motion Example Applications" installItem="true" installedVersion="1.15.0.Con1-17-0_2" itemPath="com.kuka/com.kuka.connectivity.smartServo.exampleApplications" selectedVersion="1.15.0.Con1-17-0_2" usage="Feature">
-                <Interface id="com.kuka/Bundle/com.kuka.connectivity.smartServo.exampleApplications" version="1.15.0"/>
-            </SoftwareItem>
-            <SoftwareItem autoSelected="true" canChangeSelection="true" displayName="Smart Servo Linear Motion Extension" installItem="true" installedVersion="1.15.0.Con1-17-0_2" itemPath="com.kuka/com.kuka.connectivity.smartServoLIN" selectedVersion="1.15.0.Con1-17-0_2" usage="Feature">
-                <Interface id="com.kuka/OSGi/com.kuka.connectivity.controllerModel.smartServoLIN" version="1.15.0"/>
-                <Interface id="com.kuka/Bundle/com.kuka.connectivity.smartServoLIN" version="1.15.0"/>
-                <Interface id="com.kuka/OSGi/com.kuka.connectivity.motionModel.smartServoLIN" version="1.15.0"/>
-            </SoftwareItem>
-            <SoftwareItem autoSelected="true" canChangeSelection="true" displayName="Smart Servo Linear Motion Example Applications" installItem="true" installedVersion="1.15.0.Con1-17-0_2" itemPath="com.kuka/com.kuka.connectivity.smartServoLIN.exampleApplications" selectedVersion="1.15.0.Con1-17-0_2" usage="Feature">
-                <Interface id="com.kuka/Bundle/com.kuka.connectivity.smartServoLIN.exampleApplications" version="1.15.0"/>
             </SoftwareItem>
             <SoftwareItem autoSelected="true" canChangeSelection="true" displayName="com.kuka.deployment" installItem="true" installedVersion="1.0.0.5" itemPath="com.kuka/com.kuka.deployment" selectedVersion="1.0.0.5" usage="Library">
                 <Interface id="com.kuka/OSGi/com.kuka.deployment.errors" version="1.0.0"/>
@@ -974,10 +938,13 @@
                 <Interface id="com.kuka/OSGi/com.kuka.task.provider.pause" version="1.0.0"/>
             </SoftwareItem>
             <Property displayName="userName" key="userName" type="String">
-                <Value>KUKA_Sunrise_Cabinet_1</Value>
+                <Value>Mirko_Sunrise_FRI_Cabinet</Value>
             </Property>
             <Property displayName="IP" key="IP" showInEditor="true" type="String">
                 <Value>172.31.1.147</Value>
+            </Property>
+            <Property displayName="SubnetMask" key="SubnetMask" showInEditor="true" type="String">
+                <Value>FFFFFF00</Value>
             </Property>
         </TopologyItem>
         <Property displayName="userName" key="userName" type="String">

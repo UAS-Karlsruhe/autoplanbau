@@ -18,7 +18,8 @@ public class Greifer extends Tool {
 	public Greifer(String name) { // Standardkonstruktor der Klasse Greifer
 		super(name);
 	}
-
+// test kommentar
+	
 // Methode openGripper() zum Oeffnen des Greifers
 public void openGripper(){
 	logger.info ("Greifer öffnen");

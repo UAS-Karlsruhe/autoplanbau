@@ -8,6 +8,9 @@ import com.kuka.roboticsAPI.deviceModel.LBR;
 public class AutoPlanBau extends RoboticsAPIApplication {
 	@Inject
 	private LBR lbr;
+	
+
+			
 
 	@Override
 	public void initialize() {
@@ -19,14 +22,16 @@ public class AutoPlanBau extends RoboticsAPIApplication {
 		// your application execution starts here
 		//lbr.move(ptpHome());
 		
-		System.out.println("Move Bitch");
-		lbr.move(ptp(getApplicationData().getFrame("Niko")).setJointVelocityRel(0.1));
+		
 		
 		System.out.println("Move Bitch");
-		lbr.move(ptp(getApplicationData().getFrame("Tobi")).setJointVelocityRel(0.1));
+		lbr.move(ptp(getApplicationData().getFrame("P1")).setJointVelocityRel(0.1));
 		
 		System.out.println("Move Bitch");
-		lbr.move(ptp(getApplicationData().getFrame("Clementine")).setJointVelocityRel(0.1));
+		lbr.move(ptp(getApplicationData().getFrame("P2")).setJointVelocityRel(0.1));
+		
+		System.out.println("Move Bitch");
+		lbr.move(ptp(getApplicationData().getFrame("P3")).setJointVelocityRel(0.1));
 		
 		
 	}

@@ -25,7 +25,6 @@ public class AutoPlanBau extends RoboticsAPIApplication {
 		//lbr.move(ptpHome());
 		
 		
-		
 		System.out.println("Move Bitch");
 		lbr.move(ptp(getApplicationData().getFrame("/A_Lego_Base/P1")).setJointVelocityRel(1));
 		
@@ -37,6 +36,8 @@ public class AutoPlanBau extends RoboticsAPIApplication {
 		
 		System.out.println("Move Bitch");
 		lbr.move(lin(getApplicationData().getFrame("/A_Lego_Base/P4")).setJointVelocityRel(1));
+		
+		
 		
 	}
 }

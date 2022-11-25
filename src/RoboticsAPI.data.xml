@@ -847,14 +847,13 @@
             </additionalInformation>
         </frame>
         <frame id="_678940e1-40cf-4758-ad02-8fd991b546ca" name="A_Lego_Base">
-            <transformation a="0.003490413851637638" b="0.005218925711522075" c="-5.689931380634004E-4" x="-160.45897862657253" y="404.91190079545703" z="137.1603956299898"/>
+            <transformation a="0.523" b="0.005218925711522075" c="-5.689931380634004E-4" x="-160.45897862657253" y="404.91190079545703" z="137.1603956299898"/>
             <additionalInformation>
-                <info key="LastModificationTime" type="java.lang.Long" value="1669397867235"/>
+                <info key="LastModificationTime" type="java.lang.Long" value="1669397433168"/>
                 <info base="LBR_iiwa_7_R800_1" controller="Mirko_Sunrise_FRI_Cabinet" device="LBR_iiwa_7_R800_1" tcpName="Flange" tool="Flange" type="com.kuka.roboticsAPI.deviceModel.TeachInformation">
                     <tcpTransformation a="0.0" b="0.0" c="0.0" x="0.0" y="0.0" z="0.0"/>
                 </info>
                 <info key="UseAsBaseForJogging" type="java.lang.Boolean" value="true"/>
-                <info measurementMethod="Base3Point" timestamp="1669397867235" type="com.kuka.roboticsAPI.deviceModel.MeasurementInformation"/>
             </additionalInformation>
             <redundancyData>
                 <redundancy transformationProviderName="Mirko_Sunrise_FRI_Cabinet/LBR_iiwa_7_R800_1" type="com.kuka.roboticsAPI.deviceModel.LBRE1Redundancy">
@@ -887,6 +886,13 @@
                     <info key="LastModificationTime" type="java.lang.Long" value="1669395528886"/>
                 </additionalInformation>
             </frame>
+        </frame>
+        <frame id="_8ffefd96-7a24-4b56-b756-b744a4241425" name="A_Lego_Base_2">
+            <transformation a="0.0" b="0.0" c="0.0" x="0.0" y="0.0" z="0.0"/>
+            <additionalInformation>
+                <info key="LastModificationTime" type="java.lang.Long" value="1669397534632"/>
+                <info key="UseAsBaseForJogging" type="java.lang.Boolean" value="true"/>
+            </additionalInformation>
         </frame>
     </world>
     <objectTemplates>

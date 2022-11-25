@@ -27,16 +27,19 @@ public class AutoPlanBau extends RoboticsAPIApplication {
 		
 		
 		System.out.println("Move Bitch");
-		lbr.move(ptp(getApplicationData().getFrame("/vlinkshinten")).setJointVelocityRel(0.1));
+		lbr.move(ptp(getApplicationData().getFrame("/P1")).setJointVelocityRel(0.5));
 		
 		System.out.println("Move Bitch");
-		lbr.move(ptp(getApplicationData().getFrame("/vrechtshinten")).setJointVelocityRel(0.1));
+		lbr.move(ptp(getApplicationData().getFrame("/A_Lego_Base")).setJointVelocityRel(0.5));
 		
 		System.out.println("Move Bitch");
-		lbr.move(ptp(getApplicationData().getFrame("/vrechtsvorne")).setJointVelocityRel(0.1));
+		lbr.move(ptp(getApplicationData().getFrame("/P2")).setJointVelocityRel(0.5));
 		
 		System.out.println("Move Bitch");
-		lbr.move(ptp(getApplicationData().getFrame("/vlinksvorne")).setJointVelocityRel(0.1));
+		lbr.move(ptp(getApplicationData().getFrame("/P3")).setJointVelocityRel(0.5));
+		
+		System.out.println("Move Bitch");
+		lbr.move(ptp(getApplicationData().getFrame("/P4")).setJointVelocityRel(0.5));
 		
 	}
 }

@@ -28,19 +28,19 @@ public class AutoPlanBau extends RoboticsAPIApplication {
 		TCP.attachTo(lbr.getFlange());
 		
 		System.out.println("Move Bitch");
-		lbr.move(ptp(getApplicationData().getFrame("/A_Lego_Base/P1")).setJointVelocityRel(1));
+		TCP.move(ptp(getApplicationData().getFrame("/A_Lego_Base/P1")).setJointVelocityRel(1));
 		
 		System.out.println("Move Bitch");
-		lbr.move(lin(getApplicationData().getFrame("/A_Lego_Base/P2")).setJointVelocityRel(1));
+		TCP.move(lin(getApplicationData().getFrame("/A_Lego_Base/P2")).setJointVelocityRel(1));
 
 		System.out.println("Move Bitch");
-		lbr.move(lin(getApplicationData().getFrame("/A_Lego_Base/P3")).setJointVelocityRel(1));
+		TCP.move(lin(getApplicationData().getFrame("/A_Lego_Base/P3")).setJointVelocityRel(1));
 		
 		System.out.println("Move Bitch");
-		lbr.move(lin(getApplicationData().getFrame("/A_Lego_Base/P4")).setJointVelocityRel(1));
+		TCP.move(lin(getApplicationData().getFrame("/A_Lego_Base/P4")).setJointVelocityRel(1));
 		
 		System.out.println("Move Bitch");
-		lbr.move(lin(getApplicationData().getFrame("/A_Lego_Base/P1")).setJointVelocityRel(1));
+		TCP.move(lin(getApplicationData().getFrame("/A_Lego_Base/P1")).setJointVelocityRel(1));
 		
 	}
 }

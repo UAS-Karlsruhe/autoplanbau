@@ -892,7 +892,7 @@
         <toolTemplate class="" name="Lego_Sauger">
             <frames>
                 <frame id="_69d77f58-0f4f-48de-ba68-9c9b74a07b0d" name="TCP_Lego_Sauger">
-                    <transformation a="0.0" b="0.0" c="0.0" x="0.0" y="0.0" z="75.0"/>
+                    <transformation a="0.5236" b="0.0" c="0.0" x="0.0" y="0.0" z="75.0"/>
                 </frame>
             </frames>
             <additionalInformation>

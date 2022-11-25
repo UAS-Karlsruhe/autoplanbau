@@ -27,19 +27,16 @@ public class AutoPlanBau extends RoboticsAPIApplication {
 		
 		
 		System.out.println("Move Bitch");
-		lbr.move(ptp(getApplicationData().getFrame("/P1")).setJointVelocityRel(0.5));
-//		
-//		System.out.println("Move Bitch");
-//		lbr.move(ptp(getApplicationData().getFrame("/A_Lego_Base")).setJointVelocityRel(0.5));
-//		
-//		System.out.println("Move Bitch");
-//		lbr.move(ptp(getApplicationData().getFrame("/P2")).setJointVelocityRel(0.5));
-//		
-//		System.out.println("Move Bitch");
-//		lbr.move(ptp(getApplicationData().getFrame("/P3")).setJointVelocityRel(0.5));
-//		
-//		System.out.println("Move Bitch");
-//		lbr.move(ptp(getApplicationData().getFrame("/P4")).setJointVelocityRel(0.5));
-//		
+		lbr.move(ptp(getApplicationData().getFrame("/A_Lego_Base/P1")).setJointVelocityRel(1));
+		
+		System.out.println("Move Bitch");
+		lbr.move(lin(getApplicationData().getFrame("/A_Lego_Base/P2")).setJointVelocityRel(1));
+
+		System.out.println("Move Bitch");
+		lbr.move(lin(getApplicationData().getFrame("/A_Lego_Base/P3")).setJointVelocityRel(1));
+		
+		System.out.println("Move Bitch");
+		lbr.move(lin(getApplicationData().getFrame("/A_Lego_Base/P4")).setJointVelocityRel(1));
+		
 	}
 }

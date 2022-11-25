@@ -782,24 +782,6 @@
                 </redundancy>
             </redundancyData>
         </frame>
-        <frame id="_678940e1-40cf-4758-ad02-8fd991b546ca" name="A_Lego_Base">
-            <transformation a="0.003490413851637638" b="0.005218925711522075" c="-5.689931380634004E-4" x="-160.45897862657253" y="404.91190079545703" z="137.1603956299898"/>
-            <additionalInformation>
-                <info key="LastModificationTime" type="java.lang.Long" value="1669397867235"/>
-                <info base="LBR_iiwa_7_R800_1" controller="Mirko_Sunrise_FRI_Cabinet" device="LBR_iiwa_7_R800_1" tcpName="Flange" tool="Flange" type="com.kuka.roboticsAPI.deviceModel.TeachInformation">
-                    <tcpTransformation a="0.0" b="0.0" c="0.0" x="0.0" y="0.0" z="0.0"/>
-                </info>
-                <info key="UseAsBaseForJogging" type="java.lang.Boolean" value="true"/>
-                <info measurementMethod="Base3Point" timestamp="1669397867235" type="com.kuka.roboticsAPI.deviceModel.MeasurementInformation"/>
-            </additionalInformation>
-            <redundancyData>
-                <redundancy transformationProviderName="Mirko_Sunrise_FRI_Cabinet/LBR_iiwa_7_R800_1" type="com.kuka.roboticsAPI.deviceModel.LBRE1Redundancy">
-                    <info type="com.kuka.roboticsAPI.deviceModel.StatusTurnRedundancy$StatusParameter" value="2" valueType="java.lang.Integer"/>
-                    <info type="com.kuka.roboticsAPI.deviceModel.StatusTurnRedundancy$TurnParameter" value="88" valueType="java.lang.Integer"/>
-                    <info type="com.kuka.roboticsAPI.deviceModel.LBRE1Redundancy$E1Parameter" value="0.017610339100450075" valueType="java.lang.Double"/>
-                </redundancy>
-            </redundancyData>
-        </frame>
         <frame id="_e7078a73-40c4-482e-8b94-63d75a04a7c5" name="P4">
             <transformation a="0.008291248648007711" b="0.007741146049042117" c="-3.1361737448216442" x="178.28091065055264" y="414.5618521598791" z="149.74289793596517"/>
             <additionalInformation>
@@ -863,6 +845,48 @@
             <additionalInformation>
                 <info key="LastModificationTime" type="java.lang.Long" value="1669390044619"/>
             </additionalInformation>
+        </frame>
+        <frame id="_678940e1-40cf-4758-ad02-8fd991b546ca" name="A_Lego_Base">
+            <transformation a="0.003490413851637638" b="0.005218925711522075" c="-5.689931380634004E-4" x="-160.45897862657253" y="404.91190079545703" z="137.1603956299898"/>
+            <additionalInformation>
+                <info key="LastModificationTime" type="java.lang.Long" value="1669397867235"/>
+                <info base="LBR_iiwa_7_R800_1" controller="Mirko_Sunrise_FRI_Cabinet" device="LBR_iiwa_7_R800_1" tcpName="Flange" tool="Flange" type="com.kuka.roboticsAPI.deviceModel.TeachInformation">
+                    <tcpTransformation a="0.0" b="0.0" c="0.0" x="0.0" y="0.0" z="0.0"/>
+                </info>
+                <info key="UseAsBaseForJogging" type="java.lang.Boolean" value="true"/>
+                <info measurementMethod="Base3Point" timestamp="1669397867235" type="com.kuka.roboticsAPI.deviceModel.MeasurementInformation"/>
+            </additionalInformation>
+            <redundancyData>
+                <redundancy transformationProviderName="Mirko_Sunrise_FRI_Cabinet/LBR_iiwa_7_R800_1" type="com.kuka.roboticsAPI.deviceModel.LBRE1Redundancy">
+                    <info type="com.kuka.roboticsAPI.deviceModel.StatusTurnRedundancy$StatusParameter" value="2" valueType="java.lang.Integer"/>
+                    <info type="com.kuka.roboticsAPI.deviceModel.StatusTurnRedundancy$TurnParameter" value="88" valueType="java.lang.Integer"/>
+                    <info type="com.kuka.roboticsAPI.deviceModel.LBRE1Redundancy$E1Parameter" value="0.017610339100450075" valueType="java.lang.Double"/>
+                </redundancy>
+            </redundancyData>
+            <frame id="_10c45b6a-feaf-4754-85d2-9f2889042447" name="P1">
+                <transformation a="0.0" b="0.0" c="0.0" x="0.0" y="0.0" z="100.0"/>
+                <additionalInformation>
+                    <info key="LastModificationTime" type="java.lang.Long" value="1669394597138"/>
+                </additionalInformation>
+            </frame>
+            <frame id="_06999b3d-6149-4f3d-84c3-4d782782e1d2" name="P2">
+                <transformation a="0.0" b="0.0" c="0.0" x="352.0" y="0.0" z="100.0"/>
+                <additionalInformation>
+                    <info key="LastModificationTime" type="java.lang.Long" value="1669394641788"/>
+                </additionalInformation>
+            </frame>
+            <frame id="_8e01233f-b0c0-4137-9a91-207ce398aac1" name="P3">
+                <transformation a="0.0" b="0.0" c="0.0" x="352.0" y="352.0" z="100.0"/>
+                <additionalInformation>
+                    <info key="LastModificationTime" type="java.lang.Long" value="1669394665753"/>
+                </additionalInformation>
+            </frame>
+            <frame id="_519e9e67-330d-45fa-923c-d01981b6b24f" name="P4">
+                <transformation a="0.0" b="0.0" c="0.0" x="0.0" y="352.0" z="100.0"/>
+                <additionalInformation>
+                    <info key="LastModificationTime" type="java.lang.Long" value="1669394683917"/>
+                </additionalInformation>
+            </frame>
         </frame>
     </world>
     <objectTemplates>

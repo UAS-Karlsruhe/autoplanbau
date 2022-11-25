@@ -847,9 +847,9 @@
             </additionalInformation>
         </frame>
         <frame id="_678940e1-40cf-4758-ad02-8fd991b546ca" name="A_Lego_Base">
-            <transformation a="0.523" b="0.005218925711522075" c="-5.689931380634004E-4" x="-160.45897862657253" y="404.91190079545703" z="137.1603956299898"/>
+            <transformation a="0.0030" b="0.005218925711522075" c="-5.689931380634004E-4" x="-160.45897862657253" y="404.91190079545703" z="137.1603956299898"/>
             <additionalInformation>
-                <info key="LastModificationTime" type="java.lang.Long" value="1669397433168"/>
+                <info key="LastModificationTime" type="java.lang.Long" value="1669397658059"/>
                 <info base="LBR_iiwa_7_R800_1" controller="Mirko_Sunrise_FRI_Cabinet" device="LBR_iiwa_7_R800_1" tcpName="Flange" tool="Flange" type="com.kuka.roboticsAPI.deviceModel.TeachInformation">
                     <tcpTransformation a="0.0" b="0.0" c="0.0" x="0.0" y="0.0" z="0.0"/>
                 </info>
@@ -888,11 +888,10 @@
             </frame>
         </frame>
         <frame id="_8ffefd96-7a24-4b56-b756-b744a4241425" name="A_Lego_Base_2">
-            <transformation a="1.5938401196946212" b="0.04012371763803055" c="-0.01523386137806679" x="146.13744198218365" y="578.0797849463698" z="160.3970686348305"/>
+            <transformation a="0.0" b="0.0" c="0.0" x="0.0" y="0.0" z="0.0"/>
             <additionalInformation>
-                <info key="LastModificationTime" type="java.lang.Long" value="1669402334847"/>
+                <info key="LastModificationTime" type="java.lang.Long" value="1669397534632"/>
                 <info key="UseAsBaseForJogging" type="java.lang.Boolean" value="true"/>
-                <info measurementMethod="Base3Point" timestamp="1669402334847" type="com.kuka.roboticsAPI.deviceModel.MeasurementInformation"/>
             </additionalInformation>
         </frame>
     </world>
@@ -925,7 +924,7 @@
         <toolTemplate class="" defaultMotionFrameRef="/TCP_Lego_Sauger" name="Lego_Sauger">
             <frames>
                 <frame id="_69d77f58-0f4f-48de-ba68-9c9b74a07b0d" name="TCP_Lego_Sauger">
-                    <transformation a="0.5" b="0.0" c="0.0" x="0.0" y="0.0" z="75.0"/>
+                    <transformation a="-0.5" b="0.0" c="0.0" x="0.0" y="0.0" z="75.0"/>
                 </frame>
             </frames>
             <additionalInformation>

@@ -735,9 +735,9 @@
             </redundancyData>
         </frame>
         <frame id="_abd9e372-c182-4fc5-8f53-8cd517cf3646" name="P1">
-            <transformation a="0.00829700354241552" b="0.007749410706381268" c="-3.1362719999629953" x="-145.6938396823668" y="417.01610703770154" z="458.6196674961608"/>
+            <transformation a="0.0" b="0.0" c="-3.1415" x="-145.6938396823668" y="417.01610703770154" z="458.6196674961608"/>
             <additionalInformation>
-                <info key="LastModificationTime" type="java.lang.Long" value="1669394124797"/>
+                <info key="LastModificationTime" type="java.lang.Long" value="1669391036409"/>
                 <info base="LBR_iiwa_7_R800_1" controller="Mirko_Sunrise_FRI_Cabinet" device="LBR_iiwa_7_R800_1" tcpName="Flange" tool="Flange" type="com.kuka.roboticsAPI.deviceModel.TeachInformation">
                     <tcpTransformation a="0.0" b="0.0" c="0.0" x="0.0" y="0.0" z="0.0"/>
                 </info>
@@ -783,9 +783,9 @@
             </redundancyData>
         </frame>
         <frame id="_678940e1-40cf-4758-ad02-8fd991b546ca" name="A_Lego_Base">
-            <transformation a="0.00833833893902722" b="0.007629092742319807" c="-3.136226461709828" x="-148.0133880687466" y="418.6473350175208" z="157.1758981867894"/>
+            <transformation a="0.0" b="0.0" c="-3.1415" x="-148.0133880687466" y="418.6473350175208" z="157.1758981867894"/>
             <additionalInformation>
-                <info key="LastModificationTime" type="java.lang.Long" value="1669394052313"/>
+                <info key="LastModificationTime" type="java.lang.Long" value="1669391015356"/>
                 <info base="LBR_iiwa_7_R800_1" controller="Mirko_Sunrise_FRI_Cabinet" device="LBR_iiwa_7_R800_1" tcpName="Flange" tool="Flange" type="com.kuka.roboticsAPI.deviceModel.TeachInformation">
                     <tcpTransformation a="0.0" b="0.0" c="0.0" x="0.0" y="0.0" z="0.0"/>
                 </info>
@@ -797,54 +797,6 @@
                     <info type="com.kuka.roboticsAPI.deviceModel.LBRE1Redundancy$E1Parameter" value="0.017610339100450075" valueType="java.lang.Double"/>
                 </redundancy>
             </redundancyData>
-            <frame id="_958a08ef-6111-4ffe-845a-343159653c68" name="linksvorne">
-                <transformation a="0.0" b="0.0" c="0.0" x="0.0" y="0.0" z="0.0"/>
-                <additionalInformation>
-                    <info key="LastModificationTime" type="java.lang.Long" value="1669388879649"/>
-                </additionalInformation>
-                <frame id="_40455b55-82f3-4b3b-b673-c729c464edb1" name="vlinksvorne">
-                    <transformation a="0.0" b="0.0" c="0.0" x="0.0" y="0.0" z="0.0"/>
-                    <additionalInformation>
-                        <info key="LastModificationTime" type="java.lang.Long" value="1669389101639"/>
-                    </additionalInformation>
-                </frame>
-            </frame>
-            <frame id="_ab3392e6-ccf6-4b2a-8076-e15f29737a1f" name="rechtsvorne">
-                <transformation a="0.0" b="0.0" c="0.0" x="0.0" y="0.0" z="0.0"/>
-                <additionalInformation>
-                    <info key="LastModificationTime" type="java.lang.Long" value="1669388899132"/>
-                </additionalInformation>
-                <frame id="_9f7a7587-4bf6-4ab8-beba-4110f9ff7c3e" name="vrechtsvorne">
-                    <transformation a="0.0" b="0.0" c="0.0" x="0.0" y="0.0" z="0.0"/>
-                    <additionalInformation>
-                        <info key="LastModificationTime" type="java.lang.Long" value="1669389139032"/>
-                    </additionalInformation>
-                </frame>
-            </frame>
-            <frame id="_13cd8edb-f3a7-4bf2-8c74-6f0c2872fd50" name="linkshinten">
-                <transformation a="0.0" b="0.0" c="0.0" x="0.0" y="0.0" z="0.0"/>
-                <additionalInformation>
-                    <info key="LastModificationTime" type="java.lang.Long" value="1669388914213"/>
-                </additionalInformation>
-                <frame id="_0c707ea3-a45b-42a3-b21b-f72860ca2d6d" name="vlinkshinten">
-                    <transformation a="0.0" b="0.0" c="0.0" x="0.0" y="0.0" z="0.0"/>
-                    <additionalInformation>
-                        <info key="LastModificationTime" type="java.lang.Long" value="1669389082660"/>
-                    </additionalInformation>
-                </frame>
-            </frame>
-            <frame id="_20efaf21-33a7-4c0b-9594-70565bd7fbad" name="rechtshinten">
-                <transformation a="0.0" b="0.0" c="0.0" x="0.0" y="0.0" z="0.0"/>
-                <additionalInformation>
-                    <info key="LastModificationTime" type="java.lang.Long" value="1669388935491"/>
-                </additionalInformation>
-                <frame id="_7ad5e6b8-f528-45b5-92ea-497906fa64f8" name="vlinkshinten">
-                    <transformation a="0.0" b="0.0" c="0.0" x="0.0" y="0.0" z="0.0"/>
-                    <additionalInformation>
-                        <info key="LastModificationTime" type="java.lang.Long" value="1669389118336"/>
-                    </additionalInformation>
-                </frame>
-            </frame>
         </frame>
         <frame id="_e7078a73-40c4-482e-8b94-63d75a04a7c5" name="P4">
             <transformation a="0.008291248648007711" b="0.007741146049042117" c="-3.1361737448216442" x="178.28091065055264" y="414.5618521598791" z="149.74289793596517"/>
@@ -861,6 +813,54 @@
                     <info type="com.kuka.roboticsAPI.deviceModel.LBRE1Redundancy$E1Parameter" value="0.017610399096143113" valueType="java.lang.Double"/>
                 </redundancy>
             </redundancyData>
+        </frame>
+        <frame id="_13cd8edb-f3a7-4bf2-8c74-6f0c2872fd50" name="linkshinten">
+            <transformation a="0.008338338939027221" b="0.007629092742319808" c="-3.136226461709828" x="-148.0133880687466" y="418.6473350175208" z="157.1758981867894"/>
+            <additionalInformation>
+                <info key="LastModificationTime" type="java.lang.Long" value="1669388914213"/>
+            </additionalInformation>
+            <frame id="_0c707ea3-a45b-42a3-b21b-f72860ca2d6d" name="vlinkshinten">
+                <transformation a="0.0" b="0.0" c="0.0" x="0.0" y="0.0" z="0.0"/>
+                <additionalInformation>
+                    <info key="LastModificationTime" type="java.lang.Long" value="1669389082660"/>
+                </additionalInformation>
+            </frame>
+        </frame>
+        <frame id="_958a08ef-6111-4ffe-845a-343159653c68" name="linksvorne">
+            <transformation a="0.008338338939027221" b="0.007629092742319808" c="-3.136226461709828" x="-148.0133880687466" y="418.6473350175208" z="157.1758981867894"/>
+            <additionalInformation>
+                <info key="LastModificationTime" type="java.lang.Long" value="1669388879649"/>
+            </additionalInformation>
+            <frame id="_40455b55-82f3-4b3b-b673-c729c464edb1" name="vlinksvorne">
+                <transformation a="0.0" b="0.0" c="0.0" x="0.0" y="0.0" z="0.0"/>
+                <additionalInformation>
+                    <info key="LastModificationTime" type="java.lang.Long" value="1669389101639"/>
+                </additionalInformation>
+            </frame>
+        </frame>
+        <frame id="_20efaf21-33a7-4c0b-9594-70565bd7fbad" name="rechtshinten">
+            <transformation a="0.008338338939027221" b="0.007629092742319808" c="-3.136226461709828" x="-148.0133880687466" y="418.6473350175208" z="157.1758981867894"/>
+            <additionalInformation>
+                <info key="LastModificationTime" type="java.lang.Long" value="1669388935491"/>
+            </additionalInformation>
+        </frame>
+        <frame id="_ab3392e6-ccf6-4b2a-8076-e15f29737a1f" name="rechtsvorne">
+            <transformation a="0.008338338939027221" b="0.007629092742319808" c="-3.136226461709828" x="-148.0133880687466" y="418.6473350175208" z="157.1758981867894"/>
+            <additionalInformation>
+                <info key="LastModificationTime" type="java.lang.Long" value="1669388899132"/>
+            </additionalInformation>
+            <frame id="_9f7a7587-4bf6-4ab8-beba-4110f9ff7c3e" name="vrechtsvorne">
+                <transformation a="0.0" b="0.0" c="0.0" x="0.0" y="0.0" z="0.0"/>
+                <additionalInformation>
+                    <info key="LastModificationTime" type="java.lang.Long" value="1669389139032"/>
+                </additionalInformation>
+            </frame>
+        </frame>
+        <frame id="_921bd194-04ae-4c90-8e58-99efb0c7d189" name="P5">
+            <transformation a="0.0" b="0.0" c="0.0" x="0.0" y="0.0" z="0.0"/>
+            <additionalInformation>
+                <info key="LastModificationTime" type="java.lang.Long" value="1669390044619"/>
+            </additionalInformation>
         </frame>
     </world>
     <objectTemplates>

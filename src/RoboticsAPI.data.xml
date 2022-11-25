@@ -888,10 +888,11 @@
             </frame>
         </frame>
         <frame id="_8ffefd96-7a24-4b56-b756-b744a4241425" name="A_Lego_Base_2">
-            <transformation a="0.0" b="0.0" c="0.0" x="0.0" y="0.0" z="0.0"/>
+            <transformation a="1.5938401196946212" b="0.04012371763803055" c="-0.01523386137806679" x="146.13744198218365" y="578.0797849463698" z="160.3970686348305"/>
             <additionalInformation>
-                <info key="LastModificationTime" type="java.lang.Long" value="1669397534632"/>
+                <info key="LastModificationTime" type="java.lang.Long" value="1669402334847"/>
                 <info key="UseAsBaseForJogging" type="java.lang.Boolean" value="true"/>
+                <info measurementMethod="Base3Point" timestamp="1669402334847" type="com.kuka.roboticsAPI.deviceModel.MeasurementInformation"/>
             </additionalInformation>
         </frame>
     </world>

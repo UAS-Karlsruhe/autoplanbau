@@ -750,6 +750,18 @@
                 </redundancy>
             </redundancyData>
         </frame>
+        <frame id="_08b52b8f-f3b4-49ea-81a2-eb131e2d997f" name="P2">
+            <transformation a="0.0" b="0.0" c="0.0" x="0.0" y="0.0" z="0.0"/>
+            <additionalInformation>
+                <info key="LastModificationTime" type="java.lang.Long" value="1669388193512"/>
+            </additionalInformation>
+        </frame>
+        <frame id="_4422eb14-0c49-4382-b12d-5ee493772319" name="P3">
+            <transformation a="0.0" b="0.0" c="0.0" x="0.0" y="0.0" z="0.0"/>
+            <additionalInformation>
+                <info key="LastModificationTime" type="java.lang.Long" value="1669388206082"/>
+            </additionalInformation>
+        </frame>
     </world>
     <objectTemplates>
         <workpieceTemplate class="" name="Item">

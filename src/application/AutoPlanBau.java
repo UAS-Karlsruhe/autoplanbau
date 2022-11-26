@@ -16,13 +16,31 @@ public class AutoPlanBau extends RoboticsAPIApplication {
 	private Tool TCP;
 	private final static String informationText=
 			"Vorsicht programm geändert! --> Crashgefahr";
-			
- 
+	int[] positionenx;
+	int[] positioneny;
+	
+	
 			
 
 	@Override
 	public void initialize() {
 		TCP = getApplicationData().createFromTemplate("Lego_Sauger");
+		
+		
+		positionenx = new int[6];
+		positioneny = new int[6];
+		positionenx[0] = 4;
+		positionenx[1] = 6;
+		positionenx[2] = 8;
+		positionenx[3] = 10;
+		positionenx[4] = 12;
+		
+		positioneny[0] = 4;
+		positioneny[1] = 4;
+		positioneny[3] = 4;
+		positioneny[4] = 4;
+		positioneny[5] = 4;
+		
 	}
 
 	@Override
@@ -73,10 +91,15 @@ public class AutoPlanBau extends RoboticsAPIApplication {
 		
 		// Relative Bewegungen vom A_Lego_Base Koordinatensystem;
 		
-		TCP.move(linRel(Transformation.ofDeg(0,0,10,0,0,0),getApplicationData().getFrame("/A_Lego_Base/E1/vE1")));
-		
-		
-		
-		
+		TCP.move(linRel(Transformation.ofDeg(32.5*positionenx[0],32.5*positioneny[0],-40,0,0,0),getApplicationData().getFrame("/A_Lego_Base/E1")));
+		TCP.move(linRel(Transformation.ofDeg(32.5*positionenx[0],32.5*positioneny[0],-20,0,0,0),getApplicationData().getFrame("/A_Lego_Base/E1")));
+		TCP.move(linRel(Transformation.ofDeg(32.5*positionenx[1],32.5*positioneny[1],-40,0,0,0),getApplicationData().getFrame("/A_Lego_Base/E1")));
+		TCP.move(linRel(Transformation.ofDeg(32.5*positionenx[1],32.5*positioneny[1],-20,0,0,0),getApplicationData().getFrame("/A_Lego_Base/E1")));
+		TCP.move(linRel(Transformation.ofDeg(32.5*positionenx[2],32.5*positioneny[2],-40,0,0,0),getApplicationData().getFrame("/A_Lego_Base/E1")));
+		TCP.move(linRel(Transformation.ofDeg(32.5*positionenx[2],32.5*positioneny[2],-20,0,0,0),getApplicationData().getFrame("/A_Lego_Base/E1")));
+//		TCP.move(linRel(Transformation.ofDeg(32.5*positionenx[0],32.5*positioneny[0],-40,0,0,0),getApplicationData().getFrame("/A_Lego_Base/E1")));
+//		TCP.move(linRel(Transformation.ofDeg(32.5*positionenx[0],32.5*positioneny[0],-20,0,0,0),getApplicationData().getFrame("/A_Lego_Base/E1")));
+//		TCP.move(linRel(Transformation.ofDeg(32.5*positionenx[0],32.5*positioneny[0],-40,0,0,0),getApplicationData().getFrame("/A_Lego_Base/E1")));
+//		TCP.move(linRel(Transformation.ofDeg(32.5*positionenx[0],32.5*positioneny[0],-20,0,0,0),getApplicationData().getFrame("/A_Lego_Base/E1")));
 	}
 }

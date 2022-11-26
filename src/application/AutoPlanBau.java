@@ -6,41 +6,75 @@ import static com.kuka.roboticsAPI.motionModel.BasicMotions.*;
 
 import com.kuka.roboticsAPI.deviceModel.LBR;
 import com.kuka.roboticsAPI.geometricModel.Tool;
+import com.kuka.roboticsAPI.geometricModel.math.Transformation;
 import com.kuka.roboticsAPI.motionModel.PTP;
+import com.kuka.roboticsAPI.uiModel.ApplicationDialogType;
 
 public class AutoPlanBau extends RoboticsAPIApplication {
 	@Inject
 	private LBR lbr;
 	private Tool TCP;
+	private final static String informationText=
+			"Vorsicht programm geändert! --> Crashgefahr";
+			
  
 			
 
 	@Override
 	public void initialize() {
-		// initialize your application here
 		TCP = getApplicationData().createFromTemplate("Lego_Sauger");
 	}
 
 	@Override
 	public void run() {
-		// your application execution starts here
-		//lbr.move(ptpHome()); 
+		
+		getLogger().info("Show modal dialog and wait for user to confirm");
+        int isCancel = getApplicationUI().displayModalDialog(ApplicationDialogType.QUESTION, informationText, "OK", "Cancel");
+        if (isCancel == 1)
+        {
+            return;
+        }
+		
 		TCP.attachTo(lbr.getFlange());
 		
 		System.out.println("Move Bitch");
-		TCP.move(ptp(getApplicationData().getFrame("/A_Lego_Base/P1")).setJointVelocityRel(1));
+		TCP.move(ptp(getApplicationData().getFrame("/A_Lego_Base/vE1")).setJointVelocityRel(1));
+		System.out.println("Move Bitch");
+		TCP.move(lin(getApplicationData().getFrame("/A_Lego_Base/E1")).setJointVelocityRel(1));
+		System.out.println("Move Bitch");
+		TCP.move(lin(getApplicationData().getFrame("/A_Lego_Base/vE1")).setJointVelocityRel(1));
 		
 		System.out.println("Move Bitch");
-		TCP.move(lin(getApplicationData().getFrame("/A_Lego_Base/P2")).setJointVelocityRel(1));
-
+		TCP.move(ptp(getApplicationData().getFrame("/A_Lego_Base/vE2")).setJointVelocityRel(1));
 		System.out.println("Move Bitch");
-		TCP.move(lin(getApplicationData().getFrame("/A_Lego_Base/P3")).setJointVelocityRel(1));
+		TCP.move(lin(getApplicationData().getFrame("/A_Lego_Base/E2")).setJointVelocityRel(1));
+		System.out.println("Move Bitch");
+		TCP.move(lin(getApplicationData().getFrame("/A_Lego_Base/vE2")).setJointVelocityRel(1));
 		
 		System.out.println("Move Bitch");
-		TCP.move(lin(getApplicationData().getFrame("/A_Lego_Base/P4")).setJointVelocityRel(1));
+		TCP.move(ptp(getApplicationData().getFrame("/A_Lego_Base/vE3")).setJointVelocityRel(1));
+		System.out.println("Move Bitch");
+		TCP.move(lin(getApplicationData().getFrame("/A_Lego_Base/E3")).setJointVelocityRel(1));
+		System.out.println("Move Bitch");
+		TCP.move(lin(getApplicationData().getFrame("/A_Lego_Base/vE3")).setJointVelocityRel(1));
 		
 		System.out.println("Move Bitch");
-		TCP.move(lin(getApplicationData().getFrame("/A_Lego_Base/P1")).setJointVelocityRel(1));
+		TCP.move(ptp(getApplicationData().getFrame("/A_Lego_Base/vE4")).setJointVelocityRel(1));
+		System.out.println("Move Bitch");
+		TCP.move(lin(getApplicationData().getFrame("/A_Lego_Base/E4")).setJointVelocityRel(1));
+		System.out.println("Move Bitch");
+		TCP.move(lin(getApplicationData().getFrame("/A_Lego_Base/vE4")).setJointVelocityRel(1));
+		
+		System.out.println("Move Bitch");
+		TCP.move(ptp(getApplicationData().getFrame("/A_Lego_Base/vE1")).setJointVelocityRel(1));
+		
+		
+		// Relative Bewegungen vom A_Lego_Base Koordinatensystem;
+		
+		TCP.move(linRel(Transformation.ofDeg(0,0,10,0,0,0),getApplicationData().getFrame("/A_Lego_Base/vE1")));
+		
+		
+		
 		
 	}
 }

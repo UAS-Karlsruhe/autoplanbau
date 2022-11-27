@@ -57,7 +57,7 @@ public class AutoPlanBau extends RoboticsAPIApplication {
 		
 		rotation[0] = 90;
 		rotation[1] = 0;
-		rotation[2] = -90;
+		rotation[2] = 90;
 		rotation[3] = 0;
 		rotation[4] = 90;
 		
@@ -119,7 +119,7 @@ public class AutoPlanBau extends RoboticsAPIApplication {
 		
 		System.out.println("Move Bitch");
 		TCP.move(ptp(getApplicationData().getFrame("/A_Lego_Base/E1/vE1")).setJointVelocityRel(1));
-		TCP.move(linRel(Transformation.ofDeg(32.5*positionenx[0],-32.5*positioneny[0],-safePos,rotation[0],0,0),getApplicationData().getFrame("/A_Lego_Base/E1")));
+		TCP.move(linRel(Transformation.ofDeg(32.5*positionenx[0],-32.5*positioneny[0],0,rotation[0],0,0),getApplicationData().getFrame("/A_Lego_Base/E1")));
 		TCP.move(linRel(Transformation.ofDeg(0,0,safePos,0,0,0),getApplicationData().getFrame("/A_Lego_Base/E1")));
 		TCP.move(linRel(Transformation.ofDeg(0,0,-safePos,0,0,0),getApplicationData().getFrame("/A_Lego_Base/E1")));
 		

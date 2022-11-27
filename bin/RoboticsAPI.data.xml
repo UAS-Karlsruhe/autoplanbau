@@ -873,6 +873,18 @@
                         <info key="LastModificationTime" type="java.lang.Long" value="1669470281540"/>
                     </additionalInformation>
                 </frame>
+                <frame id="_b9852019-7361-4ca2-8c95-36ee2de7f2cd" name="vAbl">
+                    <transformation a="0.0" b="0.0" c="0.0" x="0.0" y="0.0" z="0.0"/>
+                    <additionalInformation>
+                        <info key="LastModificationTime" type="java.lang.Long" value="1669557311049"/>
+                    </additionalInformation>
+                </frame>
+                <frame id="_4b7421ec-a625-4732-a654-6ffc526a65e0" name="Abl">
+                    <transformation a="90.0" b="0.0" c="0.0" x="50.0" y="50.0" z="0.0"/>
+                    <additionalInformation>
+                        <info key="LastModificationTime" type="java.lang.Long" value="1669557752916"/>
+                    </additionalInformation>
+                </frame>
             </frame>
             <frame id="_06999b3d-6149-4f3d-84c3-4d782782e1d2" name="E2">
                 <transformation a="0.0" b="0.0" c="3.1" x="352.0" y="0.0" z="0.0"/>

@@ -5,6 +5,8 @@ import com.kuka.roboticsAPI.applicationModel.RoboticsAPIApplication;
 import static com.kuka.roboticsAPI.motionModel.BasicMotions.*;
 
 import com.kuka.roboticsAPI.deviceModel.LBR;
+import com.kuka.roboticsAPI.geometricModel.AbstractFrame;
+import com.kuka.roboticsAPI.geometricModel.ObjectFrame;
 import com.kuka.roboticsAPI.geometricModel.Tool;
 import com.kuka.roboticsAPI.geometricModel.math.Transformation;
 import com.kuka.roboticsAPI.motionModel.PTP;
@@ -20,6 +22,7 @@ public class AutoPlanBau extends RoboticsAPIApplication {
 	int[] positionenx;
 	int[] positioneny;
 	int[] rotation;
+	AbstractFrame Abl;
 	int blendingCart;
 	int safePos;
 	
@@ -58,6 +61,7 @@ public class AutoPlanBau extends RoboticsAPIApplication {
 		rotation[3] = 0;
 		rotation[4] = 90;
 		
+		Abl = getApplicationData().getFrame("/A_Lego_Base/E1");
 		
 		
 		
@@ -127,7 +131,7 @@ public class AutoPlanBau extends RoboticsAPIApplication {
 		System.out.println("Move Bitch");
 		TCP.moveAsync(ptp(getApplicationData().getFrame("/A_Lego_Base/E1/vE1")).setBlendingCart(blendingCart).setJointVelocityRel(1));
 		System.out.println("Move Bitch");
-		TCP.move(lin(32.5*positionenx[1],-32.5*positioneny[1],-40,rotation[1],0,0).setJointVelocityRel(1));
+		TCP.move(lin(Abl).setJointVelocityRel(1));
 	
 	
 	
@@ -135,6 +139,11 @@ public class AutoPlanBau extends RoboticsAPIApplication {
 	
 	
 	
+	}
+
+	private RobotMotion<PTP> lin(AbstractFrame abl2) {
+		// TODO Auto-generated method stub
+		return null;
 	}
 
 	private RobotMotion<PTP> lin(double d, double e, int i, int j, int k, int l) {

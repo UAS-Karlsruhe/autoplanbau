@@ -882,7 +882,7 @@
                 <frame id="_4b7421ec-a625-4732-a654-6ffc526a65e0" name="Abl">
                     <transformation a="90.0" b="0.0" c="0.0" x="50.0" y="50.0" z="0.0"/>
                     <additionalInformation>
-                        <info key="LastModificationTime" type="java.lang.Long" value="1669557752916"/>
+                        <info key="LastModificationTime" type="java.lang.Long" value="1669557752936"/>
                     </additionalInformation>
                 </frame>
             </frame>
@@ -919,6 +919,25 @@
                     <transformation a="0.0" b="0.0" c="0.0" x="0.0" y="0.0" z="-100.0"/>
                     <additionalInformation>
                         <info key="LastModificationTime" type="java.lang.Long" value="1669470378026"/>
+                    </additionalInformation>
+                </frame>
+            </frame>
+        </frame>
+        <frame id="_4a6f9db4-9d94-4f1b-a8ee-aaee858078f8" name="A_Lego_Pal">
+            <transformation a="0.0" b="0.0" c="0.0" x="0.0" y="0.0" z="0.0"/>
+            <additionalInformation>
+                <info key="LastModificationTime" type="java.lang.Long" value="1669561545679"/>
+                <info key="UseAsBaseForJogging" type="java.lang.Boolean" value="true"/>
+            </additionalInformation>
+            <frame id="_1f1433fc-4546-4019-a101-f7583cd64670" name="Lego">
+                <transformation a="0.0" b="0.0" c="3.1415" x="0.0" y="0.0" z="0.0"/>
+                <additionalInformation>
+                    <info key="LastModificationTime" type="java.lang.Long" value="1669561621741"/>
+                </additionalInformation>
+                <frame id="_1b8600fb-028b-4a0c-b177-c7fa450b5832" name="vLego">
+                    <transformation a="0.0" b="0.0" c="0.0" x="0.0" y="0.0" z="0.0"/>
+                    <additionalInformation>
+                        <info key="LastModificationTime" type="java.lang.Long" value="1669561596608"/>
                     </additionalInformation>
                 </frame>
             </frame>

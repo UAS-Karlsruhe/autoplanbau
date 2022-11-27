@@ -18,6 +18,7 @@ public class AutoPlanBau extends RoboticsAPIApplication {
 			"Vorsicht programm geändert! --> Crashgefahr";
 	int[] positionenx;
 	int[] positioneny;
+	int blendingCart;
 	
 	
 			
@@ -29,6 +30,7 @@ public class AutoPlanBau extends RoboticsAPIApplication {
 		
 		positionenx = new int[6];
 		positioneny = new int[6];
+		blendingCart = 50;
 		positionenx[0] = 4;
 		positionenx[1] = 6;
 		positionenx[2] = 8;
@@ -58,32 +60,32 @@ public class AutoPlanBau extends RoboticsAPIApplication {
 		
 		
 		System.out.println("Move Bitch");
-		TCP.moveAsync(ptp(getApplicationData().getFrame("/A_Lego_Base/E1/vE1")).setBlendingCart(20).setJointVelocityRel(1));
+		TCP.moveAsync(ptp(getApplicationData().getFrame("/A_Lego_Base/E1/vE1")).setBlendingCart(blendingCart).setJointVelocityRel(1));
 		System.out.println("Move Bitch");
 		TCP.move(lin(getApplicationData().getFrame("/A_Lego_Base/E1")).setJointVelocityRel(1));
 		System.out.println("Move Bitch");
-		TCP.moveAsync(lin(getApplicationData().getFrame("/A_Lego_Base/E1/vE1")).setBlendingCart(20).setJointVelocityRel(1));
+		TCP.moveAsync(lin(getApplicationData().getFrame("/A_Lego_Base/E1/vE1")).setBlendingCart(blendingCart).setJointVelocityRel(1));
 		
 		System.out.println("Move Bitch");
-		TCP.moveAsync(ptp(getApplicationData().getFrame("/A_Lego_Base/E2/vE2")).setBlendingCart(20).setJointVelocityRel(1));
+		TCP.moveAsync(ptp(getApplicationData().getFrame("/A_Lego_Base/E2/vE2")).setBlendingCart(blendingCart).setJointVelocityRel(1));
 		System.out.println("Move Bitch");
 		TCP.move(lin(getApplicationData().getFrame("/A_Lego_Base/E2")).setJointVelocityRel(1));
 		System.out.println("Move Bitch");
-		TCP.moveAsync(lin(getApplicationData().getFrame("/A_Lego_Base/E2/vE2")).setBlendingCart(20).setJointVelocityRel(1));
+		TCP.moveAsync(lin(getApplicationData().getFrame("/A_Lego_Base/E2/vE2")).setBlendingCart(blendingCart).setJointVelocityRel(1));
 		
 		System.out.println("Move Bitch");
-		TCP.moveAsync(ptp(getApplicationData().getFrame("/A_Lego_Base/E3/vE3")).setBlendingCart(20).setJointVelocityRel(1));
+		TCP.moveAsync(ptp(getApplicationData().getFrame("/A_Lego_Base/E3/vE3")).setBlendingCart(blendingCart).setJointVelocityRel(1));
 		System.out.println("Move Bitch");
 		TCP.move(lin(getApplicationData().getFrame("/A_Lego_Base/E3")).setJointVelocityRel(1));
 		System.out.println("Move Bitch");
-		TCP.moveAsync(lin(getApplicationData().getFrame("/A_Lego_Base/E3/vE3")).setBlendingCart(20).setJointVelocityRel(1));
+		TCP.moveAsync(lin(getApplicationData().getFrame("/A_Lego_Base/E3/vE3")).setBlendingCart(blendingCart).setJointVelocityRel(1));
 		
 		System.out.println("Move Bitch");
-		TCP.moveAsync(ptp(getApplicationData().getFrame("/A_Lego_Base/E4/vE4")).setBlendingCart(20).setJointVelocityRel(1));
+		TCP.moveAsync(ptp(getApplicationData().getFrame("/A_Lego_Base/E4/vE4")).setBlendingCart(blendingCart).setJointVelocityRel(1));
 		System.out.println("Move Bitch");
 		TCP.move(lin(getApplicationData().getFrame("/A_Lego_Base/E4")).setJointVelocityRel(1));
 		System.out.println("Move Bitch");
-		TCP.moveAsync(lin(getApplicationData().getFrame("/A_Lego_Base/E4/vE4")).setBlendingCart(20).setJointVelocityRel(1));
+		TCP.moveAsync(lin(getApplicationData().getFrame("/A_Lego_Base/E4/vE4")).setBlendingCart(blendingCart).setJointVelocityRel(1));
 		
 		System.out.println("Move Bitch");
 		TCP.move(ptp(getApplicationData().getFrame("/A_Lego_Base/E1/vE1")).setJointVelocityRel(1));
@@ -91,8 +93,8 @@ public class AutoPlanBau extends RoboticsAPIApplication {
 		
 		// Relative Bewegungen vom A_Lego_Base Koordinatensystem;
 		
-		TCP.move(linRel(Transformation.ofDeg(32.5,32.5,-40,0,0,0),getApplicationData().getFrame("/A_Lego_Base/E1")));
-		TCP.move(linRel(Transformation.ofDeg(32.5,32.5,-20,0,0,0),getApplicationData().getFrame("/A_Lego_Base/E1")));
+		TCP.move(linRel(Transformation.ofDeg(-32.5*positioneny[0],-32.5*positioneny[1],-40,0,0,0),getApplicationData().getFrame("/A_Lego_Base/E1")));
+		TCP.move(linRel(Transformation.ofDeg(-32.5*positioneny[0],-32.5*positioneny[1],-20,0,0,0),getApplicationData().getFrame("/A_Lego_Base/E1")));
 //		TCP.move(linRel(Transformation.ofDeg(32.5*positionenx[1],32.5*positioneny[1],-40,0,0,0),getApplicationData().getFrame("/A_Lego_Base/E1")));
 //		TCP.move(linRel(Transformation.ofDeg(32.5*positionenx[1],32.5*positioneny[1],-20,0,0,0),getApplicationData().getFrame("/A_Lego_Base/E1")));
 //		TCP.move(linRel(Transformation.ofDeg(32.5*positionenx[2],32.5*positioneny[2],-40,0,0,0),getApplicationData().getFrame("/A_Lego_Base/E1")));

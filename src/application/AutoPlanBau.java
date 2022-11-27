@@ -61,19 +61,19 @@ public class AutoPlanBau extends RoboticsAPIApplication {
 		
 		
 		
-		positionenx[0] = 0;
-		positionenx[1] = 2;
-		positionenx[2] = 2;
+		positionenx[0] = 4;
+		positionenx[1] = 6;
+		positionenx[2] = 5;
 		positionenx[3] = 2;
-		positionenx[4] = 4;
+		positionenx[4] = 2;
 		
-		positioneny[0] = 4;
-		positioneny[1] = 4;
+		positioneny[0] = 11;
+		positioneny[1] = 9;
 		positioneny[2] = 6;
-		positioneny[3] = 8;
-		positioneny[4] = 8;
+		positioneny[3] = 10;
+		positioneny[4] = 7;
 		
-		rotation[0] = 90;
+		rotation[0] = 0;
 		rotation[1] = 0;
 		rotation[2] = 90;
 		rotation[3] = 0;
@@ -81,8 +81,8 @@ public class AutoPlanBau extends RoboticsAPIApplication {
 		
 		Stein[0] = 1;
 		Stein[1] = 1;
-		Stein[2] = 0;
-		Stein[3] = 1;
+		Stein[2] = 1;
+		Stein[3] = 0;
 		Stein[4] = 1;
 	
 		
@@ -144,7 +144,7 @@ public class AutoPlanBau extends RoboticsAPIApplication {
 		
 		
 		
-		for (int i = 0; i < 4; i++){
+		for (int i = 0; i < 6; i++){
 			
 			if ((Stein[i] == 0) & (Zaehler8<6)){
 					System.out.println("Move Bitch");

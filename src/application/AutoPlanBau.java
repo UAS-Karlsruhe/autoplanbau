@@ -144,7 +144,7 @@ public class AutoPlanBau extends RoboticsAPIApplication {
 		
 		
 		
-		for (int i = 0; i < 3; i++){
+		for (int i = 0; i < 6; i++){
 			
 			if ((Stein[i] == 0) & (Zaehler8<6)){
 					System.out.println("Move Bitch");
@@ -179,7 +179,7 @@ public class AutoPlanBau extends RoboticsAPIApplication {
 			System.out.println("Move Bitch");
 			TCP.move(ptp(getApplicationData().getFrame("/A_Lego_Base/E1/vE1")).setJointVelocityRel(1));
 			TCP.moveAsync(linRel(Transformation.ofDeg(BSB*(positionenx[i]),-BSB*(positioneny[i]),0,rotation[i],0,0),getApplicationData().getFrame("/A_Lego_Base/E1")).setBlendingCart(blendingCart));
-			TCP.move(linRel(Transformation.ofDeg(0,0,safePos,0,0,0),getApplicationData().getFrame("/A_Lego_Base/E1")));
+			TCP.move(linRel(Transformation.ofDeg(0,0,safePos+2,0,0,0),getApplicationData().getFrame("/A_Lego_Base/E1")));
 			try {
 				Thread.sleep(3000);
 			} catch (InterruptedException e) {

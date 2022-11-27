@@ -936,9 +936,9 @@
                     <info key="LastModificationTime" type="java.lang.Long" value="1669561621741"/>
                 </additionalInformation>
                 <frame id="_1b8600fb-028b-4a0c-b177-c7fa450b5832" name="vLego">
-                    <transformation a="0.0" b="0.0" c="0.0" x="0.0" y="0.0" z="0.0"/>
+                    <transformation a="0.0" b="0.0" c="0.0" x="0.0" y="0.0" z="-100.0"/>
                     <additionalInformation>
-                        <info key="LastModificationTime" type="java.lang.Long" value="1669561596608"/>
+                        <info key="LastModificationTime" type="java.lang.Long" value="1669563341736"/>
                     </additionalInformation>
                 </frame>
             </frame>

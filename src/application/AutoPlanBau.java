@@ -28,6 +28,9 @@ public class AutoPlanBau extends RoboticsAPIApplication {
 	int safePos;
 	int PalAbsx;
 	int PalAbsy;
+	int Zaehler8;
+	int Zaehler4;
+	
 	
 	
 	
@@ -44,6 +47,9 @@ public class AutoPlanBau extends RoboticsAPIApplication {
 		blendingCart = 85;
 		safePos = 100;
 		BSB = 32.0;
+		
+		Zaehler8 = 0;
+		Zaehler4 = 0;
 		
 		PalAbsx = 63;
 		PalAbsy = 90;
@@ -135,29 +141,27 @@ public class AutoPlanBau extends RoboticsAPIApplication {
 		
 		// Relative Bewegungen vom A_Lego_Base Koordinatensystem;
 		
-			
+		
 		
 		
 		for (int i = 0; i < 4; i++){
 			
-			if (Stein[i] == 0){
-				for (int j = 0; j < 6; j++){
+			if ((Stein[i] == 0) & (Zaehler8<6)){
 					System.out.println("Move Bitch");
 					TCP.move(ptp(getApplicationData().getFrame("/A_Lego_Pal/Lego/vLego")).setJointVelocityRel(1));
-					TCP.moveAsync(linRel(Transformation.ofDeg(PalAbsx*j,0,0,0,0,0),getApplicationData().getFrame("/A_Lego_Pal/Lego")).setBlendingCart(blendingCart));
+					TCP.moveAsync(linRel(Transformation.ofDeg(PalAbsx*Zaehler4,0,0,0,0,0),getApplicationData().getFrame("/A_Lego_Pal/Lego")).setBlendingCart(blendingCart));
 					TCP.move(linRel(Transformation.ofDeg(0,0,safePos,0,0,0),getApplicationData().getFrame("/A_Lego_Pal/Lego")));
 					TCP.moveAsync(linRel(Transformation.ofDeg(0,0,-safePos,0,0,0),getApplicationData().getFrame("/A_Lego_Pal/Lego")).setBlendingCart(blendingCart));	
-				}
+					Zaehler4 = Zaehler4+1;
+			
 			}
-			else if (Stein[i] == 1){
-				for (int k = 0; k < 6; k++){
-					
+			else if ((Stein[i] == 1)& (Zaehler8<6)){		
 					System.out.println("Move Bitch");
 					TCP.move(ptp(getApplicationData().getFrame("/A_Lego_Pal/Lego/vLego")).setJointVelocityRel(1));
-					TCP.moveAsync(linRel(Transformation.ofDeg(PalAbsx*k,PalAbsy,0,0,0,0),getApplicationData().getFrame("/A_Lego_Pal/Lego")).setBlendingCart(blendingCart));
+					TCP.moveAsync(linRel(Transformation.ofDeg(PalAbsx*Zaehler8,-PalAbsy,0,0,0,0),getApplicationData().getFrame("/A_Lego_Pal/Lego")).setBlendingCart(blendingCart));
 					TCP.move(linRel(Transformation.ofDeg(0,0,safePos,0,0,0),getApplicationData().getFrame("/A_Lego_Pal/Lego")));
 					TCP.moveAsync(linRel(Transformation.ofDeg(0,0,-safePos,0,0,0),getApplicationData().getFrame("/A_Lego_Pal/Lego")).setBlendingCart(blendingCart));	
-				}
+					Zaehler8 = Zaehler8+1;
 			}
 			
 			System.out.println("Move Bitch");

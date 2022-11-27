@@ -22,7 +22,7 @@ public class AutoPlanBau extends RoboticsAPIApplication {
 	int[] positionenx;
 	int[] positioneny;
 	int[] rotation;
-	AbstractFrame Abl;
+	
 	int blendingCart;
 	int safePos;
 	
@@ -35,7 +35,7 @@ public class AutoPlanBau extends RoboticsAPIApplication {
 		
 		
 		blendingCart = 85;
-		safePos = 50;
+		safePos = 100;
 		
 		positionenx = new int[6];
 		positioneny = new int[6];
@@ -61,7 +61,7 @@ public class AutoPlanBau extends RoboticsAPIApplication {
 		rotation[3] = 0;
 		rotation[4] = 90;
 		
-		Abl = getApplicationData().getFrame("/A_Lego_Base/E1");
+
 		
 		
 		
@@ -110,14 +110,38 @@ public class AutoPlanBau extends RoboticsAPIApplication {
 //		System.out.println("Move Bitch");
 //		TCP.moveAsync(lin(getApplicationData().getFrame("/A_Lego_Base/E4/vE4")).setBlendingCart(blendingCart).setJointVelocityRel(1));
 		
-		System.out.println("Move Bitch");
-		TCP.move(ptp(getApplicationData().getFrame("/A_Lego_Base/E1/vE1")).setJointVelocityRel(1));
+//		System.out.println("Move Bitch");
+//		TCP.move(ptp(getApplicationData().getFrame("/A_Lego_Base/E1/vE1")).setJointVelocityRel(1));
 		
 		
 		// Relative Bewegungen vom A_Lego_Base Koordinatensystem;
 		
-//		TCP.move(linRel(Transformation.ofDeg(32.5*positionenx[0],-32.5*positioneny[0],-safePos,rotation[0],0,0),getApplicationData().getFrame("/A_Lego_Base/E1")));
-//		TCP.move(linRel(Transformation.ofDeg(0,0,safePos,0,0,0),getApplicationData().getFrame("/A_Lego_Base/E1")));
+		
+		System.out.println("Move Bitch");
+		TCP.move(ptp(getApplicationData().getFrame("/A_Lego_Base/E1/vE1")).setJointVelocityRel(1));
+		TCP.move(linRel(Transformation.ofDeg(32.5*positionenx[0],-32.5*positioneny[0],-safePos,rotation[0],0,0),getApplicationData().getFrame("/A_Lego_Base/E1")));
+		TCP.move(linRel(Transformation.ofDeg(0,0,safePos,0,0,0),getApplicationData().getFrame("/A_Lego_Base/E1")));
+		
+		System.out.println("Move Bitch");
+		TCP.move(ptp(getApplicationData().getFrame("/A_Lego_Base/E1/vE1")).setJointVelocityRel(1));
+		TCP.move(linRel(Transformation.ofDeg(32.5*positionenx[1],-32.5*positioneny[1],0,rotation[1],0,0),getApplicationData().getFrame("/A_Lego_Base/E1")));
+		TCP.move(linRel(Transformation.ofDeg(0,0,safePos,0,0,0),getApplicationData().getFrame("/A_Lego_Base/E1")));
+		
+		TCP.move(ptp(getApplicationData().getFrame("/A_Lego_Base/E1/vE1")).setJointVelocityRel(1));
+		TCP.move(linRel(Transformation.ofDeg(32.5*positionenx[2],-32.5*positioneny[2],0,rotation[2],0,0),getApplicationData().getFrame("/A_Lego_Base/E1")));
+		TCP.move(linRel(Transformation.ofDeg(0,0,safePos,0,0,0),getApplicationData().getFrame("/A_Lego_Base/E1")));
+		
+		TCP.move(ptp(getApplicationData().getFrame("/A_Lego_Base/E1/vE1")).setJointVelocityRel(1));
+		TCP.move(linRel(Transformation.ofDeg(32.5*positionenx[3],-32.5*positioneny[3],0,rotation[3],0,0),getApplicationData().getFrame("/A_Lego_Base/E1")));
+		TCP.move(linRel(Transformation.ofDeg(0,0,safePos,0,0,0),getApplicationData().getFrame("/A_Lego_Base/E1")));
+		
+		TCP.move(ptp(getApplicationData().getFrame("/A_Lego_Base/E1/vE1")).setJointVelocityRel(1));
+		TCP.move(linRel(Transformation.ofDeg(32.5*positionenx[4],-32.5*positioneny[4],0,rotation[4],0,0),getApplicationData().getFrame("/A_Lego_Base/E1")));
+		TCP.move(linRel(Transformation.ofDeg(0,0,safePos,0,0,0),getApplicationData().getFrame("/A_Lego_Base/E1")));
+		
+	
+		
+		
 //		TCP.move(linRel(Transformation.ofDeg(32.5*positionenx[1],-32.5*positioneny[1],-40,rotation[1],0,0),getApplicationData().getFrame("/A_Lego_Base/E1")));
 //		TCP.move(linRel(Transformation.ofDeg(32.5*positionenx[1],-32.5*positioneny[1],0,rotation[1],0,0),getApplicationData().getFrame("/A_Lego_Base/E1")));
 //		TCP.move(linRel(Transformation.ofDeg(32.5*positionenx[2],-32.5*positioneny[2],-40,rotation[2],0,0),getApplicationData().getFrame("/A_Lego_Base/E1")));
@@ -128,10 +152,7 @@ public class AutoPlanBau extends RoboticsAPIApplication {
 //		TCP.move(linRel(Transformation.ofDeg(32.5*positionenx[4],-32.5*positioneny[4],0,rotation[4],0,0),getApplicationData().getFrame("/A_Lego_Base/E1")));
 	
 		
-		System.out.println("Move Bitch");
-		TCP.moveAsync(ptp(getApplicationData().getFrame("/A_Lego_Base/E1/vE1")).setBlendingCart(blendingCart).setJointVelocityRel(1));
-		System.out.println("Move Bitch");
-		TCP.move(lin(Abl).setJointVelocityRel(1));
+		
 	
 	
 	

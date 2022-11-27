@@ -93,8 +93,8 @@ public class AutoPlanBau extends RoboticsAPIApplication {
 		
 		// Relative Bewegungen vom A_Lego_Base Koordinatensystem;
 		
-		TCP.move(linRel(Transformation.ofDeg(-32.5*positioneny[0],-32.5*positioneny[1],-40,0,0,0),getApplicationData().getFrame("/A_Lego_Base/E1")));
-		TCP.move(linRel(Transformation.ofDeg(-32.5*positioneny[0],-32.5*positioneny[1],-20,0,0,0),getApplicationData().getFrame("/A_Lego_Base/E1")));
+		TCP.move(linRel(Transformation.ofDeg(32.5*positionenx[0],-32.5*positioneny[1],-40,0,0,0),getApplicationData().getFrame("/A_Lego_Base/E1")));
+		TCP.move(linRel(Transformation.ofDeg(32.5*positionenx[0],-32.5*positioneny[1],-20,0,0,0),getApplicationData().getFrame("/A_Lego_Base/E1")));
 //		TCP.move(linRel(Transformation.ofDeg(32.5*positionenx[1],32.5*positioneny[1],-40,0,0,0),getApplicationData().getFrame("/A_Lego_Base/E1")));
 //		TCP.move(linRel(Transformation.ofDeg(32.5*positionenx[1],32.5*positioneny[1],-20,0,0,0),getApplicationData().getFrame("/A_Lego_Base/E1")));
 //		TCP.move(linRel(Transformation.ofDeg(32.5*positionenx[2],32.5*positioneny[2],-40,0,0,0),getApplicationData().getFrame("/A_Lego_Base/E1")));

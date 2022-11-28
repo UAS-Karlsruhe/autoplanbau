@@ -19,8 +19,8 @@ public class AutoPlanBau extends RoboticsAPIApplication {
 	private Tool TCP;
 	private final static String informationText=
 			"Vorsicht programm geändert! --> Crashgefahr";
-	int[] positionenx;
-	int[] positioneny;
+	double[] positionenx;
+	double[] positioneny;
 	int[] rotation;
 	int[] Stein;
 	
@@ -54,36 +54,36 @@ public class AutoPlanBau extends RoboticsAPIApplication {
 		PalAbsx = 63;
 		PalAbsy = 90;
 		
-		positionenx = new int[6];
-		positioneny = new int[6];
+		positionenx = new double[6];
+		positioneny = new double[6];
 		rotation = new int[6];
 		Stein = new int[6];
 		
 		
 		
-		positionenx[0] = 1;
+		positionenx[0] = 0;
 		positionenx[1] = 2;
-		positionenx[2] = 3;
+		positionenx[2] = 5.5;
 		positionenx[3] = 0;
 		positionenx[4] = 0;
 		
-		positioneny[0] = 1;
-		positioneny[1] = 2;
+		positioneny[0] = 1.5;
+		positioneny[1] = 1.5;
 		positioneny[2] = 3;
 		positioneny[3] = 3;
 		positioneny[4] = 4;
 		
 		rotation[0] = 0;
 		rotation[1] = 0;
-		rotation[2] = 0;
+		rotation[2] = 90;
 		rotation[3] = 0;
 		rotation[4] = 0;
 		
-		Stein[0] = 0;
-		Stein[1] = 0;
-		Stein[2] = 0;
-		Stein[3] = 0;
-		Stein[4] = 0;
+		Stein[0] = 1;
+		Stein[1] = 1;
+		Stein[2] = 1;
+		Stein[3] = 1;
+		Stein[4] = 1;
 	
 		
 		

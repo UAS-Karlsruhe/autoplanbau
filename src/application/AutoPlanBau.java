@@ -52,7 +52,7 @@ public class AutoPlanBau extends RoboticsAPIApplication {
 		
 		
 		safePos = 100;
-		BSB = 32.024;
+		BSB = 32.035;
 		
 		Zaehler8 = 0;
 		Zaehler4 = 0;

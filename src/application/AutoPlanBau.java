@@ -187,7 +187,7 @@ public class AutoPlanBau extends RoboticsAPIApplication {
 		
 		
 		
-		for (int i = 0; i < 4; i++){
+		for (int i = 0; i < 8; i++){
 			
 			if ((Stein[i] == 0) & (Zaehler4<8)){
 					System.out.println("Move Bitch");

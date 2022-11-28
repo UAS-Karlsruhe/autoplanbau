@@ -46,7 +46,7 @@ public class AutoPlanBau extends RoboticsAPIApplication {
 		
 		blendingCart = 85;
 		safePos = 100;
-		BSB = 32.0;
+		BSB = 32.008;
 		
 		Zaehler8 = 0;
 		Zaehler4 = 0;

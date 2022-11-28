@@ -79,10 +79,10 @@ public class AutoPlanBau extends RoboticsAPIApplication {
 		rotation[3] = 0;
 		rotation[4] = 0;
 		
-		Stein[0] = 1;
+		Stein[0] = 0;
 		Stein[1] = 0;
-		Stein[2] = 1;
-		Stein[3] = 1;
+		Stein[2] = 0;
+		Stein[3] = 0;
 		Stein[4] = 1;
 	
 		

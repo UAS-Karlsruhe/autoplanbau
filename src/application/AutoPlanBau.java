@@ -25,6 +25,8 @@ public class AutoPlanBau extends RoboticsAPIApplication {
 	int[] Stein;
 	
 	int blendingCart;
+	double speed;
+	
 	int safePos;
 	int PalAbsx;
 	int PalAbsy;
@@ -45,6 +47,10 @@ public class AutoPlanBau extends RoboticsAPIApplication {
 		
 		
 		blendingCart = 85;
+		speed = 0.5;
+		
+		
+		
 		safePos = 100;
 		BSB = 32.024;
 		
@@ -108,7 +114,7 @@ public class AutoPlanBau extends RoboticsAPIApplication {
 		
 		
 		System.out.println("Move Bitch");
-		TCP.moveAsync(ptp(getApplicationData().getFrame("/A_Lego_Base/E1/vE1")).setBlendingCart(blendingCart).setJointVelocityRel(1));
+		TCP.moveAsync(ptp(getApplicationData().getFrame("/A_Lego_Base/E1/vE1")).setBlendingCart(blendingCart).setJointVelocityRel(speed));
 //		System.out.println("Move Bitch");
 //		TCP.move(lin(getApplicationData().getFrame("/A_Lego_Base/E1")).setJointVelocityRel(1));
 //		System.out.println("Move Bitch");
@@ -163,7 +169,7 @@ public class AutoPlanBau extends RoboticsAPIApplication {
 			}
 			else if ((Stein[i] == 1)& (Zaehler8<6)){		
 					System.out.println("Move Bitch");
-					TCP.move(ptp(getApplicationData().getFrame("/A_Lego_Pal/Lego/vLego")).setJointVelocityRel(1));
+					TCP.move(ptp(getApplicationData().getFrame("/A_Lego_Pal/Lego/vLego")).setJointVelocityRel(speed));
 					TCP.moveAsync(linRel(Transformation.ofDeg(PalAbsx*Zaehler8,-PalAbsy,0,0,0,0),getApplicationData().getFrame("/A_Lego_Pal/Lego")).setBlendingCart(blendingCart));
 					TCP.move(linRel(Transformation.ofDeg(0,0,safePos,0,0,0),getApplicationData().getFrame("/A_Lego_Pal/Lego")));
 					try {
@@ -177,7 +183,7 @@ public class AutoPlanBau extends RoboticsAPIApplication {
 			}
 			
 			System.out.println("Move Bitch");
-			TCP.move(ptp(getApplicationData().getFrame("/A_Lego_Base/E1/vE1")).setJointVelocityRel(1));
+			TCP.move(ptp(getApplicationData().getFrame("/A_Lego_Base/E1/vE1")).setJointVelocityRel(speed));
 			// Achtung änderungen in y und Rotation
 			TCP.moveAsync(linRel(Transformation.ofDeg(BSB*(positionenx[i]),-(BSB*(positioneny[i])+0.8),0,rotation[i]+90-2,0,0),getApplicationData().getFrame("/A_Lego_Base/E1")).setBlendingCart(blendingCart));
 			TCP.move(linRel(Transformation.ofDeg(0,0,safePos+2,0,0,0),getApplicationData().getFrame("/A_Lego_Base/E1")));

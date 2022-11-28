@@ -61,15 +61,15 @@ public class AutoPlanBau extends RoboticsAPIApplication {
 		
 		
 		
-		positionenx[0] = 0;
-		positionenx[1] = 2;
-		positionenx[2] = 5.5;
+		positionenx[0] = 2;
+		positionenx[1] = 3.5;
+		positionenx[2] = 3.5;
 		positionenx[3] = 0;
 		positionenx[4] = 0;
 		
-		positioneny[0] = 0;
-		positioneny[1] = 1.5;
-		positioneny[2] = 3;
+		positioneny[0] = 7;
+		positioneny[1] = 9;
+		positioneny[2] = 7.5;
 		positioneny[3] = 3;
 		positioneny[4] = 4;
 		
@@ -144,7 +144,7 @@ public class AutoPlanBau extends RoboticsAPIApplication {
 		
 		
 		
-		for (int i = 0; i < 6; i++){
+		for (int i = 0; i < 3; i++){
 			
 			if ((Stein[i] == 0) & (Zaehler4<6)){
 					System.out.println("Move Bitch");

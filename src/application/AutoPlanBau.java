@@ -17,10 +17,16 @@ public class AutoPlanBau extends RoboticsAPIApplication {
 	@Inject
 	private LBR lbr;
 	private Tool TCP;
-	private final static String informationText=
-			"Vorsicht programm geändert! --> Crashgefahr";
+	private final static String informationTextvierer=
+			"Vierersteine nachfüllen und mit OK bestätigen!";
+	
+	private final static String informationTextachter=
+			"Achtersteine nachfüllen und mit OK bestätigen!";
+	
+	
 	double[] positionenx;
 	double[] positioneny;
+	double[] positionenz;
 	int[] rotation;
 	int[] Stein;
 	
@@ -62,8 +68,10 @@ public class AutoPlanBau extends RoboticsAPIApplication {
 		
 		positionenx = new double[8];
 		positioneny = new double[8];
+		positionenz = new double[8];
 		rotation = new int[8];
 		Stein = new int[8];
+		
 		
 		
 		
@@ -90,49 +98,57 @@ public class AutoPlanBau extends RoboticsAPIApplication {
 //		Stein[2] = 0;
 //		Stein[3] = 0;
 
-		positionenx[0] = 3.5;
-		positionenx[1] = 3.5;
-		positionenx[2] = 3.5;
-		positionenx[3] = 5.0;
-		positionenx[4] = 7.0;
-		positionenx[5] = 7.5;
-		positionenx[6] = 7.5;
-		positionenx[7] = 7.0;
 		
-		positioneny[0] = 4.5;
-		positioneny[1] = 6.5;
-		positioneny[2] = 8.5;
-		positioneny[3] = 9.0;
-		positioneny[4] = 9.0;
-		positioneny[5] = 7.5;
-		positioneny[6] = 5.5;
-		positioneny[7] = 4.0;
+///////////////////////////////////////////////////////////////
+//      viereckige mauer funktioniert!!!!!		
 		
+//		positionenx[0] = 3.5;
+//		positionenx[1] = 3.5;
+//		positionenx[2] = 3.5;
+//		positionenx[3] = 5.0;
+//		positionenx[4] = 7.0;
+//		positionenx[5] = 7.5;
+//		positionenx[6] = 7.5;
+//		positionenx[7] = 7.0;
+//		
+//		positioneny[0] = 4.5;
+//		positioneny[1] = 6.5;
+//		positioneny[2] = 8.5;
+//		positioneny[3] = 9.0;
+//		positioneny[4] = 9.0;
+//		positioneny[5] = 7.5;
+//		positioneny[6] = 5.5;
+//		positioneny[7] = 4.0;
+//		
+//		
+//		rotation[0] = 90;
+//		rotation[1] = 90;
+//		rotation[2] = 90;
+//		rotation[3] = 0;
+//		rotation[4] = 0;
+//		rotation[5] = 90;
+//		rotation[6] = 90;
+//		rotation[7] = 0;
+//		
+//		Stein[0] = 1;
+//		Stein[1] = 1;
+//		Stein[2] = 1;
+//		Stein[3] = 1;
+//		Stein[4] = 1;
+//		Stein[5] = 1;
+//		Stein[6] = 1;
+//		Stein[7] = 1;
+//		
+////////////////////////////////////////////////////////////////////	
 		
-		rotation[0] = 90;
-		rotation[1] = 90;
-		rotation[2] = 90;
-		rotation[3] = 0;
-		rotation[4] = 0;
-		rotation[5] = 90;
-		rotation[6] = 90;
-		rotation[7] = 0;
+		positionenx[0] = 8;
+		positioneny[0] = 8;
+		positionenz[0] = 0;
+		rotation[0] = 0;
+		Stein[0] = 0;
 		
-		Stein[0] = 1;
-		Stein[1] = 1;
-		Stein[2] = 1;
-		Stein[3] = 1;
-		Stein[4] = 1;
-		Stein[5] = 1;
-		Stein[6] = 1;
-		Stein[7] = 1;
-		
-	
-		
-		
-		
-		
-
+		positionenz[1] = 19.1;
+		positionenz[2] = 19.1*2;
 	
 	}
 
@@ -187,9 +203,9 @@ public class AutoPlanBau extends RoboticsAPIApplication {
 		
 		
 		
-		for (int i = 0; i < 8; i++){
+		for (int i = 0; i < 2; i++){
 			
-			if ((Stein[i] == 0) & (Zaehler4<8)){
+			if ((Stein[i] == 0) & (Zaehler4<=6)){
 					System.out.println("Move Bitch");
 					TCP.move(ptp(getApplicationData().getFrame("/A_Lego_Pal/Lego/vLego")).setJointVelocityRel(speed));
 					TCP.moveAsync(linRel(Transformation.ofDeg(PalAbsx*Zaehler4,0,0,-1,0,0),getApplicationData().getFrame("/A_Lego_Pal/Lego")).setBlendingCart(blendingCart));
@@ -202,11 +218,21 @@ public class AutoPlanBau extends RoboticsAPIApplication {
 					}
 					TCP.moveAsync(linRel(Transformation.ofDeg(0,0,-safePos,0,0,0),getApplicationData().getFrame("/A_Lego_Pal/Lego")).setBlendingCart(blendingCart).setJointVelocityRel(0.3));	
 					Zaehler4 = Zaehler4+1;
+					if (Zaehler4 == 6){
+						getLogger().info("Show modal dialog and wait for user to confirm");
+				        int isCancel = getApplicationUI().displayModalDialog(ApplicationDialogType.QUESTION, informationTextvierer, "OK", "Cancel");
+				        if (isCancel == 1)
+				        {
+				            return;
+				        }
+						Zaehler4 = 0;
+					}
 			
 			}
-			else if ((Stein[i] == 1)& (Zaehler8<8)){		
+			else if ((Stein[i] == 1)& (Zaehler8<7)){		
 					System.out.println("Move Bitch");
 					TCP.move(ptp(getApplicationData().getFrame("/A_Lego_Pal/Lego/vLego")).setJointVelocityRel(speed));
+					// Y Achse -1 mm verschoben
 					TCP.moveAsync(linRel(Transformation.ofDeg(PalAbsx*Zaehler8,-(PalAbsy-1),-1,0,0,0),getApplicationData().getFrame("/A_Lego_Pal/Lego")).setBlendingCart(blendingCart));
 					TCP.move(linRel(Transformation.ofDeg(0,0,safePos,0,0,0),getApplicationData().getFrame("/A_Lego_Pal/Lego")).setJointVelocityRel(0.3));
 					try {
@@ -217,13 +243,22 @@ public class AutoPlanBau extends RoboticsAPIApplication {
 					}
 					TCP.moveAsync(linRel(Transformation.ofDeg(0,0,-safePos,0,0,0),getApplicationData().getFrame("/A_Lego_Pal/Lego")).setBlendingCart(blendingCart).setJointVelocityRel(0.3));	
 					Zaehler8 = Zaehler8+1;
+					if (Zaehler8 == 6){
+						getLogger().info("Show modal dialog and wait for user to confirm");
+				        int isCancel = getApplicationUI().displayModalDialog(ApplicationDialogType.QUESTION, informationTextachter, "OK", "Cancel");
+				        if (isCancel == 1)
+				        {
+				            return;
+				        }
+						Zaehler8 = 0;
+					}
 			}
 			
 			System.out.println("Move Bitch");
 			TCP.move(ptp(getApplicationData().getFrame("/A_Lego_Base/E1/vE1")).setJointVelocityRel(speed));
 			// Achtung änderungen in y und Rotation
 			TCP.moveAsync(linRel(Transformation.ofDeg(BSB*(positionenx[i]),-(BSB*(positioneny[i])+0.8),0,rotation[i]+90-2,0,0),getApplicationData().getFrame("/A_Lego_Base/E1")).setBlendingCart(blendingCart));
-			TCP.move(linRel(Transformation.ofDeg(0,0,safePos+2,0,0,0),getApplicationData().getFrame("/A_Lego_Base/E1")).setJointVelocityRel(0.3));
+			TCP.move(linRel(Transformation.ofDeg(0,0,(safePos+1)-positionenz[i],0,0,0),getApplicationData().getFrame("/A_Lego_Base/E1")).setJointVelocityRel(0.3));
 			try {
 				Thread.sleep(3000);
 			} catch (InterruptedException e) {

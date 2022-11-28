@@ -60,10 +60,10 @@ public class AutoPlanBau extends RoboticsAPIApplication {
 		PalAbsx = 63;
 		PalAbsy = 90;
 		
-		positionenx = new double[6];
-		positioneny = new double[6];
-		rotation = new int[6];
-		Stein = new int[6];
+		positionenx = new double[8];
+		positioneny = new double[8];
+		rotation = new int[8];
+		Stein = new int[8];
 		
 		
 		

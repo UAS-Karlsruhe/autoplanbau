@@ -64,14 +64,14 @@ public class AutoPlanBau extends RoboticsAPIApplication {
 		positionenx[0] = 0;
 		positionenx[1] = 1;
 		positionenx[2] = 0;
-		positionenx[3] = 2;
+		positionenx[3] = 1;
 		positionenx[4] = 2;
 		
 		positioneny[0] = 0;
 		positioneny[1] = 0;
 		positioneny[2] = 1;
-		positioneny[3] = 9;
-		positioneny[4] = 7;
+		positioneny[3] = 1;
+		positioneny[4] = 2;
 		
 		rotation[0] = 0;
 		rotation[1] = 90;
@@ -79,11 +79,11 @@ public class AutoPlanBau extends RoboticsAPIApplication {
 		rotation[3] = 90;
 		rotation[4] = 0;
 		
-		Stein[0] = 1;
-		Stein[1] = 1;
-		Stein[2] = 1;
-		Stein[3] = 1;
-		Stein[4] = 1;
+		Stein[0] = 0;
+		Stein[1] = 0;
+		Stein[2] = 0;
+		Stein[3] = 0;
+		Stein[4] = 0;
 	
 		
 		

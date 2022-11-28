@@ -61,15 +61,15 @@ public class AutoPlanBau extends RoboticsAPIApplication {
 		
 		
 		
-		positionenx[0] = 3;
-		positionenx[1] = 6;
-		positionenx[2] = 5;
+		positionenx[0] = 0;
+		positionenx[1] = 1;
+		positionenx[2] = 0;
 		positionenx[3] = 2;
 		positionenx[4] = 2;
 		
-		positioneny[0] = 6;
-		positioneny[1] = 7;
-		positioneny[2] = 10;
+		positioneny[0] = 0;
+		positioneny[1] = 0;
+		positioneny[2] = 1;
 		positioneny[3] = 9;
 		positioneny[4] = 7;
 		
@@ -157,7 +157,7 @@ public class AutoPlanBau extends RoboticsAPIApplication {
 						// TODO Auto-generated catch block
 						e.printStackTrace();
 					}
-					TCP.moveAsync(linRel(Transformation.ofDeg(0,0,-safePos,0,0,0),getApplicationData().getFrame("/A_Lego_Pal/Lego")).setBlendingCart(blendingCart));	
+					TCP.moveAsync(linRel(Transformation.ofDeg(0,0,-safePos,0,0,0),getApplicationData().getFrame("/A_Lego_Pal/Lego")).setBlendingCart(blendingCart).setJointVelocityRel(0.3));	
 					Zaehler4 = Zaehler4+1;
 			
 			}
@@ -172,7 +172,7 @@ public class AutoPlanBau extends RoboticsAPIApplication {
 						// TODO Auto-generated catch block
 						e.printStackTrace();
 					}
-					TCP.moveAsync(linRel(Transformation.ofDeg(0,0,-safePos,0,0,0),getApplicationData().getFrame("/A_Lego_Pal/Lego")).setBlendingCart(blendingCart));	
+					TCP.moveAsync(linRel(Transformation.ofDeg(0,0,-safePos,0,0,0),getApplicationData().getFrame("/A_Lego_Pal/Lego")).setBlendingCart(blendingCart).setJointVelocityRel(0.3));	
 					Zaehler8 = Zaehler8+1;
 			}
 			
@@ -186,7 +186,7 @@ public class AutoPlanBau extends RoboticsAPIApplication {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
-			TCP.moveAsync(linRel(Transformation.ofDeg(0,0,-safePos,0,0,0),getApplicationData().getFrame("/A_Lego_Base/E1")).setBlendingCart(blendingCart));	
+			TCP.moveAsync(linRel(Transformation.ofDeg(0,0,-safePos,0,0,0),getApplicationData().getFrame("/A_Lego_Base/E1")).setBlendingCart(blendingCart).setJointVelocityRel(0.3));	
 			
 		}
 		

@@ -61,21 +61,21 @@ public class AutoPlanBau extends RoboticsAPIApplication {
 		
 		
 		
-		positionenx[0] = 2;
-		positionenx[1] = 3.5;
-		positionenx[2] = 3.5;
+		positionenx[0] = 0;
+		positionenx[1] = 12;
+		positionenx[2] = 12;
 		positionenx[3] = 0;
 		positionenx[4] = 0;
 		
-		positioneny[0] = 7;
-		positioneny[1] = 9;
-		positioneny[2] = 7.5;
-		positioneny[3] = 3;
+		positioneny[0] = 0;
+		positioneny[1] = 0;
+		positioneny[2] = 12;
+		positioneny[3] = 12;
 		positioneny[4] = 4;
 		
-		rotation[0] = 90;
+		rotation[0] = 0;
 		rotation[1] = 0;
-		rotation[2] = 0;
+		rotation[2] = 90;
 		rotation[3] = 0;
 		rotation[4] = 0;
 		
@@ -144,7 +144,7 @@ public class AutoPlanBau extends RoboticsAPIApplication {
 		
 		
 		
-		for (int i = 0; i < 3; i++){
+		for (int i = 0; i < 4; i++){
 			
 			if ((Stein[i] == 0) & (Zaehler4<6)){
 					System.out.println("Move Bitch");
@@ -178,7 +178,7 @@ public class AutoPlanBau extends RoboticsAPIApplication {
 			
 			System.out.println("Move Bitch");
 			TCP.move(ptp(getApplicationData().getFrame("/A_Lego_Base/E1/vE1")).setJointVelocityRel(1));
-			TCP.moveAsync(linRel(Transformation.ofDeg(BSB*(positionenx[i]),-BSB*(positioneny[i]),0,rotation[i],0,0),getApplicationData().getFrame("/A_Lego_Base/E1")).setBlendingCart(blendingCart));
+			TCP.moveAsync(linRel(Transformation.ofDeg(BSB*(positionenx[i]),-BSB*(positioneny[i]),0,rotation[i]-90,0,0),getApplicationData().getFrame("/A_Lego_Base/E1")).setBlendingCart(blendingCart));
 			TCP.move(linRel(Transformation.ofDeg(0,0,safePos+2,0,0,0),getApplicationData().getFrame("/A_Lego_Base/E1")));
 			try {
 				Thread.sleep(3000);
@@ -190,7 +190,7 @@ public class AutoPlanBau extends RoboticsAPIApplication {
 			
 		}
 		
-		
+		TCP.move(linRel(Transformation.ofDeg(0,0,-safePos,0,0,0),getApplicationData().getFrame("/A_Lego_Base/E1")).setJointVelocityRel(0.3));
 		
 //		System.out.println("Move Bitch");
 //		TCP.move(ptp(getApplicationData().getFrame("/A_Lego_Base/E1/vE1")).setJointVelocityRel(1));

@@ -734,22 +734,6 @@
                 </redundancy>
             </redundancyData>
         </frame>
-        <frame id="_abd9e372-c182-4fc5-8f53-8cd517cf3646" name="P1">
-            <transformation a="0.0" b="0.0" c="-3.1415" x="-145.6938396823668" y="417.01610703770154" z="458.6196674961608"/>
-            <additionalInformation>
-                <info key="LastModificationTime" type="java.lang.Long" value="1669391036413"/>
-                <info base="LBR_iiwa_7_R800_1" controller="Mirko_Sunrise_FRI_Cabinet" device="LBR_iiwa_7_R800_1" tcpName="Flange" tool="Flange" type="com.kuka.roboticsAPI.deviceModel.TeachInformation">
-                    <tcpTransformation a="0.0" b="0.0" c="0.0" x="0.0" y="0.0" z="0.0"/>
-                </info>
-            </additionalInformation>
-            <redundancyData>
-                <redundancy transformationProviderName="Mirko_Sunrise_FRI_Cabinet/LBR_iiwa_7_R800_1" type="com.kuka.roboticsAPI.deviceModel.LBRE1Redundancy">
-                    <info type="com.kuka.roboticsAPI.deviceModel.StatusTurnRedundancy$StatusParameter" value="2" valueType="java.lang.Integer"/>
-                    <info type="com.kuka.roboticsAPI.deviceModel.StatusTurnRedundancy$TurnParameter" value="72" valueType="java.lang.Integer"/>
-                    <info type="com.kuka.roboticsAPI.deviceModel.LBRE1Redundancy$E1Parameter" value="0.017609500251578338" valueType="java.lang.Double"/>
-                </redundancy>
-            </redundancyData>
-        </frame>
         <frame id="_08b52b8f-f3b4-49ea-81a2-eb131e2d997f" name="P2">
             <transformation a="0.008371256419487456" b="0.007621260638498749" c="-3.136013545964565" x="-150.712592760232" y="739.9620304559076" z="154.05521748949965"/>
             <additionalInformation>
@@ -870,7 +854,7 @@
                 <frame id="_19bbda41-d6d7-43a7-8c32-6eb9eb1719b1" name="vE1">
                     <transformation a="0.0" b="0.0" c="0.0" x="0.0" y="0.0" z="-100.0"/>
                     <additionalInformation>
-                        <info key="LastModificationTime" type="java.lang.Long" value="1669647145260"/>
+                        <info key="LastModificationTime" type="java.lang.Long" value="1669647145283"/>
                     </additionalInformation>
                 </frame>
                 <frame id="_b9852019-7361-4ca2-8c95-36ee2de7f2cd" name="vAbl">
@@ -942,6 +926,28 @@
                     </additionalInformation>
                 </frame>
             </frame>
+        </frame>
+        <frame id="_3f4ddcc3-7ab0-4ebf-aa2f-f1e6044ba2ad" name="P6">
+            <transformation a="0.0" b="0.0" c="0.0" x="0.0" y="0.0" z="0.0"/>
+            <additionalInformation>
+                <info key="LastModificationTime" type="java.lang.Long" value="1669657781577"/>
+            </additionalInformation>
+        </frame>
+        <frame id="_abd9e372-c182-4fc5-8f53-8cd517cf3646" name="A_Lego_SavePos">
+            <transformation a="0.0" b="0.0" c="-3.1415" x="-145.6938396823668" y="417.01610703770154" z="458.6196674961608"/>
+            <additionalInformation>
+                <info key="LastModificationTime" type="java.lang.Long" value="1669657819211"/>
+                <info base="LBR_iiwa_7_R800_1" controller="Mirko_Sunrise_FRI_Cabinet" device="LBR_iiwa_7_R800_1" tcpName="Flange" tool="Flange" type="com.kuka.roboticsAPI.deviceModel.TeachInformation">
+                    <tcpTransformation a="0.0" b="0.0" c="0.0" x="0.0" y="0.0" z="0.0"/>
+                </info>
+            </additionalInformation>
+            <redundancyData>
+                <redundancy transformationProviderName="Mirko_Sunrise_FRI_Cabinet/LBR_iiwa_7_R800_1" type="com.kuka.roboticsAPI.deviceModel.LBRE1Redundancy">
+                    <info type="com.kuka.roboticsAPI.deviceModel.StatusTurnRedundancy$StatusParameter" value="2" valueType="java.lang.Integer"/>
+                    <info type="com.kuka.roboticsAPI.deviceModel.StatusTurnRedundancy$TurnParameter" value="72" valueType="java.lang.Integer"/>
+                    <info type="com.kuka.roboticsAPI.deviceModel.LBRE1Redundancy$E1Parameter" value="0.017609500251578338" valueType="java.lang.Double"/>
+                </redundancy>
+            </redundancyData>
         </frame>
     </world>
     <objectTemplates>

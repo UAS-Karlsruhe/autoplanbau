@@ -202,6 +202,7 @@ public class AutoPlanBau extends RoboticsAPIApplication {
 		Stein[8] = 1;
 		
 		Stein[9] = 1;
+		Stein[10] = 1;
 		Stein[11] = 1;
 		Stein[12] = 1;
 		Stein[13] = 1;
@@ -242,17 +243,18 @@ public class AutoPlanBau extends RoboticsAPIApplication {
 
 		TCP.attachTo(lbr.getFlange());
 		
-		
-		
-		System.out.println("Move Bitch");
-		TCP.moveAsync(ptp(getApplicationData().getFrame("/A_Lego_Base/E1/vE1")).setBlendingCart(blendingCart).setJointVelocityRel(speed));
+		TCP.move(ptp(getApplicationData().getFrame("/A_Lego_SavePos")).setJointVelocityRel(speed));
+		TCP.move(ptp(getApplicationData().getFrame("/A_Lego_Base/E1/vE1")).setJointVelocityRel(speed));
 		
 		
 		
 		for (int i = 0; i < 18; i++){
 			
-			if ((Stein[i] == 0) & (Zaehler4<=6)){
-					System.out.println("Move Bitch");
+			
+			TCP.moveAsync(ptp(getApplicationData().getFrame("/A_Lego_SavePos")).setBlendingCart(blendingCart).setJointVelocityRel(speed));
+			
+			
+			if ((Stein[i] == 0) & (Zaehler4<=7)){
 					TCP.move(ptp(getApplicationData().getFrame("/A_Lego_Pal/Lego/vLego")).setJointVelocityRel(speed));
 					TCP.moveAsync(linRel(Transformation.ofDeg(PalAbsx*Zaehler4,0,0,-1,0,0),getApplicationData().getFrame("/A_Lego_Pal/Lego")).setBlendingCart(blendingCart));
 					TCP.move(linRel(Transformation.ofDeg(0,0,safePos,0,0,0),getApplicationData().getFrame("/A_Lego_Pal/Lego")).setJointVelocityRel(0.3));
@@ -264,19 +266,10 @@ public class AutoPlanBau extends RoboticsAPIApplication {
 					}
 					TCP.moveAsync(linRel(Transformation.ofDeg(0,0,-safePos,0,0,0),getApplicationData().getFrame("/A_Lego_Pal/Lego")).setBlendingCart(blendingCart).setJointVelocityRel(0.3));	
 					Zaehler4 = Zaehler4+1;
-					if (Zaehler4 == 6){
-						getLogger().info("Show modal dialog and wait for user to confirm");
-				        int isCancel = getApplicationUI().displayModalDialog(ApplicationDialogType.QUESTION, informationTextvierer, "OK", "Cancel");
-				        if (isCancel == 1)
-				        {
-				            return;
-				        }
-						Zaehler4 = 0;
-					}
+					
 			
 			}
-			else if ((Stein[i] == 1)& (Zaehler8<7)){		
-					System.out.println("Move Bitch");
+			else if ((Stein[i] == 1)& (Zaehler8<=7)){		
 					TCP.move(ptp(getApplicationData().getFrame("/A_Lego_Pal/Lego/vLego")).setJointVelocityRel(speed));
 					// Y Achse -1 mm verschoben
 					TCP.moveAsync(linRel(Transformation.ofDeg(PalAbsx*Zaehler8,-(PalAbsy-1),-1,0,0,0),getApplicationData().getFrame("/A_Lego_Pal/Lego")).setBlendingCart(blendingCart));
@@ -289,19 +282,34 @@ public class AutoPlanBau extends RoboticsAPIApplication {
 					}
 					TCP.moveAsync(linRel(Transformation.ofDeg(0,0,-safePos,0,0,0),getApplicationData().getFrame("/A_Lego_Pal/Lego")).setBlendingCart(blendingCart).setJointVelocityRel(0.3));	
 					Zaehler8 = Zaehler8+1;
-					if (Zaehler8 == 6){
-						getLogger().info("Show modal dialog and wait for user to confirm");
-				        int isCancel = getApplicationUI().displayModalDialog(ApplicationDialogType.QUESTION, informationTextachter, "OK", "Cancel");
-				        if (isCancel == 1)
-				        {
-				            return;
-				        }
-						Zaehler8 = 0;
-					}
+					
 			}
 			
-			System.out.println("Move Bitch");
+			
+			TCP.moveAsync(ptp(getApplicationData().getFrame("/A_Lego_SavePos")).setBlendingCart(blendingCart).setJointVelocityRel(speed));
+			
 			TCP.move(ptp(getApplicationData().getFrame("/A_Lego_Base/E1/vE1")).setJointVelocityRel(speed));
+			
+			if (Zaehler4 == 7){
+				getLogger().info("Show modal dialog and wait for user to confirm");
+		        int isCancel = getApplicationUI().displayModalDialog(ApplicationDialogType.QUESTION, informationTextvierer, "OK", "Cancel");
+		        if (isCancel == 1)
+		        {
+		            return;
+		        }
+				Zaehler4 = 0;
+			}
+			
+			if (Zaehler8 == 7){
+				getLogger().info("Show modal dialog and wait for user to confirm");
+		        int isCancel = getApplicationUI().displayModalDialog(ApplicationDialogType.QUESTION, informationTextachter, "OK", "Cancel");
+		        if (isCancel == 1)
+		        {
+		            return;
+		        }
+				Zaehler8 = 0;
+			}
+			
 			// Achtung änderungen in y und Rotation
 			TCP.moveAsync(linRel(Transformation.ofDeg(BSB*(positionenx[i]),-(BSB*(positioneny[i])+0.8),0,rotation[i]+90-2,0,0),getApplicationData().getFrame("/A_Lego_Base/E1")).setBlendingCart(blendingCart));
 			TCP.move(linRel(Transformation.ofDeg(0,0,(safePos+1-positionenz[i]),0,0,0),getApplicationData().getFrame("/A_Lego_Base/E1")).setJointVelocityRel(0.3));

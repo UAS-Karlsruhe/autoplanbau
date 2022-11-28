@@ -44,7 +44,7 @@ public class AutoPlanBau extends RoboticsAPIApplication {
 		TCP = getApplicationData().createFromTemplate("Lego_Sauger");
 		
 		
-		blendingCart = 85;
+		blendingCart = 20;
 		safePos = 100;
 		BSB = 32.0;
 		

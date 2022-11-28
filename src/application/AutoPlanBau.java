@@ -52,7 +52,7 @@ public class AutoPlanBau extends RoboticsAPIApplication {
 		
 		
 		safePos = 100;
-		BSB = 32.035;
+		BSB = 32.05;
 		
 		Zaehler8 = 0;
 		Zaehler4 = 0;
@@ -154,7 +154,7 @@ public class AutoPlanBau extends RoboticsAPIApplication {
 			
 			if ((Stein[i] == 0) & (Zaehler4<6)){
 					System.out.println("Move Bitch");
-					TCP.move(ptp(getApplicationData().getFrame("/A_Lego_Pal/Lego/vLego")).setJointVelocityRel(1));
+					TCP.move(ptp(getApplicationData().getFrame("/A_Lego_Pal/Lego/vLego")).setJointVelocityRel(speed));
 					TCP.moveAsync(linRel(Transformation.ofDeg(PalAbsx*Zaehler4,0,0,0,0,0),getApplicationData().getFrame("/A_Lego_Pal/Lego")).setBlendingCart(blendingCart));
 					TCP.move(linRel(Transformation.ofDeg(0,0,safePos,0,0,0),getApplicationData().getFrame("/A_Lego_Pal/Lego")).setJointVelocityRel(0.3));
 					try {

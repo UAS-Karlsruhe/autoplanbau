@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+Automatically generated IO group description. Please do NOT modify!
+-->
+<SunriseIOGroupDescription xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Version="1.0.0">
+  <IOGroup DisplayName="Gripper" IconName="Gripper" SignalTypes="InOut" TemplateName="Gripper">
+    <IOs>
+      <DigitalIOItem Name="SetVakuumON" DataType="BOOL" IOType="Output" UsedBitWidth="1" IsConnected="true">
+        <Description>Setting the Vakuum ON</Description>
+      </DigitalIOItem>
+      <DigitalIOItem Name="SetVakuumOFF" DataType="BOOL" IOType="Output" UsedBitWidth="1" IsConnected="true">
+        <Description>Setting the Vakuum OFF</Description>
+      </DigitalIOItem>
+    </IOs>
+    <Description>coact egp
+</Description>
+  </IOGroup>
+</SunriseIOGroupDescription>

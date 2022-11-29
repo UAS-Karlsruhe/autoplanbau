@@ -32,6 +32,12 @@
         <DigitalIO Name="Gripper.SetClose" Type="OUTPUT" Scope="USER_IO" StartBit="2320" BitSize="1" Signed="false">
           <Description>Setting the Gripper to close the claws</Description>
         </DigitalIO>
+        <DigitalIO Name="Vakuum.SetVakuumON" Type="OUTPUT" Scope="USER_IO" StartBit="2321" BitSize="1" Signed="false">
+          <Description>Setting the Vakuum ON</Description>
+        </DigitalIO>
+        <DigitalIO Name="Vakuum.SetVakuumOFF" Type="OUTPUT" Scope="USER_IO" StartBit="2320" BitSize="1" Signed="false">
+          <Description>Setting the Vakuum OFF</Description>
+        </DigitalIO>
         <DigitalIO Name="Python.Geschwindigkeit_Foerderband" Type="INPUT" Scope="USER_IO" StartBit="152" BitSize="16" Signed="true">
           <Description />
         </DigitalIO>

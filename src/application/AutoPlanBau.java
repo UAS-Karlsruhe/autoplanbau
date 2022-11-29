@@ -32,6 +32,7 @@ public class AutoPlanBau extends RoboticsAPIApplication {
 	
 	
 	int blendingCart;
+	int blendingCart_Safepos;
 	double speed;
 	
 	int safePos;
@@ -55,6 +56,7 @@ public class AutoPlanBau extends RoboticsAPIApplication {
 		
 		
 		blendingCart = 85;
+		blendingCart_Safepos = 350;
 		speed = 1;
 		
 		
@@ -251,7 +253,7 @@ public class AutoPlanBau extends RoboticsAPIApplication {
 		for (int i = 0; i < 18; i++){
 			
 			
-			TCP.moveAsync(ptp(getApplicationData().getFrame("/A_Lego_SavePos")).setBlendingCart(blendingCart).setJointVelocityRel(speed));
+			TCP.moveAsync(ptp(getApplicationData().getFrame("/A_Lego_SavePos")).setBlendingCart(blendingCart_Safepos).setJointVelocityRel(speed));
 			
 			
 			if ((Stein[i] == 0) & (Zaehler4<=7)){
@@ -286,7 +288,7 @@ public class AutoPlanBau extends RoboticsAPIApplication {
 			}
 			
 			
-			TCP.moveAsync(ptp(getApplicationData().getFrame("/A_Lego_SavePos")).setBlendingCart(blendingCart).setJointVelocityRel(speed));
+			TCP.moveAsync(ptp(getApplicationData().getFrame("/A_Lego_SavePos")).setBlendingCart(blendingCart_Safepos).setJointVelocityRel(speed));
 			
 			TCP.move(ptp(getApplicationData().getFrame("/A_Lego_Base/E1/vE1")).setJointVelocityRel(speed));
 			

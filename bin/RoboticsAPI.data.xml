@@ -908,9 +908,9 @@
             </frame>
         </frame>
         <frame id="_4a6f9db4-9d94-4f1b-a8ee-aaee858078f8" name="A_Lego_Pal">
-            <transformation a="0.0" b="0.006686856795551136" c="-0.010513483637761523" x="563.6007160032104" y="291.47574657027246" z="13.685107752338311"/>
+            <transformation a="-1.6" b="0.006686856795551136" c="-0.010513483637761523" x="563.6007160032104" y="291.47574657027246" z="13.685107752338311"/>
             <additionalInformation>
-                <info key="LastModificationTime" type="java.lang.Long" value="1669714216389"/>
+                <info key="LastModificationTime" type="java.lang.Long" value="1669714273515"/>
                 <info key="UseAsBaseForJogging" type="java.lang.Boolean" value="true"/>
             </additionalInformation>
             <frame id="_1f1433fc-4546-4019-a101-f7583cd64670" name="Lego">

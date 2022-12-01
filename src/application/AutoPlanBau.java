@@ -24,8 +24,8 @@ public class AutoPlanBau extends RoboticsAPIApplication {
 	
 	private final static String informationTextachter=
 			"Achtersteine nachfüllen und mit OK bestätigen!";
-	
-	VakuumIOGroup CVakuum;
+	@Inject
+	private VakuumIOGroup CVakuum;
 
 	double[] positionenx;
 	double[] positioneny;
@@ -247,8 +247,11 @@ public class AutoPlanBau extends RoboticsAPIApplication {
 	@Override
 	public void run() {
 		
-		CVakuum.setVakuumON(false);
-
+		
+		if (CVakuum.getVakuumON() == true){
+			CVakuum.setVakuumON(false);
+			getLogger().info("Setze Output auf False");
+		}
 
 		TCP.attachTo(lbr.getFlange());
 		

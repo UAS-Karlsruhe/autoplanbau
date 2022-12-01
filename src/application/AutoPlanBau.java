@@ -1,6 +1,8 @@
 package application;
 
 import javax.inject.Inject;
+
+import com.kuka.generated.ioAccess.VakuumIOGroup;
 import com.kuka.roboticsAPI.applicationModel.RoboticsAPIApplication;
 import static com.kuka.roboticsAPI.motionModel.BasicMotions.*;
 
@@ -23,7 +25,8 @@ public class AutoPlanBau extends RoboticsAPIApplication {
 	private final static String informationTextachter=
 			"Achtersteine nachfüllen und mit OK bestätigen!";
 	
-	
+	VakuumIOGroup CVakuum;
+
 	double[] positionenx;
 	double[] positioneny;
 	double[] positionenz;
@@ -53,8 +56,9 @@ public class AutoPlanBau extends RoboticsAPIApplication {
 	@Override
 	public void initialize() {
 		TCP = getApplicationData().createFromTemplate("Lego_Sauger");
-		
-		
+
+		CVakuum.setVakuumON(false);
+
 		blendingCart = 85;
 		blendingCart_Safepos = 350;
 		speed = 1;
@@ -78,7 +82,7 @@ public class AutoPlanBau extends RoboticsAPIApplication {
 		Stein = new int[18];
 		
 
-	
+		 
 		
 		
 		
@@ -236,7 +240,8 @@ public class AutoPlanBau extends RoboticsAPIApplication {
 //		rotation[2] = 0;
 //		Stein[2] = 0;
 //	
-//		
+//	
+		
 	}
 
 	@Override
@@ -261,6 +266,7 @@ public class AutoPlanBau extends RoboticsAPIApplication {
 					TCP.moveAsync(linRel(Transformation.ofDeg(PalAbsx*Zaehler4,0,0,-1,0,0),getApplicationData().getFrame("/A_Lego_Pal/Lego")).setBlendingCart(blendingCart));
 					TCP.move(linRel(Transformation.ofDeg(0,0,safePos,0,0,0),getApplicationData().getFrame("/A_Lego_Pal/Lego")).setJointVelocityRel(0.3));
 					try {
+						CVakuum.setVakuumON(true);
 						Thread.sleep(3000);
 					} catch (InterruptedException e) {
 						// TODO Auto-generated catch block
@@ -316,6 +322,8 @@ public class AutoPlanBau extends RoboticsAPIApplication {
 			TCP.moveAsync(linRel(Transformation.ofDeg(BSB*(positionenx[i]),-(BSB*(positioneny[i])+0.8),0,90-rotation[i]-2,0,0),getApplicationData().getFrame("/A_Lego_Base/E1")).setBlendingCart(blendingCart));
 			TCP.move(linRel(Transformation.ofDeg(0,0,(safePos+1-positionenz[i]),0,0,0),getApplicationData().getFrame("/A_Lego_Base/E1")).setJointVelocityRel(0.3));
 			try {
+				CVakuum.setVakuumON(false);
+
 				Thread.sleep(3000);
 			} catch (InterruptedException e) {
 				// TODO Auto-generated catch block

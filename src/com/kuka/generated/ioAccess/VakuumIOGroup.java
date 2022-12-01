@@ -12,8 +12,7 @@ import com.kuka.roboticsAPI.ioModel.IOTypes;
  * <i>Please, do not modify!</i>
  * <p>
  * <b>I/O group description:</b><br>
- * coact egp
-
+ * Ansteuern einer Venturiedüse
  */
 @Singleton
 public class VakuumIOGroup extends AbstractIOGroup
@@ -30,90 +29,48 @@ public class VakuumIOGroup extends AbstractIOGroup
 	{
 		super(controller, "Vakuum");
 
-		addDigitalOutput("SetVakuumON", IOTypes.BOOLEAN, 1);
-		addDigitalOutput("SetVakuumOFF", IOTypes.BOOLEAN, 1);
+		addDigitalOutput("VakuumON", IOTypes.BOOLEAN, 1);
 	}
 
 	/**
-	 * Gets the value of the <b>digital output '<i>SetVakuumON</i>'</b>.<br>
+	 * Gets the value of the <b>digital output '<i>VakuumON</i>'</b>.<br>
 	 * <i>This method is automatically generated. Please, do not modify!</i>
 	 * <p>
 	 * <b>I/O direction and type:</b><br>
 	 * digital output
 	 * <p>
 	 * <b>User description of the I/O:</b><br>
-	 * Setting the Vakuum ON
+	 * ./.
 	 * <p>
 	 * <b>Range of the I/O value:</b><br>
 	 * [false; true]
 	 *
-	 * @return current value of the digital output 'SetVakuumON'
+	 * @return current value of the digital output 'VakuumON'
 	 */
-	public boolean getSetVakuumON()
+	public boolean getVakuumON()
 	{
-		return getBooleanIOValue("SetVakuumON", true);
+		return getBooleanIOValue("VakuumON", true);
 	}
 
 	/**
-	 * Sets the value of the <b>digital output '<i>SetVakuumON</i>'</b>.<br>
+	 * Sets the value of the <b>digital output '<i>VakuumON</i>'</b>.<br>
 	 * <i>This method is automatically generated. Please, do not modify!</i>
 	 * <p>
 	 * <b>I/O direction and type:</b><br>
 	 * digital output
 	 * <p>
 	 * <b>User description of the I/O:</b><br>
-	 * Setting the Vakuum ON
-	 * <p>
-	 * <b>Range of the I/O value:</b><br>
-	 * [false; true]
-	 *
-	 * @param value
-	 *            the value, which has to be written to the digital output 'SetVakuumON'
-	 */
-	public void setSetVakuumON(java.lang.Boolean value)
-	{
-		setDigitalOutput("SetVakuumON", value);
-	}
-
-	/**
-	 * Gets the value of the <b>digital output '<i>SetVakuumOFF</i>'</b>.<br>
-	 * <i>This method is automatically generated. Please, do not modify!</i>
-	 * <p>
-	 * <b>I/O direction and type:</b><br>
-	 * digital output
-	 * <p>
-	 * <b>User description of the I/O:</b><br>
-	 * Setting the Vakuum OFF
-	 * <p>
-	 * <b>Range of the I/O value:</b><br>
-	 * [false; true]
-	 *
-	 * @return current value of the digital output 'SetVakuumOFF'
-	 */
-	public boolean getSetVakuumOFF()
-	{
-		return getBooleanIOValue("SetVakuumOFF", true);
-	}
-
-	/**
-	 * Sets the value of the <b>digital output '<i>SetVakuumOFF</i>'</b>.<br>
-	 * <i>This method is automatically generated. Please, do not modify!</i>
-	 * <p>
-	 * <b>I/O direction and type:</b><br>
-	 * digital output
-	 * <p>
-	 * <b>User description of the I/O:</b><br>
-	 * Setting the Vakuum OFF
+	 * ./.
 	 * <p>
 	 * <b>Range of the I/O value:</b><br>
 	 * [false; true]
 	 *
 	 * @param value
-	 *            the value, which has to be written to the digital output 'SetVakuumOFF'
+	 *            the value, which has to be written to the digital output 'VakuumON'
 	 */
-	public void setSetVakuumOFF(java.lang.Boolean value)
+	public void setVakuumON(java.lang.Boolean value)
 	{
-		setDigitalOutput("SetVakuumOFF", value);
+		setDigitalOutput("VakuumON", value);
 	}
 
 }

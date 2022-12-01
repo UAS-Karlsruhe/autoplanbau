@@ -30,6 +30,7 @@ public class VakuumIOGroup extends AbstractIOGroup
 		super(controller, "Vakuum");
 
 		addDigitalOutput("VakuumON", IOTypes.BOOLEAN, 1);
+		addDigitalOutput("VakuumOFF", IOTypes.BOOLEAN, 1);
 	}
 
 	/**
@@ -71,6 +72,47 @@ public class VakuumIOGroup extends AbstractIOGroup
 	public void setVakuumON(java.lang.Boolean value)
 	{
 		setDigitalOutput("VakuumON", value);
+	}
+
+	/**
+	 * Gets the value of the <b>digital output '<i>VakuumOFF</i>'</b>.<br>
+	 * <i>This method is automatically generated. Please, do not modify!</i>
+	 * <p>
+	 * <b>I/O direction and type:</b><br>
+	 * digital output
+	 * <p>
+	 * <b>User description of the I/O:</b><br>
+	 * ./.
+	 * <p>
+	 * <b>Range of the I/O value:</b><br>
+	 * [false; true]
+	 *
+	 * @return current value of the digital output 'VakuumOFF'
+	 */
+	public boolean getVakuumOFF()
+	{
+		return getBooleanIOValue("VakuumOFF", true);
+	}
+
+	/**
+	 * Sets the value of the <b>digital output '<i>VakuumOFF</i>'</b>.<br>
+	 * <i>This method is automatically generated. Please, do not modify!</i>
+	 * <p>
+	 * <b>I/O direction and type:</b><br>
+	 * digital output
+	 * <p>
+	 * <b>User description of the I/O:</b><br>
+	 * ./.
+	 * <p>
+	 * <b>Range of the I/O value:</b><br>
+	 * [false; true]
+	 *
+	 * @param value
+	 *            the value, which has to be written to the digital output 'VakuumOFF'
+	 */
+	public void setVakuumOFF(java.lang.Boolean value)
+	{
+		setDigitalOutput("VakuumOFF", value);
 	}
 
 }

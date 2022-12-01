@@ -47,6 +47,9 @@
         <DigitalIO Name="Vakuum.VakuumON" Type="OUTPUT" Scope="USER_IO" StartBit="2322" BitSize="1" Signed="false">
           <Description />
         </DigitalIO>
+        <DigitalIO Name="Vakuum.VakuumOFF" Type="OUTPUT" Scope="USER_IO" StartBit="2323" BitSize="1" Signed="false">
+          <Description />
+        </DigitalIO>
       </IOList>
     </Bus>
   </BusList>

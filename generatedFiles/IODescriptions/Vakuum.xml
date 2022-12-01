@@ -8,6 +8,9 @@ Automatically generated IO group description. Please do NOT modify!
       <DigitalIOItem Name="VakuumON" DataType="BOOL" IOType="Output" UsedBitWidth="1" IsConnected="true">
         <Description />
       </DigitalIOItem>
+      <DigitalIOItem Name="VakuumOFF" DataType="BOOL" IOType="Output" UsedBitWidth="1" IsConnected="true">
+        <Description />
+      </DigitalIOItem>
     </IOs>
     <Description>Ansteuern einer Venturiedüse</Description>
   </IOGroup>

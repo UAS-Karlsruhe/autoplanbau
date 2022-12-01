@@ -247,6 +247,8 @@ public class AutoPlanBau extends RoboticsAPIApplication {
 	@Override
 	public void run() {
 		
+		CVakuum.setVakuumON(false);
+
 
 		TCP.attachTo(lbr.getFlange());
 		
@@ -283,6 +285,8 @@ public class AutoPlanBau extends RoboticsAPIApplication {
 					TCP.moveAsync(linRel(Transformation.ofDeg(PalAbsx*Zaehler8,-(PalAbsy-1),-1,0,0,0),getApplicationData().getFrame("/A_Lego_Pal/Lego")).setBlendingCart(blendingCart));
 					TCP.move(linRel(Transformation.ofDeg(0,0,safePos,0,0,0),getApplicationData().getFrame("/A_Lego_Pal/Lego")).setJointVelocityRel(0.3));
 					try {
+						CVakuum.setVakuumON(true);
+
 						Thread.sleep(3000);
 					} catch (InterruptedException e) {
 						// TODO Auto-generated catch block
@@ -322,8 +326,8 @@ public class AutoPlanBau extends RoboticsAPIApplication {
 			TCP.moveAsync(linRel(Transformation.ofDeg(BSB*(positionenx[i]),-(BSB*(positioneny[i])+0.8),0,90-rotation[i]-2,0,0),getApplicationData().getFrame("/A_Lego_Base/E1")).setBlendingCart(blendingCart));
 			TCP.move(linRel(Transformation.ofDeg(0,0,(safePos+1-positionenz[i]),0,0,0),getApplicationData().getFrame("/A_Lego_Base/E1")).setJointVelocityRel(0.3));
 			try {
+				
 				CVakuum.setVakuumON(false);
-
 				Thread.sleep(3000);
 			} catch (InterruptedException e) {
 				// TODO Auto-generated catch block

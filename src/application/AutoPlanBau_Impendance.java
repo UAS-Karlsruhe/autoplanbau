@@ -53,8 +53,8 @@ public class AutoPlanBau_Impendance extends RoboticsAPIApplication {
 	double BSH;
 	
 	private static final int stiffnessZ = 2500;
-	private static final int stiffnessY = 20;
-	private static final int stiffnessX = 20;
+	private static final int stiffnessY = 2000;
+	private static final int stiffnessX = 2000;
 			
 
 	@Override

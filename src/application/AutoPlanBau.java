@@ -57,7 +57,6 @@ public class AutoPlanBau extends RoboticsAPIApplication {
 	public void initialize() {
 		TCP = getApplicationData().createFromTemplate("Lego_Sauger");
 
-		//CVakuum.setVakuumON(false);
 
 		blendingCart = 85;
 		blendingCart_Safepos = 350;

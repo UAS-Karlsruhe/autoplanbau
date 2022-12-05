@@ -267,8 +267,8 @@ public class AutoPlanBau extends RoboticsAPIApplication {
 			
 			if ((Stein[i] == 0) & (Zaehler4<=7)){
 					TCP.move(ptp(getApplicationData().getFrame("/A_Lego_Pal_test/Lego/vLego")).setJointVelocityRel(speed));
-					TCP.moveAsync(linRel(Transformation.ofDeg(PalAbsx*Zaehler4,0,0,-1,0,0),getApplicationData().getFrame("/A_Lego_Pal/Lego")).setBlendingCart(blendingCart));
-					TCP.move(linRel(Transformation.ofDeg(0,0,safePos,0,0,0),getApplicationData().getFrame("/A_Lego_Pal/Lego")).setJointVelocityRel(0.3));
+					TCP.moveAsync(linRel(Transformation.ofDeg(PalAbsx*Zaehler4,0,0,-1,0,0),getApplicationData().getFrame("/A_Lego_Pal_test/Lego")).setBlendingCart(blendingCart));
+					TCP.move(linRel(Transformation.ofDeg(0,0,safePos,0,0,0),getApplicationData().getFrame("/A_Lego_Pal_test/Lego")).setJointVelocityRel(0.3));
 					try {
 						CVakuum.setVakuumON(true);
 						Thread.sleep(3000);
@@ -276,7 +276,7 @@ public class AutoPlanBau extends RoboticsAPIApplication {
 						// TODO Auto-generated catch block
 						e.printStackTrace();
 					}
-					TCP.moveAsync(linRel(Transformation.ofDeg(0,0,-safePos,0,0,0),getApplicationData().getFrame("/A_Lego_Pal/Lego")).setBlendingCart(blendingCart).setJointVelocityRel(0.3));	
+					TCP.moveAsync(linRel(Transformation.ofDeg(0,0,-safePos,0,0,0),getApplicationData().getFrame("/A_Lego_Pal_test/Lego")).setBlendingCart(blendingCart).setJointVelocityRel(0.3));	
 					Zaehler4 = Zaehler4+1;
 					
 			
@@ -284,8 +284,8 @@ public class AutoPlanBau extends RoboticsAPIApplication {
 			else if ((Stein[i] == 1)& (Zaehler8<=7)){		
 					TCP.move(ptp(getApplicationData().getFrame("/A_Lego_Pal_test/Lego/vLego")).setJointVelocityRel(speed));
 					// Y Achse -1 mm verschoben
-					TCP.moveAsync(linRel(Transformation.ofDeg(PalAbsx*Zaehler8,-(PalAbsy-1),-1,0,0,0),getApplicationData().getFrame("/A_Lego_Pal/Lego")).setBlendingCart(blendingCart));
-					TCP.move(linRel(Transformation.ofDeg(0,0,safePos,0,0,0),getApplicationData().getFrame("/A_Lego_Pal/Lego")).setJointVelocityRel(0.3));
+					TCP.moveAsync(linRel(Transformation.ofDeg(PalAbsx*Zaehler8,-(PalAbsy-1),-1,0,0,0),getApplicationData().getFrame("/A_Lego_Pal_test/Lego")).setBlendingCart(blendingCart));
+					TCP.move(linRel(Transformation.ofDeg(0,0,safePos,0,0,0),getApplicationData().getFrame("/A_Lego_Pal_test/Lego")).setJointVelocityRel(0.3));
 					try {
 						CVakuum.setVakuumON(true);
 
@@ -294,7 +294,7 @@ public class AutoPlanBau extends RoboticsAPIApplication {
 						// TODO Auto-generated catch block
 						e.printStackTrace();
 					}
-					TCP.moveAsync(linRel(Transformation.ofDeg(0,0,-safePos,0,0,0),getApplicationData().getFrame("/A_Lego_Pal/Lego")).setBlendingCart(blendingCart).setJointVelocityRel(0.3));	
+					TCP.moveAsync(linRel(Transformation.ofDeg(0,0,-safePos,0,0,0),getApplicationData().getFrame("/A_Lego_Pal_test/Lego")).setBlendingCart(blendingCart).setJointVelocityRel(0.3));	
 					Zaehler8 = Zaehler8+1;
 					
 			}

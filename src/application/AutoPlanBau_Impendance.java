@@ -290,7 +290,7 @@ public class AutoPlanBau_Impendance extends RoboticsAPIApplication {
 						// TODO Auto-generated catch block
 						e.printStackTrace();
 					}
-					TCP.moveAsync(linRel(Transformation.ofDeg(0,0,-safePos,0,0,0),getApplicationData().getFrame("/A_Lego_Pal_test/Lego")).setBlendingCart(blendingCart).setJointVelocityRel(0.3));	
+					TCP.moveAsync(linRel(Transformation.ofDeg(0,0,-safePos,0,0,0),getApplicationData().getFrame("/A_Lego_Pal_test/Lego")).setBlendingCart(blendingCart).setJointVelocityRel(0.1));	
 					Zaehler4 = Zaehler4+1;
 					
 			
@@ -308,7 +308,7 @@ public class AutoPlanBau_Impendance extends RoboticsAPIApplication {
 						// TODO Auto-generated catch block
 						e.printStackTrace();
 					}
-					TCP.moveAsync(linRel(Transformation.ofDeg(0,0,-safePos,0,0,0),getApplicationData().getFrame("/A_Lego_Pal_test/Lego")).setBlendingCart(blendingCart).setJointVelocityRel(0.3));	
+					TCP.moveAsync(linRel(Transformation.ofDeg(0,0,-safePos,0,0,0),getApplicationData().getFrame("/A_Lego_Pal_test/Lego")).setBlendingCart(blendingCart).setJointVelocityRel(0.1));	
 					Zaehler8 = Zaehler8+1;
 					
 			}
@@ -348,7 +348,7 @@ public class AutoPlanBau_Impendance extends RoboticsAPIApplication {
 			try {
 				
 				CVakuum.setVakuumON(false);
-				Thread.sleep(3000);
+				Thread.sleep(500);
 			} catch (InterruptedException e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();

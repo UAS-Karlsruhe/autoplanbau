@@ -21,7 +21,7 @@ public class TeachImpendanceMode extends RoboticsAPIApplication {
 //	private static final int stiffnessY = 0;
 //	private static final int stiffnessX = 0;
 
-	private static final int stiffnessZ = 40;
+	private static final int stiffnessZ = 20;
 	private static final int stiffnessY = 0;
 	private static final int stiffnessX = 0;
 	private static final int stiffnessA = 0;

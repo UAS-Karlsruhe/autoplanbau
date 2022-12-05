@@ -949,11 +949,12 @@
             </redundancyData>
         </frame>
         <frame id="_1c9e8a24-8a59-482d-9de8-f37b286a17d2" name="A_Lego_Pal_test">
-            <transformation a="0.0" b="0.0" c="0.0" x="0.0" y="0.0" z="0.0"/>
+            <transformation a="-3.1332432135959043" b="0.02375068588671868" c="0.010460060212477756" x="127.26340465601062" y="-610.8972089717078" z="-0.16215732424089424"/>
             <additionalInformation>
-                <info key="LastModificationTime" type="java.lang.Long" value="1670247057662"/>
+                <info key="LastModificationTime" type="java.lang.Long" value="1670258738402"/>
                 <info key="Comment" type="java.lang.String" value="&#13;&#10;"/>
                 <info key="UseAsBaseForJogging" type="java.lang.Boolean" value="true"/>
+                <info measurementMethod="Base3Point" timestamp="1670258738402" type="com.kuka.roboticsAPI.deviceModel.MeasurementInformation"/>
             </additionalInformation>
         </frame>
     </world>
@@ -992,7 +993,7 @@
             <additionalInformation>
                 <info key="ID" type="java.lang.String" value="badc958c-ea5d-47a2-9bf2-cf628e7775ae"/>
             </additionalInformation>
-            <loadData cogA="0.0" cogB="0.0" cogC="0.0" cogX="0.0" cogY="0.0" cogZ="0.0" inertiaX="0.0" inertiaY="0.0" inertiaZ="0.0" mass="0.0"/>
+            <loadData cogA="0.0" cogB="0.0" cogC="0.0" cogX="-24.38859498809785" cogY="-28.842995594065293" cogZ="-8.223168038704411" inertiaX="0.0" inertiaY="0.0" inertiaZ="0.0" mass="0.5080895136262571"/>
         </toolTemplate>
     </objectTemplates>
 </RoboticsAPIData>

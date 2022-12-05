@@ -948,6 +948,14 @@
                 </redundancy>
             </redundancyData>
         </frame>
+        <frame id="_1c9e8a24-8a59-482d-9de8-f37b286a17d2" name="A_Lego_Pal_test">
+            <transformation a="0.0" b="0.0" c="0.0" x="0.0" y="0.0" z="0.0"/>
+            <additionalInformation>
+                <info key="LastModificationTime" type="java.lang.Long" value="1670247057662"/>
+                <info key="Comment" type="java.lang.String" value="&#13;&#10;"/>
+                <info key="UseAsBaseForJogging" type="java.lang.Boolean" value="true"/>
+            </additionalInformation>
+        </frame>
     </world>
     <objectTemplates>
         <workpieceTemplate class="" name="Item">

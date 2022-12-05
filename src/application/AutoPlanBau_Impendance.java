@@ -55,8 +55,8 @@ public class AutoPlanBau_Impendance extends RoboticsAPIApplication {
 	double BSH;
 	
 	private static final int stiffnessZ = 5000;
-	private static final int stiffnessY = 2000;
-	private static final int stiffnessX = 2000;
+	private static final int stiffnessY = 3000;
+	private static final int stiffnessX = 3000;
 			
 
 	@Override
@@ -71,7 +71,7 @@ public class AutoPlanBau_Impendance extends RoboticsAPIApplication {
 		
 		
 		safePos = 100;
-		impendance_distance = 4;
+		impendance_distance = 2;
 		BSB = 32.065;
 		BSH = 19.1;;
 		
@@ -290,7 +290,7 @@ public class AutoPlanBau_Impendance extends RoboticsAPIApplication {
 						// TODO Auto-generated catch block
 						e.printStackTrace();
 					}
-					TCP.moveAsync(linRel(Transformation.ofDeg(0,0,-safePos,0,0,0),getApplicationData().getFrame("/A_Lego_Pal_test/Lego")).setBlendingCart(blendingCart).setJointVelocityRel(0.1));	
+					TCP.moveAsync(linRel(Transformation.ofDeg(0,0,-safePos,0,0,0),getApplicationData().getFrame("/A_Lego_Pal_test/Lego")).setBlendingCart(blendingCart).setJointVelocityRel(0.1).setMode(impedanceControlMode));	
 					Zaehler4 = Zaehler4+1;
 					
 			
@@ -308,7 +308,7 @@ public class AutoPlanBau_Impendance extends RoboticsAPIApplication {
 						// TODO Auto-generated catch block
 						e.printStackTrace();
 					}
-					TCP.moveAsync(linRel(Transformation.ofDeg(0,0,-safePos,0,0,0),getApplicationData().getFrame("/A_Lego_Pal_test/Lego")).setBlendingCart(blendingCart).setJointVelocityRel(0.1));	
+					TCP.moveAsync(linRel(Transformation.ofDeg(0,0,-safePos,0,0,0),getApplicationData().getFrame("/A_Lego_Pal_test/Lego")).setBlendingCart(blendingCart).setJointVelocityRel(0.1).setMode(impedanceControlMode));	
 					Zaehler8 = Zaehler8+1;
 					
 			}

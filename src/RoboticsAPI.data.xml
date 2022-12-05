@@ -956,6 +956,18 @@
                 <info key="UseAsBaseForJogging" type="java.lang.Boolean" value="true"/>
                 <info measurementMethod="Base3Point" timestamp="1670258738402" type="com.kuka.roboticsAPI.deviceModel.MeasurementInformation"/>
             </additionalInformation>
+            <frame id="_4a10e689-5fdb-4944-ae36-272e50623089" name="Lego">
+                <transformation a="0.0" b="0.0" c="3.1415" x="0.0" y="0.0" z="0.0"/>
+                <additionalInformation>
+                    <info key="LastModificationTime" type="java.lang.Long" value="1670254599973"/>
+                </additionalInformation>
+                <frame id="_ea663bf6-6389-47a8-908e-04fef4e89545" name="vLego">
+                    <transformation a="0.0" b="0.0" c="0.0" x="0.0" y="0.0" z="-100.0"/>
+                    <additionalInformation>
+                        <info key="LastModificationTime" type="java.lang.Long" value="1670254608389"/>
+                    </additionalInformation>
+                </frame>
+            </frame>
         </frame>
     </world>
     <objectTemplates>

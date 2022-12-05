@@ -37,6 +37,7 @@ public class AutoPlanBau_Impendance extends RoboticsAPIApplication {
 	
 	
 	int blendingCart;
+	int blendingCartaway;
 	int blendingCart_Safepos;
 	double speed;
 	
@@ -64,8 +65,9 @@ public class AutoPlanBau_Impendance extends RoboticsAPIApplication {
 		TCP = getApplicationData().createFromTemplate("Lego_Sauger");
 
 
-		blendingCart = 85;
-		blendingCart_Safepos = 350;
+		blendingCart = 90;
+		blendingCartaway = 95;
+		blendingCart_Safepos = 800;
 		speed = 1;
 		
 		
@@ -89,32 +91,6 @@ public class AutoPlanBau_Impendance extends RoboticsAPIApplication {
 		
 
 		 
-		
-		
-		
-//		positionenx[0] = 0;
-//		positionenx[1] = 11;
-//		positionenx[2] = 11;
-//		positionenx[3] = 0;
-
-//		
-//		positioneny[0] = 0;
-//		positioneny[1] = 0;
-//		positioneny[2] = 11;
-//		positioneny[3] = 11;
-
-//		
-//		rotation[0] = 0;
-//		rotation[1] = 0;
-//		rotation[2] = 0;
-//		rotation[3] = 0;
-
-//		
-//		Stein[0] = 0;
-//		Stein[1] = 0;
-//		Stein[2] = 0;
-//		Stein[3] = 0;
-
 		
 ///////////////////////////////////////////////////////////////
 //      viereckige mauer funktioniert!!!!!		
@@ -224,30 +200,6 @@ public class AutoPlanBau_Impendance extends RoboticsAPIApplication {
 		Stein[17] = 1;
 		
 		
-//		
-////////////////////////////////////////////////////////////////////	
-//		
-//		positionenx[0] = 8;
-//		positioneny[0] = 8;
-//		positionenz[0] = 0;
-//		rotation[0] = 0;
-//		Stein[0] = 0;
-//		
-//		positionenx[1] = 8;
-//		positioneny[1] = 8;
-//		positionenz[1] = 19.1;
-//		rotation[1] = 0;
-//		Stein[1] = 0;
-//		
-//		
-//		positionenx[2] = 8;
-//		positioneny[2] = 8;
-//		positionenz[2] = 19.1*2;
-//		rotation[2] = 0;
-//		Stein[2] = 0;
-//	
-//	
-		
 	}
 
 	@Override
@@ -290,7 +242,7 @@ public class AutoPlanBau_Impendance extends RoboticsAPIApplication {
 						// TODO Auto-generated catch block
 						e.printStackTrace();
 					}
-					TCP.moveAsync(linRel(Transformation.ofDeg(0,0,-safePos,0,0,0),getApplicationData().getFrame("/A_Lego_Pal_test/Lego")).setBlendingCart(blendingCart).setJointVelocityRel(0.1).setMode(impedanceControlMode));	
+					TCP.move(linRel(Transformation.ofDeg(0,0,-safePos,0,0,0),getApplicationData().getFrame("/A_Lego_Pal_test/Lego")).setJointVelocityRel(0.1).setMode(impedanceControlMode));	
 					Zaehler4 = Zaehler4+1;
 					
 			
@@ -308,7 +260,7 @@ public class AutoPlanBau_Impendance extends RoboticsAPIApplication {
 						// TODO Auto-generated catch block
 						e.printStackTrace();
 					}
-					TCP.moveAsync(linRel(Transformation.ofDeg(0,0,-safePos,0,0,0),getApplicationData().getFrame("/A_Lego_Pal_test/Lego")).setBlendingCart(blendingCart).setJointVelocityRel(0.1).setMode(impedanceControlMode));	
+					TCP.move(linRel(Transformation.ofDeg(0,0,-safePos,0,0,0),getApplicationData().getFrame("/A_Lego_Pal_test/Lego")).setJointVelocityRel(0.1).setMode(impedanceControlMode));	
 					Zaehler8 = Zaehler8+1;
 					
 			}
@@ -353,7 +305,7 @@ public class AutoPlanBau_Impendance extends RoboticsAPIApplication {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
-			TCP.moveAsync(linRel(Transformation.ofDeg(0,0,-safePos,0,0,0),getApplicationData().getFrame("/A_Lego_Base/E1")).setBlendingCart(blendingCart).setJointVelocityRel(0.3));	
+			TCP.moveAsync(linRel(Transformation.ofDeg(0,0,-safePos,0,0,0),getApplicationData().getFrame("/A_Lego_Base/E1")).setBlendingCart(blendingCartaway).setJointVelocityRel(0.3));	
 			
 		}
 		

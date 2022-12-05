@@ -66,11 +66,11 @@ public class TeachImpendanceMode extends RoboticsAPIApplication {
 		// The robot is set to position hold and impedance control mode gets activated without a timeout. 
 		IMotionContainer positionHoldContainer = lbr.moveAsync((new PositionHold(impedanceControlMode, -1, null)));
 
-//		getLogger().info("Show modal dialog while executing position hold");
-//		getApplicationUI().displayModalDialog(ApplicationDialogType.INFORMATION, "Press ok to finish the application.", "OK");
-//
-//		// As soon as the modal dialog returns, the motion container will be cancelled. This finishes the position hold. 
-//		positionHoldContainer.cancel();
+		getLogger().info("Show modal dialog while executing position hold");
+		getApplicationUI().displayModalDialog(ApplicationDialogType.INFORMATION, "Press ok to finish the application.", "OK");
+
+		// As soon as the modal dialog returns, the motion container will be cancelled. This finishes the position hold. 
+		positionHoldContainer.cancel();
 	}
 
 }

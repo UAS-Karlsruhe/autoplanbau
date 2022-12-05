@@ -325,8 +325,11 @@ public class AutoPlanBau_LinRelTest extends RoboticsAPIApplication {
 			}
 			
 			// Achtung änderungen in y und Rotation
-			TCP.moveAsync(linRel(Transformation.ofDeg(BSB*(positionenx[i]),-(BSB*(positioneny[i])+0.8),0,90-rotation[i]-2,0,0),getApplicationData().getFrame("/A_Lego_Base/E1")).setBlendingCart(blendingCart));
-			TCP.move(linRel(Transformation.ofDeg(0,0,(safePos+1-positionenz[i]),0,0,0),getApplicationData().getFrame("/A_Lego_Base/E1")).setJointVelocityRel(0.3));
+//			TCP.moveAsync(linRel(Transformation.ofDeg(BSB*(positionenx[i]),-(BSB*(positioneny[i])+0.8),0,90-rotation[i]-2,0,0),getApplicationData().getFrame("/A_Lego_Base/E1")).setBlendingCart(blendingCart));
+//			TCP.move(linRel(Transformation.ofDeg(0,0,(safePos+1-positionenz[i]),0,0,0),getApplicationData().getFrame("/A_Lego_Base/E1")).setJointVelocityRel(0.3));
+			TCP.getFrame("/A_Lego_Base/E1/vE1").moveAsync(linRel(Transformation.ofDeg(BSB*(positionenx[i]),-(BSB*(positioneny[i])+0.8),0,90-rotation[i]-2,0,0)).setBlendingCart(blendingCart));
+			TCP.getFrame("/A_Lego_Base/E1/vE1").move(linRel(Transformation.ofDeg(0,0,(safePos+1-positionenz[i]),0,0,0)));
+			
 			try {
 				
 				CVakuum.setVakuumON(false);
@@ -335,8 +338,9 @@ public class AutoPlanBau_LinRelTest extends RoboticsAPIApplication {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
-			TCP.moveAsync(linRel(Transformation.ofDeg(0,0,-safePos,0,0,0),getApplicationData().getFrame("/A_Lego_Base/E1")).setBlendingCart(blendingCart).setJointVelocityRel(0.3));	
-			
+			TCP.getFrame("/A_Lego_Base/E1/vE1").move(linRel(Transformation.ofDeg(0,0,(-safePos),0,0,0)));
+//			TCP.moveAsync(linRel(Transformation.ofDeg(0,0,-safePos,0,0,0),getApplicationData().getFrame("/A_Lego_Base/E1")).setBlendingCart(blendingCart).setJointVelocityRel(0.3));	
+//			
 		}
 		
 		TCP.move(linRel(Transformation.ofDeg(0,0,-safePos,0,0,0),getApplicationData().getFrame("/A_Lego_Base/E1")).setJointVelocityRel(0.3));

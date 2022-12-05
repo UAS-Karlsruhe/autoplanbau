@@ -41,6 +41,8 @@ public class AutoPlanBau_Impendance extends RoboticsAPIApplication {
 	double speed;
 	
 	int safePos;
+	int impendance_distance;
+	
 	int PalAbsx;
 	int PalAbsy;
 	int Zaehler8;
@@ -52,7 +54,7 @@ public class AutoPlanBau_Impendance extends RoboticsAPIApplication {
 	double BSB;
 	double BSH;
 	
-	private static final int stiffnessZ = 2500;
+	private static final int stiffnessZ = 5000;
 	private static final int stiffnessY = 2000;
 	private static final int stiffnessX = 2000;
 			
@@ -69,6 +71,7 @@ public class AutoPlanBau_Impendance extends RoboticsAPIApplication {
 		
 		
 		safePos = 100;
+		impendance_distance = 4;
 		BSB = 32.065;
 		BSH = 19.1;;
 		
@@ -278,7 +281,8 @@ public class AutoPlanBau_Impendance extends RoboticsAPIApplication {
 			if ((Stein[i] == 0) & (Zaehler4<=7)){
 					TCP.move(ptp(getApplicationData().getFrame("/A_Lego_Pal_test/Lego/vLego")).setJointVelocityRel(speed));
 					TCP.move(linRel(Transformation.ofDeg(PalAbsx*Zaehler4,0,0,-1,0,0),getApplicationData().getFrame("/A_Lego_Pal_test/Lego")));
-					TCP.move(linRel(Transformation.ofDeg(0,0,safePos,0,0,0),getApplicationData().getFrame("/A_Lego_Pal_test/Lego")).setJointVelocityRel(0.3).setMode(impedanceControlMode));
+					TCP.move(linRel(Transformation.ofDeg(0,0,safePos-impendance_distance,0,0,0),getApplicationData().getFrame("/A_Lego_Pal_test/Lego")).setBlendingCart(blendingCart).setJointVelocityRel(0.3));
+					TCP.move(linRel(Transformation.ofDeg(0,0,3*impendance_distance,0,0,0),getApplicationData().getFrame("/A_Lego_Pal_test/Lego")).setJointVelocityRel(0.3).setMode(impedanceControlMode));
 					try {
 						CVakuum.setVakuumON(true);
 						Thread.sleep(3000);
@@ -295,7 +299,8 @@ public class AutoPlanBau_Impendance extends RoboticsAPIApplication {
 					TCP.move(ptp(getApplicationData().getFrame("/A_Lego_Pal_test/Lego/vLego")).setJointVelocityRel(speed));
 					// Y Achse -1 mm verschoben
 					TCP.move(linRel(Transformation.ofDeg(PalAbsx*Zaehler8,-(PalAbsy-1),-1,0,0,0),getApplicationData().getFrame("/A_Lego_Pal_test/Lego")));
-					TCP.move(linRel(Transformation.ofDeg(0,0,safePos,0,0,0),getApplicationData().getFrame("/A_Lego_Pal_test/Lego")).setJointVelocityRel(0.3).setMode(impedanceControlMode));
+					TCP.move(linRel(Transformation.ofDeg(0,0,safePos-impendance_distance,0,0,0),getApplicationData().getFrame("/A_Lego_Pal_test/Lego")).setBlendingCart(blendingCart).setJointVelocityRel(0.3));
+					TCP.move(linRel(Transformation.ofDeg(0,0,3*impendance_distance,0,0,0),getApplicationData().getFrame("/A_Lego_Pal_test/Lego")).setJointVelocityRel(0.3).setMode(impedanceControlMode));
 					try {
 						CVakuum.setVakuumON(true);
 
@@ -339,8 +344,8 @@ public class AutoPlanBau_Impendance extends RoboticsAPIApplication {
 	
 			// Achtung änderungen in y und Rotation
 			TCP.move(linRel(Transformation.ofDeg(BSB*(positionenx[i]),-(BSB*(positioneny[i])+0.8),0,90-rotation[i]-2,0,0),getApplicationData().getFrame("/A_Lego_Base/E1")));
-			//TCP.move(linRel(Transformation.ofDeg(0,0,(safePos+1-positionenz[i]),0,0,0),getApplicationData().getFrame("/A_Lego_Base/E1")).setJointVelocityRel(0.3));
-			TCP.move(linRel(Transformation.ofDeg(0,0,(safePos+1-positionenz[i]),0,0,0),getApplicationData().getFrame("/A_Lego_Base/E1")).setJointVelocityRel(0.3).setMode(impedanceControlMode));
+			TCP.move(linRel(Transformation.ofDeg(0,0,(safePos-positionenz[i]-impendance_distance),0,0,0),getApplicationData().getFrame("/A_Lego_Base/E1")).setJointVelocityRel(0.3));
+			TCP.move(linRel(Transformation.ofDeg(0,0,(3*impendance_distance),0,0,0),getApplicationData().getFrame("/A_Lego_Base/E1")).setJointVelocityRel(0.3).setMode(impedanceControlMode));
 			try {
 				
 				CVakuum.setVakuumON(false);

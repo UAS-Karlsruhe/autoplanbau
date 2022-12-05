@@ -302,7 +302,7 @@ public class AutoPlanBau_LinRelTest extends RoboticsAPIApplication {
 			
 			TCP.moveAsync(ptp(getApplicationData().getFrame("/A_Lego_SavePos")).setBlendingCart(blendingCart_Safepos).setJointVelocityRel(speed));
 			
-			//TCP.move(ptp(getApplicationData().getFrame("/A_Lego_Base/E1/vE1")).setJointVelocityRel(speed));
+			TCP.move(ptp(getApplicationData().getFrame("/A_Lego_Base/E1/vE1")).setJointVelocityRel(speed));
 			
 			if (Zaehler4 == 7){
 				getLogger().info("Show modal dialog and wait for user to confirm");
@@ -327,7 +327,7 @@ public class AutoPlanBau_LinRelTest extends RoboticsAPIApplication {
 			// Achtung änderungen in y und Rotation
 //			TCP.moveAsync(linRel(Transformation.ofDeg(BSB*(positionenx[i]),-(BSB*(positioneny[i])+0.8),0,90-rotation[i]-2,0,0),getApplicationData().getFrame("/A_Lego_Base/E1")).setBlendingCart(blendingCart));
 //			TCP.move(linRel(Transformation.ofDeg(0,0,(safePos+1-positionenz[i]),0,0,0),getApplicationData().getFrame("/A_Lego_Base/E1")).setJointVelocityRel(0.3));
-			TCP.getFrame("/A_Lego_Base/E1/vE1").move(linRel(Transformation.ofDeg(BSB*(positionenx[i]),-(BSB*(positioneny[i])+0.8),0,90-rotation[i]-2,0,0)));
+			TCP.getFrame("/A_Lego_Base/E1/vE1").moveAsync(linRel(Transformation.ofDeg(BSB*(positionenx[i]),-(BSB*(positioneny[i])+0.8),0,90-rotation[i]-2,0,0)).setBlendingCart(blendingCart));
 			TCP.getFrame("/A_Lego_Base/E1/vE1").move(linRel(Transformation.ofDeg(0,0,(safePos+1-positionenz[i]),0,0,0)));
 			
 			try {

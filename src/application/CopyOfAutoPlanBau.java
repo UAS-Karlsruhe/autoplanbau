@@ -294,10 +294,10 @@ public class CopyOfAutoPlanBau extends RoboticsAPIApplication {
 //		TCP.moveAsync(ptp(getApplicationData().getFrame("/A_Lego_Base/E1/vE1")).setBlendingCart(blendingCart).setJointVelocityRel(speed));
 
 		
-//		LIN linTestPos = (0, 0, 0, 0, 0, 0);
-//		linTestPos.setJointVelocityRel(0.25);
-//		TCP.move(linTestPos);
-//		
+		PTP linTestPos = ptp(0, 0, 0, 0, 0, 0, 0);
+		linTestPos.setJointVelocityRel(0.25);
+		TCP.move(linTestPos);
+		
 		
 		
 	}

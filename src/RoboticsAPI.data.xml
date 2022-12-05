@@ -984,7 +984,7 @@
             <additionalInformation>
                 <info key="ID" type="java.lang.String" value="badc958c-ea5d-47a2-9bf2-cf628e7775ae"/>
             </additionalInformation>
-            <loadData cogA="0.0" cogB="0.0" cogC="0.0" cogX="-39.925328785478264" cogY="-43.52495456330168" cogZ="-11.455002825175933" inertiaX="0.0" inertiaY="0.0" inertiaZ="0.0" mass="0.5097258260109946"/>
+            <loadData cogA="0.0" cogB="0.0" cogC="0.0" cogX="0.0" cogY="0.0" cogZ="0.0" inertiaX="0.0" inertiaY="0.0" inertiaZ="0.0" mass="0.0"/>
         </toolTemplate>
     </objectTemplates>
 </RoboticsAPIData>

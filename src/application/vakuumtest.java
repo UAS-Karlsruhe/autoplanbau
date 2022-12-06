@@ -106,7 +106,7 @@ public class vakuumtest extends RoboticsAPIApplication {
 				Thread.sleep(100);
 				
 				CVakuum.setVakuumON(false);
-				Thread.sleep(300);
+				Thread.sleep(60);
 			}
 			
 		} catch (InterruptedException e) {

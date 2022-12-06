@@ -41,63 +41,67 @@ public class vakuumtest extends RoboticsAPIApplication {
 		CVakuum.setVakuumON(false);
 		try {
 			
-			
-			CVakuum.setVakuumON(true);
-			Thread.sleep(10);
-			
-			CVakuum.setVakuumON(false);
-			Thread.sleep(60);
-			
-			CVakuum.setVakuumON(true);
-			Thread.sleep(10);
-			
-			CVakuum.setVakuumON(false);
-			Thread.sleep(60);
-			
-			CVakuum.setVakuumON(true);
-			Thread.sleep(10);
-			
-			CVakuum.setVakuumON(false);
-			Thread.sleep(60);
-			
-			CVakuum.setVakuumON(true);
-			Thread.sleep(100);
-			
-			CVakuum.setVakuumON(false);
-			Thread.sleep(600);
-			
-			CVakuum.setVakuumON(true);
-			Thread.sleep(100);
-			
-			CVakuum.setVakuumON(false);
-			Thread.sleep(600);
-			
-			CVakuum.setVakuumON(true);
-			Thread.sleep(100);
-			
-			CVakuum.setVakuumON(false);
-			Thread.sleep(600);
-			
-			CVakuum.setVakuumON(true);
-			Thread.sleep(100);
-			
-			CVakuum.setVakuumON(false);
-			Thread.sleep(600);
-			
-			CVakuum.setVakuumON(true);
-			Thread.sleep(100);
-			
-			CVakuum.setVakuumON(false);
-			Thread.sleep(600);
-			
-			CVakuum.setVakuumON(true);
-			Thread.sleep(100);
-			
-			CVakuum.setVakuumON(false);
-			Thread.sleep(600);
-			
-			
-			
+			for (int i = 0; i < 10; i++){
+				CVakuum.setVakuumON(true);
+				Thread.sleep(10);
+				
+				CVakuum.setVakuumON(false);
+				Thread.sleep(60);
+				
+				CVakuum.setVakuumON(true);
+				Thread.sleep(10);
+				
+				CVakuum.setVakuumON(false);
+				Thread.sleep(60);
+				
+				CVakuum.setVakuumON(true);
+				Thread.sleep(10);
+				
+				CVakuum.setVakuumON(false);
+				Thread.sleep(60);
+				
+				CVakuum.setVakuumON(true);
+				Thread.sleep(100);
+				
+				CVakuum.setVakuumON(false);
+				Thread.sleep(600);
+				
+				CVakuum.setVakuumON(true);
+				Thread.sleep(100);
+				
+				CVakuum.setVakuumON(false);
+				Thread.sleep(600);
+				
+				CVakuum.setVakuumON(true);
+				Thread.sleep(100);
+				
+				CVakuum.setVakuumON(false);
+				Thread.sleep(600);
+				
+				CVakuum.setVakuumON(true);
+				Thread.sleep(100);
+				
+				CVakuum.setVakuumON(false);
+				Thread.sleep(600);
+				
+				CVakuum.setVakuumON(true);
+				Thread.sleep(100);
+				
+				CVakuum.setVakuumON(false);
+				Thread.sleep(600);
+				
+				CVakuum.setVakuumON(true);
+				Thread.sleep(100);
+				
+				CVakuum.setVakuumON(false);
+				Thread.sleep(600);
+				
+				CVakuum.setVakuumON(true);
+				Thread.sleep(100);
+				
+				CVakuum.setVakuumON(false);
+				Thread.sleep(600);
+			}
 			
 		} catch (InterruptedException e) {
 			// TODO Auto-generated catch block

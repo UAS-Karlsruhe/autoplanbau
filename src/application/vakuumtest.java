@@ -64,43 +64,49 @@ public class vakuumtest extends RoboticsAPIApplication {
 				Thread.sleep(100);
 				
 				CVakuum.setVakuumON(false);
-				Thread.sleep(600);
+				Thread.sleep(300);
 				
 				CVakuum.setVakuumON(true);
 				Thread.sleep(100);
 				
 				CVakuum.setVakuumON(false);
-				Thread.sleep(600);
+				Thread.sleep(300);
 				
 				CVakuum.setVakuumON(true);
 				Thread.sleep(100);
 				
 				CVakuum.setVakuumON(false);
-				Thread.sleep(600);
+				Thread.sleep(300);
 				
 				CVakuum.setVakuumON(true);
 				Thread.sleep(100);
 				
 				CVakuum.setVakuumON(false);
-				Thread.sleep(600);
+				Thread.sleep(300);
 				
 				CVakuum.setVakuumON(true);
 				Thread.sleep(100);
 				
 				CVakuum.setVakuumON(false);
-				Thread.sleep(600);
+				Thread.sleep(300);
 				
 				CVakuum.setVakuumON(true);
 				Thread.sleep(100);
 				
 				CVakuum.setVakuumON(false);
-				Thread.sleep(600);
+				Thread.sleep(300);
 				
 				CVakuum.setVakuumON(true);
 				Thread.sleep(100);
 				
 				CVakuum.setVakuumON(false);
-				Thread.sleep(600);
+				Thread.sleep(300);
+				
+				CVakuum.setVakuumON(true);
+				Thread.sleep(100);
+				
+				CVakuum.setVakuumON(false);
+				Thread.sleep(300);
 			}
 			
 		} catch (InterruptedException e) {

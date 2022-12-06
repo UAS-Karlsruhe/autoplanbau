@@ -408,7 +408,8 @@ public class AutoPlanBau_Impendance_CopyList extends RoboticsAPIApplication {
 		        getLogger().info("Achter Zähler zurrückgesetzt");
 				Zaehler8 = 0;
 			}
-			
+			// Stein Nummer
+			getLogger().info("SteinNummmer"+i);
 	
 			// Ablegen des bausteins auf Variable Positionen
 			// Relative Bewegung auf der Sicherheitshöhe von 100 mm auf die Ablageposition

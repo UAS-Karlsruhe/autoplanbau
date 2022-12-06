@@ -112,6 +112,7 @@ public class AutoPlanBau_Impendance_CopyList extends RoboticsAPIApplication {
 		Stein = new int[18];
 		
 		BSListlen = 160;
+		BSList = new double[BSListlen];
 		
 		
 		

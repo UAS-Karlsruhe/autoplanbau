@@ -283,7 +283,7 @@ public class AutoPlanBau_Impendance_CopyList extends RoboticsAPIApplication {
 			
 			// if else if Entscheidung ob 4er oder 8er Stein
 			getLogger().info("Baustein holen");
-			if ((BSList[i] == 4.0) & (Zaehler4<=7)){
+			if ((BSList[i+1] == 4.0) & (Zaehler4<=7)){
 					
 					// Vierer holen
 					getLogger().info("Vierer holen");
@@ -326,7 +326,7 @@ public class AutoPlanBau_Impendance_CopyList extends RoboticsAPIApplication {
 					Zaehler4 = Zaehler4+1;			
 			}
 			
-			else if ((BSList[i] == 8.0)& (Zaehler8<=7)){		
+			else if ((BSList[i+1] == 8.0)& (Zaehler8<=7)){		
 					
 					// Achter holen
 					getLogger().info("Achter holen");

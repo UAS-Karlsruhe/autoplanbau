@@ -29,11 +29,7 @@ public class AutoPlanBau_Impendance extends RoboticsAPIApplication {
 	@Inject
 	private VakuumIOGroup CVakuum;
 
-	double[] positionenx;
-	double[] positioneny;
-	double[] positionenz;
-	int[] rotation;
-	int[] Stein;
+	
 	
 	
 	int blendingCart;
@@ -43,14 +39,11 @@ public class AutoPlanBau_Impendance extends RoboticsAPIApplication {
 	
 	int safePos;
 	int impendance_distance;
-	
 	int PalAbsx;
 	int PalAbsy;
+	
 	int Zaehler8;
 	int Zaehler4;
-	
-	
-	
 	
 	double BSB;
 	double BSH;
@@ -59,6 +52,12 @@ public class AutoPlanBau_Impendance extends RoboticsAPIApplication {
 	private static final int stiffnessY = 3000;
 	private static final int stiffnessX = 3000;
 			
+	
+	double[] positionenx;
+	double[] positioneny;
+	double[] positionenz;
+	int[] rotation;
+	int[] Stein;
 
 	@Override
 	public void initialize() {
@@ -67,8 +66,8 @@ public class AutoPlanBau_Impendance extends RoboticsAPIApplication {
 		TCP = getApplicationData().createFromTemplate("Lego_Sauger");
 
 		// Inizialisieren der Verschleifradien im Kartesischen System
-		blendingCart = 90; 
-		blendingCartaway = 120;
+		blendingCart = 100; 
+		blendingCartaway = 150;
 		blendingCart_Safepos = 800;
 		
 		// Inizialisieren der Geschwindigkeiten bei PTP Bewegungen
@@ -238,7 +237,7 @@ public class AutoPlanBau_Impendance extends RoboticsAPIApplication {
 		for (int i = 0; i < 18; i++){
 			
 			// Anfahren und Verschleifen der SafePos zwischen Palette und der Ablage
-			TCP.moveAsync(ptp(getApplicationData().getFrame("/A_Lego_SavePos")).setBlendingCart(blendingCart_Safepos).setJointVelocityRel(speed));
+			TCP.moveAsync(ptp(getApplicationData().getFrame("/A_Lego_SavePos")).setBlendingCart(blendingCart_Safepos).setJointVelocityRel(0.5));
 			
 			// if else if Entscheidung ob 4er oder 8er Stein
 			if ((Stein[i] == 0) & (Zaehler4<=7)){
@@ -340,7 +339,7 @@ public class AutoPlanBau_Impendance extends RoboticsAPIApplication {
 				e.printStackTrace();
 			}
 			// Relative Bewegung um 100 mm on der Fügeposition nach oben
-			TCP.moveAsync(linRel(Transformation.ofDeg(0,0,-safePos,0,0,0),getApplicationData().getFrame("/A_Lego_Base/E1")).setBlendingCart(blendingCartaway).setJointVelocityRel(speed));	
+			TCP.moveAsync(linRel(Transformation.ofDeg(0,0,-safePos,0,0,0),getApplicationData().getFrame("/A_Lego_Base/E1")).setBlendingCart(blendingCartaway).setJointVelocityRel(0.3));	
 		}
 		
 		// Relative Bewegung um 100 mm on der Fügeposition nach oben

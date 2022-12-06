@@ -58,6 +58,9 @@ public class AutoPlanBau_Impendance_CopyList extends RoboticsAPIApplication {
 	double[] positionenz;
 	int[] rotation;
 	int[] Stein;
+	
+	double[] BSList;
+	int BSListlen;
 
 	@Override
 	public void initialize() {
@@ -97,6 +100,10 @@ public class AutoPlanBau_Impendance_CopyList extends RoboticsAPIApplication {
 		positionenz = new double[18];
 		rotation = new int[18];
 		Stein = new int[18];
+		
+		BSListlen = 160;
+		BSList = new double[BSListlen];
+		
 		
 		
 /////////////////////////////////////////////////////////////////
@@ -235,7 +242,7 @@ public class AutoPlanBau_Impendance_CopyList extends RoboticsAPIApplication {
 		TCP.move(linRel(Transformation.ofDeg(0,0,-2*safePos,0,0,0),getApplicationData().getFrame("/A_Lego_Base/E1")).setJointVelocityRel(0.1));
 		
 		// For-Schleife über die Länge der Liste der Bausteine 
-		for (int i = 0; i < 18; i++){
+		for (int i = 0; i < BSListlen; i++){
 			
 			// Anfahren und Verschleifen der SafePos zwischen Palette und der Ablage
 			getLogger().info("Anfahren und Verschleifen der SafePos zwischen Palette und der Ablage");
@@ -243,7 +250,7 @@ public class AutoPlanBau_Impendance_CopyList extends RoboticsAPIApplication {
 			
 			// if else if Entscheidung ob 4er oder 8er Stein
 			getLogger().info("Baustein holen");
-			if ((Stein[i] == 0) & (Zaehler4<=7)){
+			if ((BSList[i] == 0) & (Zaehler4<=7)){
 					
 					// Vierer holen
 					getLogger().info("Vierer holen");
@@ -286,7 +293,7 @@ public class AutoPlanBau_Impendance_CopyList extends RoboticsAPIApplication {
 					Zaehler4 = Zaehler4+1;			
 			}
 			
-			else if ((Stein[i] == 1)& (Zaehler8<=7)){		
+			else if ((BSList[i] == 1)& (Zaehler8<=7)){		
 					
 					// Achter holen
 					getLogger().info("Achter holen");
@@ -372,12 +379,12 @@ public class AutoPlanBau_Impendance_CopyList extends RoboticsAPIApplication {
 	
 			// Ablegen des bausteins auf Variable Positionen
 			// Relative Bewegung auf der Sicherheitshöhe von 100 mm auf die Ablageposition
-			getLogger().info("Achter Zähler zurrückgesetzt");
-			TCP.moveAsync(linRel(Transformation.ofDeg(BSB*(positionenx[i]),-(BSB*(positioneny[i])+0.8),0,90-rotation[i]-2,0,0),getApplicationData().getFrame("/A_Lego_Base/E1")).setBlendingCart(blendingCart));
+			getLogger().info("Relative Bewegung auf der Sicherheitshöhe von 100 mm auf die Ablageposition");
+			TCP.moveAsync(linRel(Transformation.ofDeg(BSB*(BSList[i+2]),-(BSB*(BSList[i+3])+0.8),0,90-BSList[i+1]-2,0,0),getApplicationData().getFrame("/A_Lego_Base/E1")).setBlendingCart(blendingCart));
 			
 			// Relative Bewegung auf die Ablageposition Abzüglich der Distanz die für die ImpendanzBewegug vorgesehen war
 			getLogger().info("Relative Bewegung auf die Ablageposition Abzüglich der Distanz die für die ImpendanzBewegug vorgesehen war");
-			TCP.move(linRel(Transformation.ofDeg(0,0,(safePos-positionenz[i]-impendance_distance),0,0,0),getApplicationData().getFrame("/A_Lego_Base/E1")).setJointVelocityRel(0.3));
+			TCP.move(linRel(Transformation.ofDeg(0,0,(safePos-BSList[i+4]-impendance_distance),0,0,0),getApplicationData().getFrame("/A_Lego_Base/E1")).setJointVelocityRel(0.3));
 			
 			// Relative Bewegung in die Ablage hinein mit Impendanz Modus --> Erzeugte Federkraft ist 3+1* Federkonstante
 			getLogger().info("Relative Bewegung in die Ablage hinein mit Impendanz Modus");
@@ -398,6 +405,10 @@ public class AutoPlanBau_Impendance_CopyList extends RoboticsAPIApplication {
 			// Relative Bewegung um 100 mm on der Fügeposition nach oben
 			getLogger().info("Relative Bewegung um 100 mm on der Fügeposition nach oben");
 			TCP.moveAsync(linRel(Transformation.ofDeg(0,0,-safePos,0,0,0),getApplicationData().getFrame("/A_Lego_Base/E1")).setBlendingCart(blendingCartaway).setJointVelocityRel(0.3));	
+			
+			// i Zähler hochzählen
+			i = i+4;
+		
 		}
 		
 		// Relative Bewegung um 100 mm on der Fügeposition nach oben

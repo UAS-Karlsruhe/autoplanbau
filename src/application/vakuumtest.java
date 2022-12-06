@@ -41,7 +41,7 @@ public class vakuumtest extends RoboticsAPIApplication {
 		CVakuum.setVakuumON(false);
 		try {
 			
-			for (int i = 0; i < 10; i++){
+			for (int i = 0; i < 2; i++){
 				CVakuum.setVakuumON(true);
 				Thread.sleep(10);
 				

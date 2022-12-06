@@ -283,7 +283,7 @@ public class AutoPlanBau_Impendance_CopyList extends RoboticsAPIApplication {
 			
 			// if else if Entscheidung ob 4er oder 8er Stein
 			getLogger().info("Baustein holen");
-			if ((BSList[i] == 0) & (Zaehler4<=7)){
+			if ((BSList[i] == 4.0) & (Zaehler4<=7)){
 					
 					// Vierer holen
 					getLogger().info("Vierer holen");
@@ -326,7 +326,7 @@ public class AutoPlanBau_Impendance_CopyList extends RoboticsAPIApplication {
 					Zaehler4 = Zaehler4+1;			
 			}
 			
-			else if ((BSList[i] == 1)& (Zaehler8<=7)){		
+			else if ((BSList[i] == 8.0)& (Zaehler8<=7)){		
 					
 					// Achter holen
 					getLogger().info("Achter holen");
@@ -413,11 +413,11 @@ public class AutoPlanBau_Impendance_CopyList extends RoboticsAPIApplication {
 			// Ablegen des bausteins auf Variable Positionen
 			// Relative Bewegung auf der Sicherheitshöhe von 100 mm auf die Ablageposition
 			getLogger().info("Relative Bewegung auf der Sicherheitshöhe von 100 mm auf die Ablageposition");
-			TCP.moveAsync(linRel(Transformation.ofDeg(BSB*(BSList[i+2]),-(BSB*(BSList[i+3])+0.8),0,90-BSList[i+1]-2,0,0),getApplicationData().getFrame("/A_Lego_Base/E1")).setBlendingCart(blendingCart));
+			TCP.moveAsync(linRel(Transformation.ofDeg(BSB*(BSList[i+3]),-(BSB*(BSList[i+3])+0.8),0,90-BSList[i+2]-2,0,0),getApplicationData().getFrame("/A_Lego_Base/E1")).setBlendingCart(blendingCart));
 			
 			// Relative Bewegung auf die Ablageposition Abzüglich der Distanz die für die ImpendanzBewegug vorgesehen war
 			getLogger().info("Relative Bewegung auf die Ablageposition Abzüglich der Distanz die für die ImpendanzBewegug vorgesehen war");
-			TCP.move(linRel(Transformation.ofDeg(0,0,(safePos-BSList[i+4]-impendance_distance),0,0,0),getApplicationData().getFrame("/A_Lego_Base/E1")).setJointVelocityRel(0.3));
+			TCP.move(linRel(Transformation.ofDeg(0,0,(safePos-BSList[i+5]-impendance_distance),0,0,0),getApplicationData().getFrame("/A_Lego_Base/E1")).setJointVelocityRel(0.3));
 			
 			// Relative Bewegung in die Ablage hinein mit Impendanz Modus --> Erzeugte Federkraft ist 3+1* Federkonstante
 			getLogger().info("Relative Bewegung in die Ablage hinein mit Impendanz Modus");

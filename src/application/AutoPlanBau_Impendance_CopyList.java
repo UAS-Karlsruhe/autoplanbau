@@ -272,7 +272,7 @@ public class AutoPlanBau_Impendance_CopyList extends RoboticsAPIApplication {
 		
 		// Lineare Fahrt Senkrecht nach oben um 200 mm 
 		getLogger().info("Lineare Fahrt Senkrecht nach oben um 200 mm");
-		TCP.move(linRel(Transformation.ofDeg(0,0,-2*safePos,0,0,0),getApplicationData().getFrame("/A_Lego_Base/E1")).setJointVelocityRel(0.1));
+		TCP.move(linRel(Transformation.ofDeg(0,0,-1*safePos,0,0,0),getApplicationData().getFrame("/A_Lego_Base/E1")).setJointVelocityRel(0.1));
 		
 		// For-Schleife über die Länge der Liste der Bausteine 
 		for (int i = 0; i < BSListlen; i++){

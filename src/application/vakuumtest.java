@@ -28,8 +28,7 @@ import com.kuka.roboticsAPI.deviceModel.LBR;
  */
 public class vakuumtest extends RoboticsAPIApplication {
 	@Inject
-	private LBR lBR_iiwa_7_R800_1;
-	private VakuumIOGroup CVac;
+	private VakuumIOGroup CVakuum;
 	
 	@Override
 	public void initialize() {
@@ -39,8 +38,47 @@ public class vakuumtest extends RoboticsAPIApplication {
 	@Override
 	public void run() {
 		// your application execution starts here
-		CVac.setVakuumON(true);
-		lBR_iiwa_7_R800_1.move(ptpHome());
+		CVakuum.setVakuumON(false);
+		try {
+			
+			
+			CVakuum.setVakuumON(true);
+			Thread.sleep(10);
+			
+			CVakuum.setVakuumON(false);
+			Thread.sleep(30);
+			
+			CVakuum.setVakuumON(true);
+			Thread.sleep(10);
+			
+			CVakuum.setVakuumON(false);
+			Thread.sleep(30);
+			
+			CVakuum.setVakuumON(true);
+			Thread.sleep(10);
+			
+			CVakuum.setVakuumON(false);
+			Thread.sleep(30);
+			
+			CVakuum.setVakuumON(true);
+			Thread.sleep(100);
+			
+			CVakuum.setVakuumON(false);
+			Thread.sleep(300);
+			
+			CVakuum.setVakuumON(true);
+			Thread.sleep(100);
+			
+			CVakuum.setVakuumON(false);
+			Thread.sleep(300);
+			
+			
+			
+			
+		} catch (InterruptedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 		
 	}
 }

@@ -129,11 +129,12 @@ public class AutoPlanBau_Impendance_CopyList extends RoboticsAPIApplication {
                 Bauplanname = string_result[x];
             } else {
                 double zahl = Double.parseDouble(string_result[x]);
-                BSList[x] = zahl;
+                //BSList[x] = zahl;
+                System.out.println(zahl);
             }
         }
-        System.out.println(BSList);
         
+        System.out.println(BSList);
 		
 		
 		

@@ -25,7 +25,7 @@ public class ServerSideSocket extends RoboticsAPIApplication{
 	  getLogger().info("Starte Programm");
 	  
 	  try {
-		int serverPort = 6677;
+		int serverPort = 30001;
 		ServerSocket serverSocket = new ServerSocket(serverPort);
 		serverSocket.setSoTimeout(5000000); 
 		while(true) {

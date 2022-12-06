@@ -413,7 +413,7 @@ public class AutoPlanBau_Impendance_CopyList extends RoboticsAPIApplication {
 			// Ablegen des bausteins auf Variable Positionen
 			// Relative Bewegung auf der Sicherheitshöhe von 100 mm auf die Ablageposition
 			getLogger().info("Relative Bewegung auf der Sicherheitshöhe von 100 mm auf die Ablageposition");
-			TCP.moveAsync(linRel(Transformation.ofDeg(BSB*(BSList[i+3]),-(BSB*(BSList[i+3])+0.8),0,90-BSList[i+2]-2,0,0),getApplicationData().getFrame("/A_Lego_Base/E1")).setBlendingCart(blendingCart));
+			TCP.moveAsync(linRel(Transformation.ofDeg(BSB*(BSList[i+3]),-(BSB*(BSList[i+4])+0.8),0,90-BSList[i+2]-2,0,0),getApplicationData().getFrame("/A_Lego_Base/E1")).setBlendingCart(blendingCart));
 			
 			// Relative Bewegung auf die Ablageposition Abzüglich der Distanz die für die ImpendanzBewegug vorgesehen war
 			getLogger().info("Relative Bewegung auf die Ablageposition Abzüglich der Distanz die für die ImpendanzBewegug vorgesehen war");

@@ -7,17 +7,20 @@ import com.kuka.roboticsAPI.applicationModel.RoboticsAPIApplication;
 import static com.kuka.roboticsAPI.motionModel.BasicMotions.*;
 
 import com.kuka.roboticsAPI.deviceModel.LBR;
-//import com.kuka.roboticsAPI.geometricModel.AbstractFrame;
+import com.kuka.roboticsAPI.geometricModel.AbstractFrame;
 import com.kuka.roboticsAPI.geometricModel.CartDOF;
-//import com.kuka.roboticsAPI.geometricModel.ObjectFrame;
+import com.kuka.roboticsAPI.geometricModel.ObjectFrame;
 import com.kuka.roboticsAPI.geometricModel.Tool;
 import com.kuka.roboticsAPI.geometricModel.math.Transformation;
-//import com.kuka.roboticsAPI.motionModel.PTP;
-//import com.kuka.roboticsAPI.motionModel.RobotMotion;
+import com.kuka.roboticsAPI.motionModel.PTP;
+import com.kuka.roboticsAPI.motionModel.RobotMotion;
 import com.kuka.roboticsAPI.motionModel.controlModeModel.CartesianImpedanceControlMode;
 import com.kuka.roboticsAPI.uiModel.ApplicationDialogType;
 
-public class AutoPlanBau_Impendance extends RoboticsAPIApplication {
+import java.util.ArrayList;
+
+
+public class CopyOfAutoPlanBau_Impendance_List extends RoboticsAPIApplication {
 	@Inject
 	private LBR lbr;
 	private Tool TCP;
@@ -32,6 +35,8 @@ public class AutoPlanBau_Impendance extends RoboticsAPIApplication {
 	double[] positionenx;
 	double[] positioneny;
 	double[] positionenz;
+	ArrayList<double[]> Bausteinmittelpunkt = new ArrayList <double[]> ();
+	//<8.0, 90.0, 3.5, 5.0, 0.0, 8.0, 90.0, 3.5, 7.0, 0.0, 8.0, 0.0, 4.0, 8.5, 0.0, 8.0, 0.0, 6.0, 8.5, 0.0, 8.0, 90.0, 7.5, 8.0, 0.0, 8.0, 90.0, 7.5, 6.0, 0.0, 8.0, 0.0, 7.0, 4.5, 0.0, 8.0, 0.0, 5.0, 4.5, 0.0, 8.0, 0.0, 4.0, 4.5, 1.0, 8.0, 90.0, 3.5, 6.0, 1.0, 8.0, 90.0, 3.5, 8.0, 1.0, 8.0, 0.0, 5.0, 8.5, 1.0, 8.0, 0.0, 7.0, 8.5, 1.0, 8.0, 90.0, 7.5, 7.0, 1.0, 8.0, 90.0, 7.5, 5.0, 1.0, 8.0, 0.0, 6.0, 4.5, 1.0, 8.0, 90.0, 3.5, 5.0, 2.0, 8.0, 90.0, 3.5, 7.0, 2.0, 8.0, 0.0, 4.0, 8.5, 2.0, 8.0, 0.0, 6.0, 8.5, 2.0, 8.0, 90.0, 7.5, 8.0, 2.0, 8.0, 90.0, 7.5, 6.0, 2.0, 8.0, 0.0, 7.0, 4.5, 2.0, 8.0, 0.0, 5.0, 4.5, 2.0, 8.0, 0.0, 4.0, 4.5, 3.0, 8.0, 90.0, 3.5, 6.0, 3.0, 8.0, 90.0, 3.5, 8.0, 3.0, 8.0, 0.0, 5.0, 8.5, 3.0, 8.0, 0.0, 7.0, 8.5, 3.0, 8.0, 90.0, 7.5, 7.0, 3.0, 8.0, 90.0, 7.5, 5.0, 3.0, 8.0, 0.0, 6.0, 4.5, 3.0>;
 	int[] rotation;
 	int[] Stein;
 	
@@ -62,24 +67,18 @@ public class AutoPlanBau_Impendance extends RoboticsAPIApplication {
 
 	@Override
 	public void initialize() {
-		
-		// Initialisieren des TCP
 		TCP = getApplicationData().createFromTemplate("Lego_Sauger");
 
-		// Inizialisieren der Verschleifradien im Kartesischen System
-		blendingCart = 90; 
+
+		blendingCart = 90;
 		blendingCartaway = 120;
 		blendingCart_Safepos = 800;
-		
-		// Inizialisieren der Geschwindigkeiten bei PTP Bewegungen
 		speed = 1;
 		
-		// Inizialisieren der SafePos-Höhe !!!Muss 100 mm bleiben!!!
+		
+		
 		safePos = 100;
-		
-		// Inizialisieren der Impendance Distanz 
 		impendance_distance = 2;
-		
 		BSB = 32.065;
 		BSH = 19.1;;
 		
@@ -94,6 +93,9 @@ public class AutoPlanBau_Impendance extends RoboticsAPIApplication {
 		positionenz = new double[18];
 		rotation = new int[18];
 		Stein = new int[18];
+		
+	
+		//Bausteinmittelpunkt = [8.0, 90.0, 3.5, 5.0, 0.0, 8.0, 90.0, 3.5, 7.0, 0.0, 8.0, 0.0, 4.0, 8.5, 0.0, 8.0, 0.0, 6.0, 8.5, 0.0, 8.0, 90.0, 7.5, 8.0, 0.0, 8.0, 90.0, 7.5, 6.0, 0.0, 8.0, 0.0, 7.0, 4.5, 0.0, 8.0, 0.0, 5.0, 4.5, 0.0, 8.0, 0.0, 4.0, 4.5, 1.0, 8.0, 90.0, 3.5, 6.0, 1.0, 8.0, 90.0, 3.5, 8.0, 1.0, 8.0, 0.0, 5.0, 8.5, 1.0, 8.0, 0.0, 7.0, 8.5, 1.0, 8.0, 90.0, 7.5, 7.0, 1.0, 8.0, 90.0, 7.5, 5.0, 1.0, 8.0, 0.0, 6.0, 4.5, 1.0, 8.0, 90.0, 3.5, 5.0, 2.0, 8.0, 90.0, 3.5, 7.0, 2.0, 8.0, 0.0, 4.0, 8.5, 2.0, 8.0, 0.0, 6.0, 8.5, 2.0, 8.0, 90.0, 7.5, 8.0, 2.0, 8.0, 90.0, 7.5, 6.0, 2.0, 8.0, 0.0, 7.0, 4.5, 2.0, 8.0, 0.0, 5.0, 4.5, 2.0, 8.0, 0.0, 4.0, 4.5, 3.0, 8.0, 90.0, 3.5, 6.0, 3.0, 8.0, 90.0, 3.5, 8.0, 3.0, 8.0, 0.0, 5.0, 8.5, 3.0, 8.0, 0.0, 7.0, 8.5, 3.0, 8.0, 90.0, 7.5, 7.0, 3.0, 8.0, 90.0, 7.5, 5.0, 3.0, 8.0, 0.0, 6.0, 4.5, 3.0];
 		
 		
 
@@ -210,26 +212,24 @@ public class AutoPlanBau_Impendance extends RoboticsAPIApplication {
 
 	@Override
 	public void run() {
-		// Inizialisieren der Impendance Parameter
-		getLogger().info("Initialisieren der Impendance-Parameter");
+		
 		CartesianImpedanceControlMode impedanceControlMode;
 		impedanceControlMode = 	new CartesianImpedanceControlMode();
 		impedanceControlMode.parametrize(CartDOF.X).setStiffness(stiffnessX);
 		impedanceControlMode.parametrize(CartDOF.Y).setStiffness(stiffnessY);
 		impedanceControlMode.parametrize(CartDOF.Z).setStiffness(stiffnessZ);
 	
-		// Vakuum als default wert nach starten des Programms ausschalten
+		
 		if (CVakuum.getVakuumON() == true){
 			CVakuum.setVakuumON(false);
 			getLogger().info("Setze Output auf False");
 		}
 
-		
-		// Zuweisung des TCP an den Roboterflange
 		TCP.attachTo(lbr.getFlange());
 		
+//		TCP.move(ptp(getApplicationData().getFrame("/A_Lego_SavePos")).setJointVelocityRel(speed));
+//		TCP.move(ptp(getApplicationData().getFrame("/A_Lego_Base/E1/vE1")).setJointVelocityRel(speed));
 		
-		// Lineare Fahrt Senkrecht nach oben um 200 mm 
 		TCP.move(linRel(Transformation.ofDeg(0,0,-2*safePos,0,0,0),getApplicationData().getFrame("/A_Lego_Base/E1")).setJointVelocityRel(0.1));
 		
 		

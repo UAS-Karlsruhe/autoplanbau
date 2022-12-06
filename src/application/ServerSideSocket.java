@@ -86,6 +86,7 @@ public class ServerSideSocket extends RoboticsAPIApplication {
 	@Override
 	public void run() 
 	{
+		  getLogger().info("Starte Programm");
 		try {       
 			String sentence;
 			String modifiedSentence;

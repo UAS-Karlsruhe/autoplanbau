@@ -41,18 +41,7 @@ public class mma_22_vordergrund extends RoboticsAPIApplication {
 	}
 	
 	 public void run() {
-			System.out.println("Kuka ist kacka"); 
-			System.out.println("Kuka ist kacka"); 
-			System.out.println("Kuka ist kacka"); 
-			System.out.println("Kuka ist kacka"); 
-			System.out.println("Kuka ist kacka"); 
-			System.out.println("Kuka ist kacka"); 
-			System.out.println("Kuka ist kacka"); 
-			System.out.println("Kuka ist kacka"); 
-			System.out.println("Kuka ist kacka"); 
-			System.out.println("Kuka ist kacka"); 
-			System.out.println("Kuka ist kacka"); 
-
+			//System.out.println("Kuka ist kacka"); 
 			try {
 				int serverPort = 6677;
 				ServerSocket serverSocket = new ServerSocket(serverPort);

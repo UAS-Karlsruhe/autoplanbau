@@ -128,7 +128,7 @@ public class AutoPlanBau_Impendance_SendList extends RoboticsAPIApplication {
 				try {
 					int serverPort = 30001;
 					ServerSocket serverSocket = new ServerSocket(serverPort);
-					serverSocket.setSoTimeout(5000000); 
+					serverSocket.setSoTimeout(60000); 
 					while(true) {
 						System.out.println("Waiting for client on port " + serverSocket.getLocalPort() + "..."); 
 

@@ -23,7 +23,15 @@ import com.kuka.roboticsAPI.geometricModel.math.Transformation;
 import com.kuka.roboticsAPI.motionModel.controlModeModel.CartesianImpedanceControlMode;
 import com.kuka.roboticsAPI.uiModel.ApplicationDialogType;
 
-public class AutoPlanBau_Impendance_CopyList extends RoboticsAPIApplication {
+import java.io.BufferedReader;
+import java.io.DataOutputStream;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.net.Socket; 
+ 
+import com.kuka.roboticsAPI.controllerModel.Controller;
+
+public class CopyOfAutoPlanBau_Impendance_SendList extends RoboticsAPIApplication {
 	@Inject
 	private LBR lbr;
 	private Tool TCP;
@@ -32,6 +40,10 @@ public class AutoPlanBau_Impendance_CopyList extends RoboticsAPIApplication {
 	
 	private final static String informationTextachter=
 			"Achtersteine nachfüllen und mit OK bestätigen!";
+	
+	private Controller contoller;  
+	Socket clientSocket = null;
+	
 	@Inject
 	private VakuumIOGroup CVakuum;
 
@@ -114,6 +126,8 @@ public class AutoPlanBau_Impendance_CopyList extends RoboticsAPIApplication {
 		BSListlen = 800;
 		BSList = new double[BSListlen];
 		
+		contoller = (Controller) getContext().getControllers().toArray()[0];
+		
 		
 		
 		
@@ -139,8 +153,67 @@ public class AutoPlanBau_Impendance_CopyList extends RoboticsAPIApplication {
 		
 	}
 
+	// To liberate the port 
+	@Override
+	public void dispose()
+		{
+			try { 
+				clientSocket.close();  
+				System.out.println("Socket closed"); 
+				}catch (Exception e)
+				{ e.printStackTrace(); } 
+				super.dispose(); 
+		}
+			
+	
 	@Override
 	public void run() {
+		
+		//----------------Start TCP
+
+	
+		try {       
+			String sentence;
+			String modifiedSentence;
+			BufferedReader inFromUser = new BufferedReader(new InputStreamReader(System.in));
+			clientSocket = new Socket("172.31.1.34", 30001);
+			DataOutputStream outToServer = new DataOutputStream(clientSocket.getOutputStream());
+			BufferedReader inFromServer = new BufferedReader(new InputStreamReader(clientSocket.getInputStream()));
+			sentence = "tcp message";
+			outToServer.writeBytes(sentence + '\n');
+			modifiedSentence = inFromServer.readLine();
+			System.out.println("FROM SERVER: " + modifiedSentence);
+			clientSocket.close(); 
+		} catch (IOException e) {  
+			e.printStackTrace();            
+		}  
+	  
+		
+		
+		
+				
+		
+		//----------------End TCP
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
 		
 		
 		// Inizialisieren der Impendance Parameter

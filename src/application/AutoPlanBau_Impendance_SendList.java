@@ -177,6 +177,7 @@ public class AutoPlanBau_Impendance_SendList extends RoboticsAPIApplication {
             if (x == 0) {
                 Bauplanname = string_result[x];
             } else {
+            	System.out.println(x);
                 double zahl = Double.parseDouble(string_result[x]);
                 BSList[x] = zahl;
                 //System.out.println(zahl);

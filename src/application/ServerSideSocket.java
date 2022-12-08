@@ -2,8 +2,13 @@ package application;
 
 import java.net.*;
 import java.io.*;
+import javax.inject.Inject;
+import com.kuka.roboticsAPI.applicationModel.RoboticsAPIApplication;
+import static com.kuka.roboticsAPI.motionModel.BasicMotions.*;
+import com.kuka.roboticsAPI.deviceModel.LBR;
 
-public class ServerSideSocket { 
+
+public class ServerSideSocket extends RoboticsAPIApplication { 
   public void run() {
 	try {
 		int serverPort = 6677;

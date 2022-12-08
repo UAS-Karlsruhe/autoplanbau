@@ -2,6 +2,13 @@ package application;
 
 import javax.inject.Inject;
 
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.io.PrintWriter;
+import java.net.ServerSocket;
+import java.net.Socket;
+import java.net.UnknownHostException;
 import java.util.List;
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -23,15 +30,7 @@ import com.kuka.roboticsAPI.geometricModel.math.Transformation;
 import com.kuka.roboticsAPI.motionModel.controlModeModel.CartesianImpedanceControlMode;
 import com.kuka.roboticsAPI.uiModel.ApplicationDialogType;
 
-import java.io.BufferedReader;
-import java.io.DataOutputStream;
-import java.io.IOException;
-import java.io.InputStreamReader;
-import java.net.Socket; 
- 
-import com.kuka.roboticsAPI.controllerModel.Controller;
-
-public class CopyOfAutoPlanBau_Impendance_SendList extends RoboticsAPIApplication {
+public class AutoPlanBau_Impendance_SendList extends RoboticsAPIApplication {
 	@Inject
 	private LBR lbr;
 	private Tool TCP;
@@ -40,10 +39,6 @@ public class CopyOfAutoPlanBau_Impendance_SendList extends RoboticsAPIApplicatio
 	
 	private final static String informationTextachter=
 			"Achtersteine nachfüllen und mit OK bestätigen!";
-	
-	private Controller contoller;  
-	Socket clientSocket = null;
-	
 	@Inject
 	private VakuumIOGroup CVakuum;
 
@@ -126,8 +121,6 @@ public class CopyOfAutoPlanBau_Impendance_SendList extends RoboticsAPIApplicatio
 		BSListlen = 800;
 		BSList = new double[BSListlen];
 		
-		contoller = (Controller) getContext().getControllers().toArray()[0];
-		
 		
 		
 		
@@ -153,67 +146,41 @@ public class CopyOfAutoPlanBau_Impendance_SendList extends RoboticsAPIApplicatio
 		
 	}
 
-	// To liberate the port 
-	@Override
-	public void dispose()
-		{
-			try { 
-				clientSocket.close();  
-				System.out.println("Socket closed"); 
-				}catch (Exception e)
-				{ e.printStackTrace(); } 
-				super.dispose(); 
-		}
-			
-	
 	@Override
 	public void run() {
 		
-		//----------------Start TCP
+		// TCP Socket Verbindung
+		
+		try {
+			int serverPort = 30001;
+			ServerSocket serverSocket = new ServerSocket(serverPort);
+			serverSocket.setSoTimeout(5000000); 
+			while(true) {
+				System.out.println("Waiting for client on port " + serverSocket.getLocalPort() + "..."); 
 
-	
-		try {       
-			String sentence;
-			String modifiedSentence;
-			BufferedReader inFromUser = new BufferedReader(new InputStreamReader(System.in));
-			clientSocket = new Socket("172.31.1.34", 30001);
-			DataOutputStream outToServer = new DataOutputStream(clientSocket.getOutputStream());
-			BufferedReader inFromServer = new BufferedReader(new InputStreamReader(clientSocket.getInputStream()));
-			sentence = "tcp message";
-			outToServer.writeBytes(sentence + '\n');
-			modifiedSentence = inFromServer.readLine();
-			System.out.println("FROM SERVER: " + modifiedSentence);
-			clientSocket.close(); 
-		} catch (IOException e) {  
-			e.printStackTrace();            
-		}  
-	  
-		
-		
-		
+				Socket server = serverSocket.accept();
+				System.out.println("Just connected to " + server.getRemoteSocketAddress()); 
+				PrintWriter toClient = 
+					new PrintWriter(server.getOutputStream(),true);
+				BufferedReader fromClient =
+					new BufferedReader(
+							new InputStreamReader(server.getInputStream()));
 				
-		
-		//----------------End TCP
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
+
+				String line = fromClient.readLine();
+
+				
+				System.out.println("Server received: " + line); 
+				toClient.println("Thank you for connecting to " + server.getLocalSocketAddress() + "\nGoodbye!"); 
+			}
+		}
+		catch(UnknownHostException ex) {
+			ex.printStackTrace();
+		}
+		catch(IOException e){
+			e.printStackTrace();
+		}
+	  
 		
 		
 		// Inizialisieren der Impendance Parameter

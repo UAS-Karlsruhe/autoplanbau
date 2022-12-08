@@ -8,6 +8,8 @@ import java.io.PrintWriter;
 import java.net.ServerSocket;
 import java.net.Socket;
 import java.net.UnknownHostException;
+import java.net.*;
+import java.io.*;
 
 import javax.inject.Inject;
 import com.kuka.roboticsAPI.applicationModel.RoboticsAPIApplication;
@@ -33,15 +35,24 @@ import com.kuka.roboticsAPI.deviceModel.LBR;
  * @see #dispose()
  */
 public class mma_22_vordergrund extends RoboticsAPIApplication {
-	@Inject
-	private LBR lBR_iiwa_7_R800_1;
-
 	@Override
 	public void initialize() {
 		// initialize your application here
 	}
 	
 	 public void run() {
+			System.out.println("Kuka ist kacka"); 
+			System.out.println("Kuka ist kacka"); 
+			System.out.println("Kuka ist kacka"); 
+			System.out.println("Kuka ist kacka"); 
+			System.out.println("Kuka ist kacka"); 
+			System.out.println("Kuka ist kacka"); 
+			System.out.println("Kuka ist kacka"); 
+			System.out.println("Kuka ist kacka"); 
+			System.out.println("Kuka ist kacka"); 
+			System.out.println("Kuka ist kacka"); 
+			System.out.println("Kuka ist kacka"); 
+
 			try {
 				int serverPort = 6677;
 				ServerSocket serverSocket = new ServerSocket(serverPort);

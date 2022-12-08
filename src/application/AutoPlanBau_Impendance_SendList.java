@@ -123,64 +123,64 @@ public class AutoPlanBau_Impendance_SendList extends RoboticsAPIApplication {
 		
 		
 		
+		// TCP Socket Verbindung
 		
+				try {
+					int serverPort = 30001;
+					ServerSocket serverSocket = new ServerSocket(serverPort);
+					serverSocket.setSoTimeout(5000000); 
+					while(true) {
+						System.out.println("Waiting for client on port " + serverSocket.getLocalPort() + "..."); 
+
+						Socket server = serverSocket.accept();
+						System.out.println("Just connected to " + server.getRemoteSocketAddress()); 
+						PrintWriter toClient = 
+							new PrintWriter(server.getOutputStream(),true);
+						BufferedReader fromClient =
+							new BufferedReader(
+									new InputStreamReader(server.getInputStream()));
+						
+
+						String line = fromClient.readLine();
+
+						
+						System.out.println("Server received: " + line); 
+						toClient.println("Thank you for connecting to " + server.getLocalSocketAddress() + "\nGoodbye!"); 
+					}
+				}
+				catch(UnknownHostException ex) {
+					ex.printStackTrace();
+				}
+				catch(IOException e){
+					e.printStackTrace();
+				}
+			  
 		
-//		 // String vereinzeln an "," und schreibe in string result
-//        List BSList = new ArrayList<Double>();
-        String Bauplanname = "";
-        String[] string_result = "Quadrat, 8.0, 90.0, 3.5, 5.0, 0.0, 8.0, 90.0, 3.5, 7.0, 0.0, 8.0, 0.0, 4.0, 8.5, 0.0, 8.0, 0.0, 6.0, 8.5, 0.0, 8.0, 90.0, 7.5, 8.0, 0.0, 8.0, 90.0, 7.5, 6.0, 0.0, 8.0, 0.0, 7.0, 4.5, 0.0, 8.0, 0.0, 5.0, 4.5, 0.0, 8.0, 0.0, 4.0, 4.5, 1.0, 8.0, 90.0, 3.5, 6.0, 1.0, 8.0, 90.0, 3.5, 8.0, 1.0, 8.0, 0.0, 5.0, 8.5, 1.0, 8.0, 0.0, 7.0, 8.5, 1.0, 8.0, 90.0, 7.5, 7.0, 1.0, 8.0, 90.0, 7.5, 5.0, 1.0, 8.0, 0.0, 6.0, 4.5, 1.0, 8.0, 90.0, 3.5, 5.0, 2.0, 8.0, 90.0, 3.5, 7.0, 2.0, 8.0, 0.0, 4.0, 8.5, 2.0, 8.0, 0.0, 6.0, 8.5, 2.0, 8.0, 90.0, 7.5, 8.0, 2.0, 8.0, 90.0, 7.5, 6.0, 2.0, 8.0, 0.0, 7.0, 4.5, 2.0, 8.0, 0.0, 5.0, 4.5, 2.0, 8.0, 0.0, 4.0, 4.5, 3.0, 8.0, 90.0, 3.5, 6.0, 3.0, 8.0, 90.0, 3.5, 8.0, 3.0, 8.0, 0.0, 5.0, 8.5, 3.0, 8.0, 0.0, 7.0, 8.5, 3.0, 8.0, 90.0, 7.5, 7.0, 3.0, 8.0, 90.0, 7.5, 5.0, 3.0, 8.0, 0.0, 6.0, 4.5, 3.0".split(",");
-
-        for (int x = 0; x < string_result.length; x++) {
-
-            if (x == 0) {
-                Bauplanname = string_result[x];
-            } else {
-                double zahl = Double.parseDouble(string_result[x]);
-                BSList[x] = zahl;
-                System.out.println(zahl);
-                
-            }
-        }
-        
-        System.out.println(BSList);
+////		 // String vereinzeln an "," und schreibe in string result
+////        List BSList = new ArrayList<Double>();
+//        String Bauplanname = "";
+//        String[] string_result = "Quadrat, 8.0, 90.0, 3.5, 5.0, 0.0, 8.0, 90.0, 3.5, 7.0, 0.0, 8.0, 0.0, 4.0, 8.5, 0.0, 8.0, 0.0, 6.0, 8.5, 0.0, 8.0, 90.0, 7.5, 8.0, 0.0, 8.0, 90.0, 7.5, 6.0, 0.0, 8.0, 0.0, 7.0, 4.5, 0.0, 8.0, 0.0, 5.0, 4.5, 0.0, 8.0, 0.0, 4.0, 4.5, 1.0, 8.0, 90.0, 3.5, 6.0, 1.0, 8.0, 90.0, 3.5, 8.0, 1.0, 8.0, 0.0, 5.0, 8.5, 1.0, 8.0, 0.0, 7.0, 8.5, 1.0, 8.0, 90.0, 7.5, 7.0, 1.0, 8.0, 90.0, 7.5, 5.0, 1.0, 8.0, 0.0, 6.0, 4.5, 1.0, 8.0, 90.0, 3.5, 5.0, 2.0, 8.0, 90.0, 3.5, 7.0, 2.0, 8.0, 0.0, 4.0, 8.5, 2.0, 8.0, 0.0, 6.0, 8.5, 2.0, 8.0, 90.0, 7.5, 8.0, 2.0, 8.0, 90.0, 7.5, 6.0, 2.0, 8.0, 0.0, 7.0, 4.5, 2.0, 8.0, 0.0, 5.0, 4.5, 2.0, 8.0, 0.0, 4.0, 4.5, 3.0, 8.0, 90.0, 3.5, 6.0, 3.0, 8.0, 90.0, 3.5, 8.0, 3.0, 8.0, 0.0, 5.0, 8.5, 3.0, 8.0, 0.0, 7.0, 8.5, 3.0, 8.0, 90.0, 7.5, 7.0, 3.0, 8.0, 90.0, 7.5, 5.0, 3.0, 8.0, 0.0, 6.0, 4.5, 3.0".split(",");
+//
+//        for (int x = 0; x < string_result.length; x++) {
+//
+//            if (x == 0) {
+//                Bauplanname = string_result[x];
+//            } else {
+//                double zahl = Double.parseDouble(string_result[x]);
+//                BSList[x] = zahl;
+//                System.out.println(zahl);
+//                
+//            }
+//        }
+//        
+//        System.out.println(BSList);
 		
 	}
 
 	@Override
 	public void run() {
 		
-		// TCP Socket Verbindung
 		
-		try {
-			int serverPort = 30001;
-			ServerSocket serverSocket = new ServerSocket(serverPort);
-			serverSocket.setSoTimeout(5000000); 
-			while(true) {
-				System.out.println("Waiting for client on port " + serverSocket.getLocalPort() + "..."); 
-
-				Socket server = serverSocket.accept();
-				System.out.println("Just connected to " + server.getRemoteSocketAddress()); 
-				PrintWriter toClient = 
-					new PrintWriter(server.getOutputStream(),true);
-				BufferedReader fromClient =
-					new BufferedReader(
-							new InputStreamReader(server.getInputStream()));
-				
-
-				String line = fromClient.readLine();
-
-				
-				System.out.println("Server received: " + line); 
-				toClient.println("Thank you for connecting to " + server.getLocalSocketAddress() + "\nGoodbye!"); 
-			}
-		}
-		catch(UnknownHostException ex) {
-			ex.printStackTrace();
-		}
-		catch(IOException e){
-			e.printStackTrace();
-		}
-	  
 		
 		
 		// Inizialisieren der Impendance Parameter

@@ -42,7 +42,7 @@ public class AutoPlanBau_Impendance_SendList extends RoboticsAPIApplication {
 	@Inject
 	private VakuumIOGroup CVakuum;
 
-	
+	int gotData = 0;
 	
 	
 	int blendingCart;
@@ -134,6 +134,7 @@ public class AutoPlanBau_Impendance_SendList extends RoboticsAPIApplication {
 
 						Socket server = serverSocket.accept();
 						System.out.println("Just connected to " + server.getRemoteSocketAddress()); 
+						gotData = 1;
 						PrintWriter toClient = 
 							new PrintWriter(server.getOutputStream(),true);
 						BufferedReader fromClient =
@@ -146,6 +147,12 @@ public class AutoPlanBau_Impendance_SendList extends RoboticsAPIApplication {
 						
 						System.out.println("Server received: " + line); 
 						toClient.println("Thank you for connecting to " + server.getLocalSocketAddress() + "\nGoodbye!"); 
+						
+						if (gotData == 1){
+							break;
+						}
+						
+						
 					}
 				}
 				catch(UnknownHostException ex) {

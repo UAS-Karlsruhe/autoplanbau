@@ -179,7 +179,7 @@ public class AutoPlanBau_Impendance_SendList extends RoboticsAPIApplication {
             } else {
                 double zahl = Double.parseDouble(string_result[x]);
                 BSList[x] = zahl;
-                System.out.println(zahl);
+                //System.out.println(zahl);
                 
             }
         }

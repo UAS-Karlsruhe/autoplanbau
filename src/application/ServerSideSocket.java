@@ -30,7 +30,7 @@ public class ServerSideSocket extends RoboticsAPIApplication {
 			String sentence;
 			String modifiedSentence;
 			BufferedReader inFromUser = new BufferedReader(new InputStreamReader(System.in));
-			clientSocket = new Socket("172.31.1.135", 30001);
+			clientSocket = new Socket("172.31.1.33", 30001);
 			DataOutputStream outToServer = new DataOutputStream(clientSocket.getOutputStream());
 			BufferedReader inFromServer = new BufferedReader(new InputStreamReader(clientSocket.getInputStream()));
 			sentence = "tcp message";

@@ -376,7 +376,7 @@ public class AutoPlanBau_Impendance_SendList extends RoboticsAPIApplication {
 				CVakuum.setVakuumON(false);
 				
 				// Warten
-				Thread.sleep(10000);
+				Thread.sleep(1500);
 			} catch (InterruptedException e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();

@@ -66,8 +66,8 @@ public class AutoPlanBau_Impendance_SendList extends RoboticsAPIApplication {
 	double BSH;
 	
 	private static final int stiffnessZ = 5000;
-	private static final int stiffnessY = 1000;
-	private static final int stiffnessX = 1000;
+	private static final int stiffnessY = 3000;
+	private static final int stiffnessX = 3000;
 			
 	
 	double[] positionenx;

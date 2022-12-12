@@ -65,7 +65,7 @@ public class AutoPlanBau_Impendance_SendList extends RoboticsAPIApplication {
 	double BSB;
 	double BSH;
 	
-	private static final int stiffnessZ = 1000;
+	private static final int stiffnessZ = 5000;
 	private static final int stiffnessY = 3000;
 	private static final int stiffnessX = 3000;
 			
@@ -104,7 +104,7 @@ public class AutoPlanBau_Impendance_SendList extends RoboticsAPIApplication {
 		impendance_distance_vhol = 2;
 		impendance_distance_vabl = 2;
 		impendance_distance_hol = 6*impendance_distance_vhol;
-		impendance_distance_abl = 10*impendance_distance_vabl;
+		impendance_distance_abl = 12*impendance_distance_vabl;
 		
 		// Initialisieren der Bausteinbreite und Bausteinhöhe
 		BSB = 32.065;

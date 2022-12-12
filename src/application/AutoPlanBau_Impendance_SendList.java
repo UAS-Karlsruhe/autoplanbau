@@ -307,7 +307,7 @@ public class AutoPlanBau_Impendance_SendList extends RoboticsAPIApplication {
 					}
 					
 					// Relative Bewegung um 100 mm on der Fügeposition nach oben
-					TCP.move(linRel(Transformation.ofDeg(0,0,-safePos,0,0,0),getApplicationData().getFrame("/A_Lego_Pal_test/Lego")).setJointVelocityRel(0.1));	
+					TCP.move(linRel(Transformation.ofDeg(0,0,-safePos,0,0,0),getApplicationData().getFrame("/A_Lego_Pal_test/Lego")).setJointVelocityRel(0.1).setMode(impedanceControlMode));	
 					getLogger().info("Relative Bewegung um 100 mm on der Fügeposition nach oben");
 					
 					// Zählerwert um 1 erhöhen
@@ -384,7 +384,7 @@ public class AutoPlanBau_Impendance_SendList extends RoboticsAPIApplication {
 			
 			// Relative Bewegung um 100 mm on der Fügeposition nach oben
 			getLogger().info("Relative Bewegung um 100 mm on der Fügeposition nach oben");
-			TCP.moveAsync(linRel(Transformation.ofDeg(0,0,-safePos,0,0,0),getApplicationData().getFrame("/A_Lego_Base/E1")).setBlendingCart(blendingCartaway).setJointVelocityRel(0.3).setMode(impedanceControlMode));	
+			TCP.move(linRel(Transformation.ofDeg(0,0,-safePos,0,0,0),getApplicationData().getFrame("/A_Lego_Base/E1")).setJointVelocityRel(0.3).setMode(impedanceControlMode));	
 			
 			// i Zähler hochzählen
 			//i = i+4;

@@ -112,17 +112,9 @@ public class AutoPlanBau_Impendance_SendList extends RoboticsAPIApplication {
 		PalAbsx = 63;
 		PalAbsy = 90;
 		
-		// Testlisten 
-		positionenx = new double[18];
-		positioneny = new double[18];
-		positionenz = new double[18];
-		rotation = new int[18];
-		Stein = new int[18];
-		
+		// Erstellen einer Pufferliste
 		BSListlen = 800;
 		BSList = new double[BSListlen];
-		
-		
 		
 		// TCP Socket Verbindung
 		
@@ -177,7 +169,7 @@ public class AutoPlanBau_Impendance_SendList extends RoboticsAPIApplication {
             if (x == 0) {
                 Bauplanname = string_result[x];
             } else {
-            	System.out.println(x);
+            	//System.out.println(x);
                 double zahl = Double.parseDouble(string_result[x]);
                 BSList[x] = zahl;
                 //System.out.println(zahl);

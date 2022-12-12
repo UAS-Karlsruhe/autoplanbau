@@ -217,8 +217,11 @@ public class AutoPlanBau_Impendance_SendList extends RoboticsAPIApplication {
 		TCP.move(linRel(Transformation.ofDeg(0,0,-1*safePos,0,0,0),getApplicationData().getFrame("/A_Lego_Base/E1")).setJointVelocityRel(0.1));
 		
 		// For-Schleife über die Länge der Liste der Bausteine 
-		for (int i = 0; i < BSListlen; i = i+5){
+		for (int i = 0; (i < BSListlen); i = i+5){
 			
+			if (BSList[i+1] == 0){
+				break;
+			}
 			// Anfahren und Verschleifen der SafePos zwischen Palette und der Ablage
 			getLogger().info("Anfahren und Verschleifen der SafePos zwischen Palette und der Ablage");
 			TCP.moveAsync(ptp(getApplicationData().getFrame("/A_Lego_SavePos")).setBlendingCart(blendingCart_Safepos).setJointVelocityRel(0.5));

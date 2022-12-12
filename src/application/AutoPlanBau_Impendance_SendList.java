@@ -219,6 +219,7 @@ public class AutoPlanBau_Impendance_SendList extends RoboticsAPIApplication {
 		// For-Schleife über die Länge der Liste der Bausteine 
 		for (int i = 0; (i < BSListlen); i = i+5){
 			
+			// Beender der FOR-Schleife, wenn kein Zahlenwert mehr ür die bausteinart ankommt
 			if (BSList[i+1] == 0){
 				break;
 			}

@@ -52,7 +52,10 @@ public class AutoPlanBau_Impendance_SendList extends RoboticsAPIApplication {
 	double speed;
 	
 	int safePos;
-	int impendance_distance;
+	int impendance_distance_hol;
+	int impendance_distance_vhol;
+	int impendance_distance_abl;
+	int impendance_distance_vabl;
 	int PalAbsx;
 	int PalAbsy;
 	
@@ -98,7 +101,10 @@ public class AutoPlanBau_Impendance_SendList extends RoboticsAPIApplication {
 		safePos = 100;
 		
 		// Inizialisieren der Impendance Distanz 
-		impendance_distance = 2;
+		impendance_distance_vhol = 2;
+		impendance_distance_vabl = 2;
+		impendance_distance_hol = 6*impendance_distance_vhol;
+		impendance_distance_vhol = 6*impendance_distance_vhol;
 		
 		// Initialisieren der Bausteinbreite und Bausteinhöhe
 		BSB = 32.065;
@@ -234,7 +240,7 @@ public class AutoPlanBau_Impendance_SendList extends RoboticsAPIApplication {
 					
 					// Relative Bewegung auf die Bausteinposition Abzüglich der Distanz die für die ImpendanzBewegug vorgesehen war
 					getLogger().info("Relative Bewegung auf die Bausteinposition Abzüglich der Distanz die für die ImpendanzBewegug vorgesehen war");
-					TCP.move(linRel(Transformation.ofDeg(0,0,safePos-impendance_distance,0,0,0),getApplicationData().getFrame("/A_Lego_Pal_test/Lego")).setJointVelocityRel(0.3));
+					TCP.move(linRel(Transformation.ofDeg(0,0,safePos-impendance_distance_vhol,0,0,0),getApplicationData().getFrame("/A_Lego_Pal_test/Lego")).setJointVelocityRel(0.3));
 					
 					// Anschalten des Vakuums
 					getLogger().info("Anschalten des Vakuums");
@@ -242,7 +248,7 @@ public class AutoPlanBau_Impendance_SendList extends RoboticsAPIApplication {
 					
 					// Relative Bewegung in den Baustein hinein mit Impendanz Modus --> Erzeugte Federkraft ist 3+1* Federkonstante
 					getLogger().info("Relative Bewegung in den Baustein hinein mit Impendanz Modus");
-					TCP.move(linRel(Transformation.ofDeg(0,0,3*impendance_distance,0,0,0),getApplicationData().getFrame("/A_Lego_Pal_test/Lego")).setJointVelocityRel(0.1).setMode(impedanceControlMode));
+					TCP.move(linRel(Transformation.ofDeg(0,0,impendance_distance_hol,0,0,0),getApplicationData().getFrame("/A_Lego_Pal_test/Lego")).setJointVelocityRel(0.1).setMode(impedanceControlMode));
 					
 					// Warten
 					getLogger().info("Warten 1500 ms");
@@ -277,7 +283,7 @@ public class AutoPlanBau_Impendance_SendList extends RoboticsAPIApplication {
 					
 					// Relative Bewegung auf die Bausteinposition Abzüglich der Distanz die für die ImpendanzBewegug vorgesehen war
 					getLogger().info("Relative Bewegung auf die Bausteinposition Abzüglich der Distanz die für die ImpendanzBewegug vorgesehen war");
-					TCP.move(linRel(Transformation.ofDeg(0,0,safePos-impendance_distance,0,0,0),getApplicationData().getFrame("/A_Lego_Pal_test/Lego")).setJointVelocityRel(0.3));
+					TCP.move(linRel(Transformation.ofDeg(0,0,safePos-impendance_distance_vhol,0,0,0),getApplicationData().getFrame("/A_Lego_Pal_test/Lego")).setJointVelocityRel(0.3));
 					
 					// Anschalten des Vakuums
 					getLogger().info("Anschalten des Vakuums");
@@ -285,7 +291,7 @@ public class AutoPlanBau_Impendance_SendList extends RoboticsAPIApplication {
 					
 					// Relative Bewegung in den Baustein hinein mit Impendanz Modus --> Erzeugte Federkraft ist 3+1* Federkonstante
 					getLogger().info("Relative Bewegung in den Baustein hinein mit Impendanz Modus");
-					TCP.move(linRel(Transformation.ofDeg(0,0,3*impendance_distance,0,0,0),getApplicationData().getFrame("/A_Lego_Pal_test/Lego")).setJointVelocityRel(0.1).setMode(impedanceControlMode));
+					TCP.move(linRel(Transformation.ofDeg(0,0,impendance_distance_hol,0,0,0),getApplicationData().getFrame("/A_Lego_Pal_test/Lego")).setJointVelocityRel(0.1).setMode(impedanceControlMode));
 					
 					// Warten
 					getLogger().info("Warten 1500 ms");
@@ -354,11 +360,11 @@ public class AutoPlanBau_Impendance_SendList extends RoboticsAPIApplication {
 			
 			// Relative Bewegung auf die Ablageposition Abzüglich der Distanz die für die ImpendanzBewegug vorgesehen war
 			getLogger().info("Relative Bewegung auf die Ablageposition Abzüglich der Distanz die für die ImpendanzBewegug vorgesehen war");
-			TCP.move(linRel(Transformation.ofDeg(0,0,(safePos-(BSList[i+5]*BSH)-impendance_distance),0,0,0),getApplicationData().getFrame("/A_Lego_Base/E1")).setJointVelocityRel(0.3));
+			TCP.move(linRel(Transformation.ofDeg(0,0,(safePos-(BSList[i+5]*BSH)-impendance_distance_vabl),0,0,0),getApplicationData().getFrame("/A_Lego_Base/E1")).setJointVelocityRel(0.3));
 			
 			// Relative Bewegung in die Ablage hinein mit Impendanz Modus --> Erzeugte Federkraft ist 3+1* Federkonstante
 			getLogger().info("Relative Bewegung in die Ablage hinein mit Impendanz Modus");
-			TCP.move(linRel(Transformation.ofDeg(0,0,(3*impendance_distance),0,0,0),getApplicationData().getFrame("/A_Lego_Base/E1")).setJointVelocityRel(0.1).setMode(impedanceControlMode));
+			TCP.move(linRel(Transformation.ofDeg(0,0,(impendance_distance_abl),0,0,0),getApplicationData().getFrame("/A_Lego_Base/E1")).setJointVelocityRel(0.1).setMode(impedanceControlMode));
 			
 			// Abschalten des Vakuums
 			getLogger().info("Abschalten des Vakuums");

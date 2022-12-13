@@ -307,7 +307,7 @@ public class AutoPlanBau_Impendance_SendList extends RoboticsAPIApplication {
 						e.printStackTrace();
 					}
 					
-					// Relative Bewegung um 100 mm on der Fügeposition nach oben
+					// Relative Bewegung um 100 mm on der Abholposition nach oben
 					TCP.move(linRel(Transformation.ofDeg(0,0,-safePos,0,0,0),getApplicationData().getFrame("/A_Lego_Pal_test/Lego")).setJointVelocityRel(0.1).setMode(impedanceControlMode));	
 					getLogger().info("Relative Bewegung um 100 mm on der Fügeposition nach oben");
 					
@@ -351,6 +351,7 @@ public class AutoPlanBau_Impendance_SendList extends RoboticsAPIApplication {
 		            return;
 		        }
 		     
+		        
 		        // Zähler Rücksetzen
 		        getLogger().info("Achter Zähler zurrückgesetzt");
 				Zaehler8 = 0;
@@ -361,7 +362,7 @@ public class AutoPlanBau_Impendance_SendList extends RoboticsAPIApplication {
 			// Ablegen des bausteins auf Variable Positionen
 			// Relative Bewegung auf der Sicherheitshöhe von 100 mm auf die Ablageposition
 			getLogger().info("Relative Bewegung auf der Sicherheitshöhe von 100 mm auf die Ablageposition");
-			TCP.moveAsync(linRel(Transformation.ofDeg(BSB*(BSList[i+3]),-(BSB*(BSList[i+4])+0.8),0,90-BSList[i+2]-2,0,0),getApplicationData().getFrame("/A_Lego_Base/E1")).setBlendingCart(blendingCart));
+			TCP.moveAsync(linRel(Transformation.ofDeg(BSB*(BSList[i+3]),-(BSB*(BSList[i+4])+0.4),0,90-BSList[i+2]-2,0,0),getApplicationData().getFrame("/A_Lego_Base/E1")).setBlendingCart(blendingCart));
 			
 			// Relative Bewegung auf die Ablageposition Abzüglich der Distanz die für die ImpendanzBewegug vorgesehen war
 			getLogger().info("Relative Bewegung auf die Ablageposition Abzüglich der Distanz die für die ImpendanzBewegug vorgesehen war");

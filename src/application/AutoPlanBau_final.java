@@ -236,30 +236,17 @@ public class AutoPlanBau_final extends RoboticsAPIApplication {
 					
 					// Vierer holen
 					getLogger().info("Vierer holen");
-				
-//					// Anfahren des Referenzkoordinatensystems(Palettenkoordinatensystem) auf der Safeposhöhe
-//					getLogger().info("Anfahren des Referenzkoordinatensystems(Palettenkoordinatensystem) auf der Safeposhöhe");
-//					TCP.move(ptp(getApplicationData().getFrame("/A_Lego_Pal_test/Lego/vLego")).setJointVelocityRel(speed));
-//					
-//					//  Relative Bewegung zu dem nächsten 4er Baustein
-//					getLogger().info("Relative Bewegung zu dem nächsten 4er Baustein");
-//					TCP.moveAsync(linRel(Transformation.ofDeg(PalAbsx*Zaehler4,0,0,0,0,0),getApplicationData().getFrame("/A_Lego_Pal_test/Lego")).setBlendingCart(blendingCart));
-//					
-//					// Relative Bewegung auf die Bausteinposition Abzüglich der Distanz die für die ImpendanzBewegug vorgesehen war
-//					getLogger().info("Relative Bewegung auf die Bausteinposition Abzüglich der Distanz die für die ImpendanzBewegug vorgesehen war");
-//					TCP.move(linRel(Transformation.ofDeg(0,0,safePos-impendance_distance_vhol,0,0,0),getApplicationData().getFrame("/A_Lego_Pal_test/Lego")).setJointVelocityRel(0.3));
 					
-					
+					//  Relative Bewegung zu dem nächsten 4er Baustein
 					ObjectFrame vPosviererObjectFrame = getApplicationData().getFrame("/A_Lego_Pal_test/Lego");
 					Frame vPosviererFrame = vPosviererObjectFrame.copyWithRedundancy(vPosviererObjectFrame);
-					vPosviererFrame.setX(vPosviererFrame.getX() + 200);
-					vPosviererFrame.setY(vPosviererFrame.getY() - 200);
-					vPosviererFrame.setZ(vPosviererFrame.getZ() - 200);
+					Transformation vPosvierertrafo = Transformation.ofDeg(PalAbsx*Zaehler4, 0,-safePos, 0, 0, 0); 
+					vPosviererFrame.transform(vPosvierertrafo);
+					TCP.move(ptp(vPosviererFrame).setBlendingCart(blendingCart).setJointVelocityRel(speed));
 					
-					Frame transformationFrame = new Frame(200,-200, -200, 0, 0, 0);
-					vPosviererFrame.transformationTo(transformationFrame);
-					TCP.move(ptp(vPosviererFrame));
-					
+					//Relative Bewegung auf die Bausteinposition Abzüglich der Distanz die für die ImpendanzBewegug vorgesehen war
+					getLogger().info("Relative Bewegung auf die Bausteinposition Abzüglich der Distanz die für die ImpendanzBewegug vorgesehen war");
+					TCP.move(linRel(Transformation.ofDeg(0,0,safePos-impendance_distance_vhol,0,0,0),getApplicationData().getFrame("/A_Lego_Pal_test/Lego")).setJointVelocityRel(0.3));
 					
 					
 					// Anschalten des Vakuums
@@ -293,13 +280,12 @@ public class AutoPlanBau_final extends RoboticsAPIApplication {
 					// Achter holen
 					getLogger().info("Achter holen");
 				
-					// Anfahren des Referenzkoordinatensystems(Palettenkoordinatensystem) auf der Safeposhöhe	
-					getLogger().info("Anfahren des Referenzkoordinatensystems(Palettenkoordinatensystem) auf der Safeposhöhe");
-					TCP.move(ptp(getApplicationData().getFrame("/A_Lego_Pal_test/Lego/vLego")).setJointVelocityRel(speed));
-					
-					//  Relative Bewegung zu dem nächsten 8er Baustein
-					getLogger().info("Relative Bewegung zu dem nächsten 8er Baustein");
-					TCP.moveAsync(linRel(Transformation.ofDeg(PalAbsx*Zaehler8,-(PalAbsy),0,0,0,0),getApplicationData().getFrame("/A_Lego_Pal_test/Lego")).setBlendingCart(blendingCart));
+					//  Relative Bewegung zu dem nächsten 4er Baustein
+					ObjectFrame vPosachterObjectFrame = getApplicationData().getFrame("/A_Lego_Pal_test/Lego");
+					Frame vPosachterFrame = vPosachterObjectFrame.copyWithRedundancy(vPosachterObjectFrame);
+					Transformation vPosvierertrafo = Transformation.ofDeg(PalAbsx*Zaehler8, -(PalAbsy),-safePos, 0, 0, 0); 
+					vPosachterFrame.transform(vPosvierertrafo);
+					TCP.move(ptp(vPosachterFrame).setBlendingCart(blendingCart).setJointVelocityRel(speed));
 					
 					// Relative Bewegung auf die Bausteinposition Abzüglich der Distanz die für die ImpendanzBewegug vorgesehen war
 					getLogger().info("Relative Bewegung auf die Bausteinposition Abzüglich der Distanz die für die ImpendanzBewegug vorgesehen war");
@@ -334,10 +320,6 @@ public class AutoPlanBau_final extends RoboticsAPIApplication {
 			// Anfahren und Verschleifen der SafePos zwischen Palette und der Ablage
 			getLogger().info("Anfahren und Verschleifen der SafePos zwischen Palette und der Ablage");
 			TCP.moveAsync(ptp(getApplicationData().getFrame("/A_Lego_SavePos")).setBlendingCart(blendingCart_Safepos).setJointVelocityRel(speed));
-			
-			// Anfahren des Referenzkoordinatensystems(grüne Legobasiskoordinatensystem) auf der Safeposhöhe
-			getLogger().info("Anfahren des Referenzkoordinatensystems(grüne Legobasiskoordinatensystem) auf der Safeposhöhe");
-			TCP.move(ptp(getApplicationData().getFrame("/A_Lego_Base/E1/vE1")).setJointVelocityRel(speed));
 			
 			// if Abfragen ob die Paletten nochBausteine einthalten --> wenn NEIN, dann wird eine Meldung ausgegeben, dass diese nachgefüllt werden sollen.
 			if (Zaehler4 == 7){
@@ -375,9 +357,18 @@ public class AutoPlanBau_final extends RoboticsAPIApplication {
 			getLogger().info("SteinNummmer"+i);
 	
 			// Ablegen des bausteins auf Variable Positionen
+			
+			
 			// Relative Bewegung auf der Sicherheitshöhe von 100 mm auf die Ablageposition
 			getLogger().info("Relative Bewegung auf der Sicherheitshöhe von 100 mm auf die Ablageposition");
 			TCP.moveAsync(linRel(Transformation.ofDeg(BSB*(BSList[i+3]),-(BSB*(BSList[i+4])+0.4),0,90-BSList[i+2]-2,0,0),getApplicationData().getFrame("/A_Lego_Base/E1")).setBlendingCart(blendingCart));
+			
+			//  Relative Bewegung zu dem nächsten 4er Baustein
+			ObjectFrame vPosAblObjectFrame = getApplicationData().getFrame("/A_Lego_Base/E1");
+			Frame vPosAblFrame = vPosAblObjectFrame.copyWithRedundancy(vPosAblObjectFrame);
+			Transformation vPosAbltrafo = Transformation.ofDeg(BSB*(BSList[i+3]),-(BSB*(BSList[i+4])+0.4),-safePos, 90-BSList[i+2]-2, 0, 0); 
+			vPosAblFrame.transform(vPosAbltrafo);
+			TCP.move(ptp(vPosAblFrame).setBlendingCart(blendingCart).setJointVelocityRel(speed));
 			
 			// Relative Bewegung auf die Ablageposition Abzüglich der Distanz die für die ImpendanzBewegug vorgesehen war
 			getLogger().info("Relative Bewegung auf die Ablageposition Abzüglich der Distanz die für die ImpendanzBewegug vorgesehen war");

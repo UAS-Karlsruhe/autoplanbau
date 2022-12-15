@@ -333,7 +333,7 @@ public class AutoPlanBau_final extends RoboticsAPIApplication {
 			
 			// Relative Bewegung auf die Ablageposition Abzüglich der Distanz die für die ImpendanzBewegug vorgesehen war
 			getLogger().info("Relative Bewegung auf die Ablageposition Abzüglich der Distanz die für die ImpendanzBewegug vorgesehen war");
-			TCP.move(linRel(Transformation.ofDeg(0,0,(safePos-(BSList[i+5]*BSH)-impendance_distance_vabl),0,0,0),getApplicationData().getFrame("/A_Lego_Base/E1")).setJointVelocityRel(0.3));
+			TCP.move(linRel(Transformation.ofDeg(0,0,(safePos-impendance_distance_vabl),0,0,0),getApplicationData().getFrame("/A_Lego_Base/E1")).setJointVelocityRel(0.3));
 			
 			// Relative Bewegung in die Ablage hinein mit Impendanz Modus --> Erzeugte Federkraft ist 3+1* Federkonstante
 			getLogger().info("Relative Bewegung in die Ablage hinein mit Impendanz Modus");

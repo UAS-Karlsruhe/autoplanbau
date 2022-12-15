@@ -40,6 +40,6 @@ public class RobotApplicationtest extends RoboticsAPIApplication {
 		getLogger().info("MOVE to mechanical ZeroPosition");
 		lbr.move(ptp(0,0,0,0,0,0,0));
 		getLogger().info("App finished");
-		
+		lbr.move(ptp(0,0,Math.toRadians(90),0,0,0,0));
 	}
 }

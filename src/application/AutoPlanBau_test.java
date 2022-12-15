@@ -109,12 +109,10 @@ public class AutoPlanBau_test extends RoboticsAPIApplication {
 		Frame someBasicFrame2 = someFrame2.copyWithRedundancy(someFrame2);
 //		someBasicFrame2.setX(someBasicFrame2.getX() + 200);
 //		someBasicFrame2.setY(someBasicFrame2.getY() - 200);
-//		someBasicFrame2.setZ(someBasicFrame2.getZ() - 200);
-//		TCP.move(ptp(someBasicFrame2));
-		
+//		someBasicFrame2.setZ(someBasicFrame2.getZ() - 200);	
 		Frame transformationFrame = new Frame(200,-200, -200, 0, 0, 0);
 		someBasicFrame2.transformationTo(transformationFrame);
-		
+		TCP.move(ptp(someBasicFrame2));
 		
 		getLogger().info("Relative Bewegung in den Baustein hinein mit Impendanz Modus");
 		TCP.move(linRel(Transformation.ofDeg(0,0,200,0,0,0),getApplicationData().getFrame("/A_Lego_Pal_test/Lego")).setJointVelocityRel(0.1));

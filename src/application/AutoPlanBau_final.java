@@ -226,9 +226,9 @@ public class AutoPlanBau_final extends RoboticsAPIApplication {
 				break;
 			}
 			
-			// Anfahren und Verschleifen der SafePos zwischen Palette und der Ablage
-			getLogger().info("Anfahren und Verschleifen der SafePos zwischen Palette und der Ablage");
-			TCP.moveAsync(ptp(getApplicationData().getFrame("/A_Lego_SavePos")).setBlendingCart(blendingCart_Safepos).setJointVelocityRel(0.5));
+//			// Anfahren und Verschleifen der SafePos zwischen Palette und der Ablage
+//			getLogger().info("Anfahren und Verschleifen der SafePos zwischen Palette und der Ablage");
+//			TCP.moveAsync(ptp(getApplicationData().getFrame("/A_Lego_SavePos")).setBlendingCart(blendingCart_Safepos).setJointVelocityRel(0.5));
 			
 			// if else if Entscheidung ob 4er oder 8er Stein
 			getLogger().info("Baustein holen");
@@ -268,7 +268,7 @@ public class AutoPlanBau_final extends RoboticsAPIApplication {
 					
 					// Relative Bewegung um 100 mm on der Fügeposition nach oben
 					getLogger().info("Relative Bewegung um 100 mm on der Fügeposition nach oben");
-					TCP.move(linRel(Transformation.ofDeg(0,0,-safePos,0,0,0),getApplicationData().getFrame("/A_Lego_Pal_test/Lego")).setJointVelocityRel(0.1).setMode(impedanceControlMode));	
+					TCP.moveAsync(linRel(Transformation.ofDeg(0,0,-safePos,0,0,0),getApplicationData().getFrame("/A_Lego_Pal_test/Lego")).setJointVelocityRel(0.1).setBlendingCart(blendingCart).setMode(impedanceControlMode));	
 					
 					// Zählerwert um 1 erhöhen
 					getLogger().info("Zählerwert um 1 erhöhen");
@@ -309,7 +309,7 @@ public class AutoPlanBau_final extends RoboticsAPIApplication {
 					}
 					
 					// Relative Bewegung um 100 mm on der Abholposition nach oben
-					TCP.move(linRel(Transformation.ofDeg(0,0,-safePos,0,0,0),getApplicationData().getFrame("/A_Lego_Pal_test/Lego")).setJointVelocityRel(0.1).setMode(impedanceControlMode));	
+					TCP.moveAsync(linRel(Transformation.ofDeg(0,0,-safePos,0,0,0),getApplicationData().getFrame("/A_Lego_Pal_test/Lego")).setJointVelocityRel(0.1).setBlendingCart(blendingCart).setMode(impedanceControlMode));	
 					getLogger().info("Relative Bewegung um 100 mm on der Fügeposition nach oben");
 					
 					// Zählerwert um 1 erhöhen
@@ -317,9 +317,9 @@ public class AutoPlanBau_final extends RoboticsAPIApplication {
 					Zaehler8 = Zaehler8+1;
 			}
 			
-			// Anfahren und Verschleifen der SafePos zwischen Palette und der Ablage
-			getLogger().info("Anfahren und Verschleifen der SafePos zwischen Palette und der Ablage");
-			TCP.moveAsync(ptp(getApplicationData().getFrame("/A_Lego_SavePos")).setBlendingCart(blendingCart_Safepos).setJointVelocityRel(speed));
+//			// Anfahren und Verschleifen der SafePos zwischen Palette und der Ablage
+//			getLogger().info("Anfahren und Verschleifen der SafePos zwischen Palette und der Ablage");
+//			TCP.moveAsync(ptp(getApplicationData().getFrame("/A_Lego_SavePos")).setBlendingCart(blendingCart_Safepos).setJointVelocityRel(speed));
 			
 			// if Abfragen ob die Paletten nochBausteine einthalten --> wenn NEIN, dann wird eine Meldung ausgegeben, dass diese nachgefüllt werden sollen.
 			if (Zaehler4 == 7){
@@ -385,7 +385,7 @@ public class AutoPlanBau_final extends RoboticsAPIApplication {
 			
 			// Relative Bewegung um 100 mm on der Fügeposition nach oben
 			getLogger().info("Relative Bewegung um 100 mm on der Fügeposition nach oben");
-			TCP.move(linRel(Transformation.ofDeg(0,0,-safePos,0,0,0),getApplicationData().getFrame("/A_Lego_Base/E1")).setJointVelocityRel(0.3).setMode(impedanceControlMode));	
+			TCP.moveAsync(linRel(Transformation.ofDeg(0,0,-safePos,0,0,0),getApplicationData().getFrame("/A_Lego_Base/E1")).setJointVelocityRel(0.3).setBlendingCart(blendingCart).setMode(impedanceControlMode));	
 			
 			// i Zähler hochzählen
 			//i = i+4;

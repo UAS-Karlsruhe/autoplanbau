@@ -22,6 +22,8 @@ import static com.kuka.roboticsAPI.motionModel.BasicMotions.*;
 import com.kuka.roboticsAPI.deviceModel.LBR;
 //import com.kuka.roboticsAPI.geometricModel.AbstractFrame;
 import com.kuka.roboticsAPI.geometricModel.CartDOF;
+import com.kuka.roboticsAPI.geometricModel.Frame;
+import com.kuka.roboticsAPI.geometricModel.ObjectFrame;
 //import com.kuka.roboticsAPI.geometricModel.ObjectFrame;
 import com.kuka.roboticsAPI.geometricModel.Tool;
 import com.kuka.roboticsAPI.geometricModel.math.Transformation;
@@ -235,17 +237,30 @@ public class AutoPlanBau_final extends RoboticsAPIApplication {
 					// Vierer holen
 					getLogger().info("Vierer holen");
 				
-					// Anfahren des Referenzkoordinatensystems(Palettenkoordinatensystem) auf der Safeposhöhe
-					getLogger().info("Anfahren des Referenzkoordinatensystems(Palettenkoordinatensystem) auf der Safeposhöhe");
-					TCP.move(ptp(getApplicationData().getFrame("/A_Lego_Pal_test/Lego/vLego")).setJointVelocityRel(speed));
+//					// Anfahren des Referenzkoordinatensystems(Palettenkoordinatensystem) auf der Safeposhöhe
+//					getLogger().info("Anfahren des Referenzkoordinatensystems(Palettenkoordinatensystem) auf der Safeposhöhe");
+//					TCP.move(ptp(getApplicationData().getFrame("/A_Lego_Pal_test/Lego/vLego")).setJointVelocityRel(speed));
+//					
+//					//  Relative Bewegung zu dem nächsten 4er Baustein
+//					getLogger().info("Relative Bewegung zu dem nächsten 4er Baustein");
+//					TCP.moveAsync(linRel(Transformation.ofDeg(PalAbsx*Zaehler4,0,0,0,0,0),getApplicationData().getFrame("/A_Lego_Pal_test/Lego")).setBlendingCart(blendingCart));
+//					
+//					// Relative Bewegung auf die Bausteinposition Abzüglich der Distanz die für die ImpendanzBewegug vorgesehen war
+//					getLogger().info("Relative Bewegung auf die Bausteinposition Abzüglich der Distanz die für die ImpendanzBewegug vorgesehen war");
+//					TCP.move(linRel(Transformation.ofDeg(0,0,safePos-impendance_distance_vhol,0,0,0),getApplicationData().getFrame("/A_Lego_Pal_test/Lego")).setJointVelocityRel(0.3));
 					
-					//  Relative Bewegung zu dem nächsten 4er Baustein
-					getLogger().info("Relative Bewegung zu dem nächsten 4er Baustein");
-					TCP.moveAsync(linRel(Transformation.ofDeg(PalAbsx*Zaehler4,0,0,0,0,0),getApplicationData().getFrame("/A_Lego_Pal_test/Lego")).setBlendingCart(blendingCart));
 					
-					// Relative Bewegung auf die Bausteinposition Abzüglich der Distanz die für die ImpendanzBewegug vorgesehen war
-					getLogger().info("Relative Bewegung auf die Bausteinposition Abzüglich der Distanz die für die ImpendanzBewegug vorgesehen war");
-					TCP.move(linRel(Transformation.ofDeg(0,0,safePos-impendance_distance_vhol,0,0,0),getApplicationData().getFrame("/A_Lego_Pal_test/Lego")).setJointVelocityRel(0.3));
+					ObjectFrame vPosviererObjectFrame = getApplicationData().getFrame("/A_Lego_Pal_test/Lego");
+					Frame vPosviererFrame = vPosviererObjectFrame.copyWithRedundancy(vPosviererObjectFrame);
+					vPosviererFrame.setX(vPosviererFrame.getX() + 200);
+					vPosviererFrame.setY(vPosviererFrame.getY() - 200);
+					vPosviererFrame.setZ(vPosviererFrame.getZ() - 200);
+					
+					Frame transformationFrame = new Frame(200,-200, -200, 0, 0, 0);
+					vPosviererFrame.transformationTo(transformationFrame);
+					TCP.move(ptp(vPosviererFrame));
+					
+					
 					
 					// Anschalten des Vakuums
 					getLogger().info("Anschalten des Vakuums");

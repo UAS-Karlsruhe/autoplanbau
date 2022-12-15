@@ -107,10 +107,13 @@ public class AutoPlanBau_test extends RoboticsAPIApplication {
 		
 		ObjectFrame someFrame2 = getApplicationData().getFrame("/A_Lego_Base/E1");
 		Frame someBasicFrame2 = someFrame2.copyWithRedundancy(someFrame2);
-		someBasicFrame2.setX(someBasicFrame2.getX() + 200);
-		someBasicFrame2.setY(someBasicFrame2.getY() - 200);
-		someBasicFrame2.setZ(someBasicFrame2.getZ() - 200);
-		TCP.move(ptp(someBasicFrame2));
+//		someBasicFrame2.setX(someBasicFrame2.getX() + 200);
+//		someBasicFrame2.setY(someBasicFrame2.getY() - 200);
+//		someBasicFrame2.setZ(someBasicFrame2.getZ() - 200);
+//		TCP.move(ptp(someBasicFrame2));
+		
+		Frame transformationFrame = new Frame(200,-200, -200, 0, 0, 0);
+		someBasicFrame2.transformationTo(transformationFrame);
 		
 		
 		getLogger().info("Relative Bewegung in den Baustein hinein mit Impendanz Modus");
@@ -119,23 +122,7 @@ public class AutoPlanBau_test extends RoboticsAPIApplication {
 		getLogger().info("Relative Bewegung in den Baustein hinein mit Impendanz Modus");
 		TCP.move(linRel(Transformation.ofDeg(0,0,-200,0,0,0),getApplicationData().getFrame("/A_Lego_Pal_test/Lego")).setJointVelocityRel(0.1));
 		
-//		
-//		ObjectFrame someFrame3 = getApplicationData().getFrame("/A_Lego_Base/E1");
-//		Frame someBasicFrame3 = someFrame.copyWithRedundancy(someFrame);
-//		someBasicFrame.setX(someBasicFrame.getX() + 50);
-//		TCP.move(ptp(someBasicFrame));
-//		
-//		
-//		ObjectFrame someFrame4 = getApplicationData().getFrame("/A_Lego_Base/E1");
-//		Frame someBasicFrame4 = someFrame.copyWithRedundancy(someFrame);
-//		someBasicFrame.setX(someBasicFrame.getX() + 50);
-//		TCP.move(ptp(someBasicFrame));
-//		
-//		
-//		ObjectFrame someFrame5 = getApplicationData().getFrame("/A_Lego_Base/E1");
-//		Frame someBasicFrame5 = someFrame.copyWithRedundancy(someFrame);
-//		someBasicFrame.setX(someBasicFrame.getX() + 50);
-//		TCP.move(ptp(someBasicFrame));
+
 //		
 		
 		

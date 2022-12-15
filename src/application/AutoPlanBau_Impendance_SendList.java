@@ -124,45 +124,45 @@ public class AutoPlanBau_Impendance_SendList extends RoboticsAPIApplication {
 		BSListlen = 800;
 		BSList = new double[BSListlen];
 		
-//		// TCP Socket Verbindung
-//		
-//				try {
-//					int serverPort = 30001;
-//					ServerSocket serverSocket = new ServerSocket(serverPort);
-//					serverSocket.setSoTimeout(10000); 
-//					while(true) {
-//						System.out.println("Waiting for client on port " + serverSocket.getLocalPort() + "..."); 
-//
-//						Socket server = serverSocket.accept();
-//						System.out.println("Just connected to " + server.getRemoteSocketAddress()); 
-//						gotData = 1;
-//						PrintWriter toClient = 
-//							new PrintWriter(server.getOutputStream(),true);
-//						BufferedReader fromClient =
-//							new BufferedReader(
-//									new InputStreamReader(server.getInputStream()));
-//						
-//
-//						line = fromClient.readLine();
-//
-//						
-//						System.out.println("Server received: " + line); 
-//						toClient.println("Thank you for connecting to " + server.getLocalSocketAddress() + "\nGoodbye!"); 
-//						
-//						if (gotData == 1){
-//							break;
-//						}
-//						
-//						
-//					}
-//				}
-//				catch(UnknownHostException ex) {
-//					ex.printStackTrace();
-//				}
-//				catch(IOException e){
-//					e.printStackTrace();
-//				}
-//			  
+		// TCP Socket Verbindung
+		
+				try {
+					int serverPort = 30001;
+					ServerSocket serverSocket = new ServerSocket(serverPort);
+					serverSocket.setSoTimeout(10000); 
+					while(true) {
+						System.out.println("Waiting for client on port " + serverSocket.getLocalPort() + "..."); 
+
+						Socket server = serverSocket.accept();
+						System.out.println("Just connected to " + server.getRemoteSocketAddress()); 
+						gotData = 1;
+						PrintWriter toClient = 
+							new PrintWriter(server.getOutputStream(),true);
+						BufferedReader fromClient =
+							new BufferedReader(
+									new InputStreamReader(server.getInputStream()));
+						
+
+						line = fromClient.readLine();
+
+						
+						System.out.println("Server received: " + line); 
+						toClient.println("Thank you for connecting to " + server.getLocalSocketAddress() + "\nGoodbye!"); 
+						
+						if (gotData == 1){
+							break;
+						}
+						
+						
+					}
+				}
+				catch(UnknownHostException ex) {
+					ex.printStackTrace();
+				}
+				catch(IOException e){
+					e.printStackTrace();
+				}
+			  
 		
 ////		 // String vereinzeln an "," und schreibe in string result
 ////        List BSList = new ArrayList<Double>();
@@ -194,13 +194,13 @@ public class AutoPlanBau_Impendance_SendList extends RoboticsAPIApplication {
 		
 		
 		////////////////////////////////////////////////////////////////////////////////////
-		
-		ObjectFrame someFrame = getApplicationData().getFrame("/A_Lego_Base/E1");
-        Frame someBasicFrame = someFrame.copyWithRedundancy(someFrame);
-        someBasicFrame.setX(someBasicFrame.getX() + 50);
-        lbr.move(ptp(someBasicFrame));
-		
-		
+//		
+//		ObjectFrame someFrame = getApplicationData().getFrame("/A_Lego_Base/E1");
+//        Frame someBasicFrame = someFrame.copyWithRedundancy(someFrame);
+//        someBasicFrame.setX(someBasicFrame.getX() + 50);
+//        lbr.move(ptp(someBasicFrame));
+//		
+//		
 		
 		
 		
@@ -210,210 +210,210 @@ public class AutoPlanBau_Impendance_SendList extends RoboticsAPIApplication {
 		
 		
 		
-//		
-//		// Inizialisieren der Impendance Parameter
-//		getLogger().info("Initialisieren der Impendance-Parameter");
-//		CartesianImpedanceControlMode impedanceControlMode;
-//		impedanceControlMode = 	new CartesianImpedanceControlMode();
-//		impedanceControlMode.parametrize(CartDOF.X).setStiffness(stiffnessX);
-//		impedanceControlMode.parametrize(CartDOF.Y).setStiffness(stiffnessY);
-//		impedanceControlMode.parametrize(CartDOF.Z).setStiffness(stiffnessZ);
-//	
-//		// Vakuum als default wert nach starten des Programms ausschalten
-//		if (CVakuum.getVakuumON() == true){
-//			CVakuum.setVakuumON(false);
-//			getLogger().info("Setze Output auf False");
-//		}
-//
-//		
-//		// Zuweisung des TCP an den Roboterflange
-//		TCP.attachTo(lbr.getFlange());
-//		
-//		
-//		// Lineare Fahrt Senkrecht nach oben um 200 mm 
-//		getLogger().info("Lineare Fahrt Senkrecht nach oben um 200 mm");
-//		TCP.move(linRel(Transformation.ofDeg(0,0,-1*safePos,0,0,0),getApplicationData().getFrame("/A_Lego_Base/E1")).setJointVelocityRel(0.1));
-//		
-//		// For-Schleife über die Länge der Liste der Bausteine 
-//		for (int i = 0; (i < BSListlen); i = i+5){
-//			
-//			// Beender der FOR-Schleife, wenn kein Zahlenwert mehr ür die bausteinart ankommt
-//			if (BSList[i+1] == 0){
-//				break;
-//			}
-//			
-//			// Anfahren und Verschleifen der SafePos zwischen Palette und der Ablage
-//			getLogger().info("Anfahren und Verschleifen der SafePos zwischen Palette und der Ablage");
-//			TCP.moveAsync(ptp(getApplicationData().getFrame("/A_Lego_SavePos")).setBlendingCart(blendingCart_Safepos).setJointVelocityRel(0.5));
-//			
-//			// if else if Entscheidung ob 4er oder 8er Stein
-//			getLogger().info("Baustein holen");
-//			if ((BSList[i+1] == 4.0) & (Zaehler4<=7)){
-//					
-//					// Vierer holen
-//					getLogger().info("Vierer holen");
-//				
-//					// Anfahren des Referenzkoordinatensystems(Palettenkoordinatensystem) auf der Safeposhöhe
-//					getLogger().info("Anfahren des Referenzkoordinatensystems(Palettenkoordinatensystem) auf der Safeposhöhe");
-//					TCP.move(ptp(getApplicationData().getFrame("/A_Lego_Pal_test/Lego/vLego")).setJointVelocityRel(speed));
-//					
-//					//  Relative Bewegung zu dem nächsten 4er Baustein
-//					getLogger().info("Relative Bewegung zu dem nächsten 4er Baustein");
-//					TCP.moveAsync(linRel(Transformation.ofDeg(PalAbsx*Zaehler4,0,0,0,0,0),getApplicationData().getFrame("/A_Lego_Pal_test/Lego")).setBlendingCart(blendingCart));
-//					
-//					// Relative Bewegung auf die Bausteinposition Abzüglich der Distanz die für die ImpendanzBewegug vorgesehen war
-//					getLogger().info("Relative Bewegung auf die Bausteinposition Abzüglich der Distanz die für die ImpendanzBewegug vorgesehen war");
-//					TCP.move(linRel(Transformation.ofDeg(0,0,safePos-impendance_distance_vhol,0,0,0),getApplicationData().getFrame("/A_Lego_Pal_test/Lego")).setJointVelocityRel(0.3));
-//					
-//					// Anschalten des Vakuums
-//					getLogger().info("Anschalten des Vakuums");
-//					CVakuum.setVakuumON(true);
-//					
-//					// Relative Bewegung in den Baustein hinein mit Impendanz Modus --> Erzeugte Federkraft ist 3+1* Federkonstante
-//					getLogger().info("Relative Bewegung in den Baustein hinein mit Impendanz Modus");
-//					TCP.move(linRel(Transformation.ofDeg(0,0,impendance_distance_hol,0,0,0),getApplicationData().getFrame("/A_Lego_Pal_test/Lego")).setJointVelocityRel(0.1).setMode(impedanceControlMode));
-//					
-//					// Warten
-//					getLogger().info("Warten 1500 ms");
-//					try {
-//						Thread.sleep(1500);
-//					} catch (InterruptedException e) {
-//						// TODO Auto-generated catch block
-//						e.printStackTrace();
-//					}
-//					
-//					// Relative Bewegung um 100 mm on der Fügeposition nach oben
-//					getLogger().info("Relative Bewegung um 100 mm on der Fügeposition nach oben");
-//					TCP.move(linRel(Transformation.ofDeg(0,0,-safePos,0,0,0),getApplicationData().getFrame("/A_Lego_Pal_test/Lego")).setJointVelocityRel(0.1).setMode(impedanceControlMode));	
-//					
-//					// Zählerwert um 1 erhöhen
-//					getLogger().info("Zählerwert um 1 erhöhen");
-//					Zaehler4 = Zaehler4+1;			
-//			}
-//			
-//			else if ((BSList[i+1] == 8.0)& (Zaehler8<=7)){		
-//					
-//					// Achter holen
-//					getLogger().info("Achter holen");
-//				
-//					// Anfahren des Referenzkoordinatensystems(Palettenkoordinatensystem) auf der Safeposhöhe	
-//					getLogger().info("Anfahren des Referenzkoordinatensystems(Palettenkoordinatensystem) auf der Safeposhöhe");
-//					TCP.move(ptp(getApplicationData().getFrame("/A_Lego_Pal_test/Lego/vLego")).setJointVelocityRel(speed));
-//					
-//					//  Relative Bewegung zu dem nächsten 8er Baustein
-//					getLogger().info("Relative Bewegung zu dem nächsten 8er Baustein");
-//					TCP.moveAsync(linRel(Transformation.ofDeg(PalAbsx*Zaehler8,-(PalAbsy),0,0,0,0),getApplicationData().getFrame("/A_Lego_Pal_test/Lego")).setBlendingCart(blendingCart));
-//					
-//					// Relative Bewegung auf die Bausteinposition Abzüglich der Distanz die für die ImpendanzBewegug vorgesehen war
-//					getLogger().info("Relative Bewegung auf die Bausteinposition Abzüglich der Distanz die für die ImpendanzBewegug vorgesehen war");
-//					TCP.move(linRel(Transformation.ofDeg(0,0,safePos-impendance_distance_vhol,0,0,0),getApplicationData().getFrame("/A_Lego_Pal_test/Lego")).setJointVelocityRel(0.3));
-//					
-//					// Anschalten des Vakuums
-//					getLogger().info("Anschalten des Vakuums");
-//					CVakuum.setVakuumON(true);
-//					
-//					// Relative Bewegung in den Baustein hinein mit Impendanz Modus --> Erzeugte Federkraft ist 3+1* Federkonstante
-//					getLogger().info("Relative Bewegung in den Baustein hinein mit Impendanz Modus");
-//					TCP.move(linRel(Transformation.ofDeg(0,0,impendance_distance_hol,0,0,0),getApplicationData().getFrame("/A_Lego_Pal_test/Lego")).setJointVelocityRel(0.1).setMode(impedanceControlMode));
-//					
-//					// Warten
-//					getLogger().info("Warten 1500 ms");
-//					try {
-//						Thread.sleep(1500);
-//					} catch (InterruptedException e) {
-//						// TODO Auto-generated catch block
-//						e.printStackTrace();
-//					}
-//					
-//					// Relative Bewegung um 100 mm on der Abholposition nach oben
-//					TCP.move(linRel(Transformation.ofDeg(0,0,-safePos,0,0,0),getApplicationData().getFrame("/A_Lego_Pal_test/Lego")).setJointVelocityRel(0.1).setMode(impedanceControlMode));	
-//					getLogger().info("Relative Bewegung um 100 mm on der Fügeposition nach oben");
-//					
-//					// Zählerwert um 1 erhöhen
-//					getLogger().info("Zählerwert um 1 erhöhen");
-//					Zaehler8 = Zaehler8+1;
-//			}
-//			
-//			// Anfahren und Verschleifen der SafePos zwischen Palette und der Ablage
-//			getLogger().info("Anfahren und Verschleifen der SafePos zwischen Palette und der Ablage");
-//			TCP.moveAsync(ptp(getApplicationData().getFrame("/A_Lego_SavePos")).setBlendingCart(blendingCart_Safepos).setJointVelocityRel(speed));
-//			
-//			// Anfahren des Referenzkoordinatensystems(grüne Legobasiskoordinatensystem) auf der Safeposhöhe
-//			getLogger().info("Anfahren des Referenzkoordinatensystems(grüne Legobasiskoordinatensystem) auf der Safeposhöhe");
-//			TCP.move(ptp(getApplicationData().getFrame("/A_Lego_Base/E1/vE1")).setJointVelocityRel(speed));
-//			
-//			// if Abfragen ob die Paletten nochBausteine einthalten --> wenn NEIN, dann wird eine Meldung ausgegeben, dass diese nachgefüllt werden sollen.
-//			if (Zaehler4 == 7){
-//				getLogger().info("Show modal dialog and wait for user to confirm");
-//		        
-//				// Benutzerabfrage ob die Palette wieder befüllt wurde
-//				int isCancel = getApplicationUI().displayModalDialog(ApplicationDialogType.QUESTION, informationTextvierer, "OK", "Cancel");
-//		        if (isCancel == 1)
-//		        {
-//		            return;
-//		        }
-//		        
-//		        // Zähler Rücksetzen
-//		        getLogger().info("Vierer Zähler zurrückgesetzt");
-//				Zaehler4 = 0;
-//			}
-//			
-//			// if Abfragen ob die Paletten nochBausteine einthalten --> wenn NEIN, dann wird eine Meldung ausgegeben, dass diese nachgefüllt werden sollen.
-//			if (Zaehler8 == 7){
-//				getLogger().info("Show modal dialog and wait for user to confirm");
-//				
-//				// Benutzerabfrage ob die Palette wieder befüllt wurde
-//		        int isCancel = getApplicationUI().displayModalDialog(ApplicationDialogType.QUESTION, informationTextachter, "OK", "Cancel");
-//		        if (isCancel == 1)
-//		        {
-//		            return;
-//		        }
-//		     
-//		        
-//		        // Zähler Rücksetzen
-//		        getLogger().info("Achter Zähler zurrückgesetzt");
-//				Zaehler8 = 0;
-//			}
-//			// Stein Nummer
-//			getLogger().info("SteinNummmer"+i);
-//	
-//			// Ablegen des bausteins auf Variable Positionen
-//			// Relative Bewegung auf der Sicherheitshöhe von 100 mm auf die Ablageposition
-//			getLogger().info("Relative Bewegung auf der Sicherheitshöhe von 100 mm auf die Ablageposition");
-//			TCP.moveAsync(linRel(Transformation.ofDeg(BSB*(BSList[i+3]),-(BSB*(BSList[i+4])+0.4),0,90-BSList[i+2]-2,0,0),getApplicationData().getFrame("/A_Lego_Base/E1")).setBlendingCart(blendingCart));
-//			
-//			// Relative Bewegung auf die Ablageposition Abzüglich der Distanz die für die ImpendanzBewegug vorgesehen war
-//			getLogger().info("Relative Bewegung auf die Ablageposition Abzüglich der Distanz die für die ImpendanzBewegug vorgesehen war");
-//			TCP.move(linRel(Transformation.ofDeg(0,0,(safePos-(BSList[i+5]*BSH)-impendance_distance_vabl),0,0,0),getApplicationData().getFrame("/A_Lego_Base/E1")).setJointVelocityRel(0.3));
-//			
-//			// Relative Bewegung in die Ablage hinein mit Impendanz Modus --> Erzeugte Federkraft ist 3+1* Federkonstante
-//			getLogger().info("Relative Bewegung in die Ablage hinein mit Impendanz Modus");
-//			TCP.move(linRel(Transformation.ofDeg(0,0,(impendance_distance_abl),0,0,0),getApplicationData().getFrame("/A_Lego_Base/E1")).setJointVelocityRel(0.1).setMode(impedanceControlMode));
-//			
-//			// Abschalten des Vakuums
-//			getLogger().info("Abschalten des Vakuums");
-//			try {
-//				CVakuum.setVakuumON(false);
-//				
-//				// Warten
-//				Thread.sleep(1500);
-//			} catch (InterruptedException e) {
-//				// TODO Auto-generated catch block
-//				e.printStackTrace();
-//			}
-//			
-//			// Relative Bewegung um 100 mm on der Fügeposition nach oben
-//			getLogger().info("Relative Bewegung um 100 mm on der Fügeposition nach oben");
-//			TCP.move(linRel(Transformation.ofDeg(0,0,-safePos,0,0,0),getApplicationData().getFrame("/A_Lego_Base/E1")).setJointVelocityRel(0.3).setMode(impedanceControlMode));	
-//			
-//			// i Zähler hochzählen
-//			//i = i+4;
-//		
-//		}
-//		
-//		// Relative Bewegung um 100 mm on der Fügeposition nach oben
-//		getLogger().info("Relative Bewegung um 100 mm on der Fügeposition nach oben");
-//		TCP.move(linRel(Transformation.ofDeg(0,0,-safePos,0,0,0),getApplicationData().getFrame("/A_Lego_Base/E1")).setJointVelocityRel(0.3));
+		
+		// Inizialisieren der Impendance Parameter
+		getLogger().info("Initialisieren der Impendance-Parameter");
+		CartesianImpedanceControlMode impedanceControlMode;
+		impedanceControlMode = 	new CartesianImpedanceControlMode();
+		impedanceControlMode.parametrize(CartDOF.X).setStiffness(stiffnessX);
+		impedanceControlMode.parametrize(CartDOF.Y).setStiffness(stiffnessY);
+		impedanceControlMode.parametrize(CartDOF.Z).setStiffness(stiffnessZ);
+	
+		// Vakuum als default wert nach starten des Programms ausschalten
+		if (CVakuum.getVakuumON() == true){
+			CVakuum.setVakuumON(false);
+			getLogger().info("Setze Output auf False");
+		}
+
+		
+		// Zuweisung des TCP an den Roboterflange
+		TCP.attachTo(lbr.getFlange());
+		
+		
+		// Lineare Fahrt Senkrecht nach oben um 200 mm 
+		getLogger().info("Lineare Fahrt Senkrecht nach oben um 200 mm");
+		TCP.move(linRel(Transformation.ofDeg(0,0,-1*safePos,0,0,0),getApplicationData().getFrame("/A_Lego_Base/E1")).setJointVelocityRel(0.1));
+		
+		// For-Schleife über die Länge der Liste der Bausteine 
+		for (int i = 0; (i < BSListlen); i = i+5){
+			
+			// Beender der FOR-Schleife, wenn kein Zahlenwert mehr ür die bausteinart ankommt
+			if (BSList[i+1] == 0){
+				break;
+			}
+			
+			// Anfahren und Verschleifen der SafePos zwischen Palette und der Ablage
+			getLogger().info("Anfahren und Verschleifen der SafePos zwischen Palette und der Ablage");
+			TCP.moveAsync(ptp(getApplicationData().getFrame("/A_Lego_SavePos")).setBlendingCart(blendingCart_Safepos).setJointVelocityRel(0.5));
+			
+			// if else if Entscheidung ob 4er oder 8er Stein
+			getLogger().info("Baustein holen");
+			if ((BSList[i+1] == 4.0) & (Zaehler4<=7)){
+					
+					// Vierer holen
+					getLogger().info("Vierer holen");
+				
+					// Anfahren des Referenzkoordinatensystems(Palettenkoordinatensystem) auf der Safeposhöhe
+					getLogger().info("Anfahren des Referenzkoordinatensystems(Palettenkoordinatensystem) auf der Safeposhöhe");
+					TCP.move(ptp(getApplicationData().getFrame("/A_Lego_Pal_test/Lego/vLego")).setJointVelocityRel(speed));
+					
+					//  Relative Bewegung zu dem nächsten 4er Baustein
+					getLogger().info("Relative Bewegung zu dem nächsten 4er Baustein");
+					TCP.moveAsync(linRel(Transformation.ofDeg(PalAbsx*Zaehler4,0,0,0,0,0),getApplicationData().getFrame("/A_Lego_Pal_test/Lego")).setBlendingCart(blendingCart));
+					
+					// Relative Bewegung auf die Bausteinposition Abzüglich der Distanz die für die ImpendanzBewegug vorgesehen war
+					getLogger().info("Relative Bewegung auf die Bausteinposition Abzüglich der Distanz die für die ImpendanzBewegug vorgesehen war");
+					TCP.move(linRel(Transformation.ofDeg(0,0,safePos-impendance_distance_vhol,0,0,0),getApplicationData().getFrame("/A_Lego_Pal_test/Lego")).setJointVelocityRel(0.3));
+					
+					// Anschalten des Vakuums
+					getLogger().info("Anschalten des Vakuums");
+					CVakuum.setVakuumON(true);
+					
+					// Relative Bewegung in den Baustein hinein mit Impendanz Modus --> Erzeugte Federkraft ist 3+1* Federkonstante
+					getLogger().info("Relative Bewegung in den Baustein hinein mit Impendanz Modus");
+					TCP.move(linRel(Transformation.ofDeg(0,0,impendance_distance_hol,0,0,0),getApplicationData().getFrame("/A_Lego_Pal_test/Lego")).setJointVelocityRel(0.1).setMode(impedanceControlMode));
+					
+					// Warten
+					getLogger().info("Warten 1500 ms");
+					try {
+						Thread.sleep(1500);
+					} catch (InterruptedException e) {
+						// TODO Auto-generated catch block
+						e.printStackTrace();
+					}
+					
+					// Relative Bewegung um 100 mm on der Fügeposition nach oben
+					getLogger().info("Relative Bewegung um 100 mm on der Fügeposition nach oben");
+					TCP.move(linRel(Transformation.ofDeg(0,0,-safePos,0,0,0),getApplicationData().getFrame("/A_Lego_Pal_test/Lego")).setJointVelocityRel(0.1).setMode(impedanceControlMode));	
+					
+					// Zählerwert um 1 erhöhen
+					getLogger().info("Zählerwert um 1 erhöhen");
+					Zaehler4 = Zaehler4+1;			
+			}
+			
+			else if ((BSList[i+1] == 8.0)& (Zaehler8<=7)){		
+					
+					// Achter holen
+					getLogger().info("Achter holen");
+				
+					// Anfahren des Referenzkoordinatensystems(Palettenkoordinatensystem) auf der Safeposhöhe	
+					getLogger().info("Anfahren des Referenzkoordinatensystems(Palettenkoordinatensystem) auf der Safeposhöhe");
+					TCP.move(ptp(getApplicationData().getFrame("/A_Lego_Pal_test/Lego/vLego")).setJointVelocityRel(speed));
+					
+					//  Relative Bewegung zu dem nächsten 8er Baustein
+					getLogger().info("Relative Bewegung zu dem nächsten 8er Baustein");
+					TCP.moveAsync(linRel(Transformation.ofDeg(PalAbsx*Zaehler8,-(PalAbsy),0,0,0,0),getApplicationData().getFrame("/A_Lego_Pal_test/Lego")).setBlendingCart(blendingCart));
+					
+					// Relative Bewegung auf die Bausteinposition Abzüglich der Distanz die für die ImpendanzBewegug vorgesehen war
+					getLogger().info("Relative Bewegung auf die Bausteinposition Abzüglich der Distanz die für die ImpendanzBewegug vorgesehen war");
+					TCP.move(linRel(Transformation.ofDeg(0,0,safePos-impendance_distance_vhol,0,0,0),getApplicationData().getFrame("/A_Lego_Pal_test/Lego")).setJointVelocityRel(0.3));
+					
+					// Anschalten des Vakuums
+					getLogger().info("Anschalten des Vakuums");
+					CVakuum.setVakuumON(true);
+					
+					// Relative Bewegung in den Baustein hinein mit Impendanz Modus --> Erzeugte Federkraft ist 3+1* Federkonstante
+					getLogger().info("Relative Bewegung in den Baustein hinein mit Impendanz Modus");
+					TCP.move(linRel(Transformation.ofDeg(0,0,impendance_distance_hol,0,0,0),getApplicationData().getFrame("/A_Lego_Pal_test/Lego")).setJointVelocityRel(0.1).setMode(impedanceControlMode));
+					
+					// Warten
+					getLogger().info("Warten 1500 ms");
+					try {
+						Thread.sleep(1500);
+					} catch (InterruptedException e) {
+						// TODO Auto-generated catch block
+						e.printStackTrace();
+					}
+					
+					// Relative Bewegung um 100 mm on der Abholposition nach oben
+					TCP.move(linRel(Transformation.ofDeg(0,0,-safePos,0,0,0),getApplicationData().getFrame("/A_Lego_Pal_test/Lego")).setJointVelocityRel(0.1).setMode(impedanceControlMode));	
+					getLogger().info("Relative Bewegung um 100 mm on der Fügeposition nach oben");
+					
+					// Zählerwert um 1 erhöhen
+					getLogger().info("Zählerwert um 1 erhöhen");
+					Zaehler8 = Zaehler8+1;
+			}
+			
+			// Anfahren und Verschleifen der SafePos zwischen Palette und der Ablage
+			getLogger().info("Anfahren und Verschleifen der SafePos zwischen Palette und der Ablage");
+			TCP.moveAsync(ptp(getApplicationData().getFrame("/A_Lego_SavePos")).setBlendingCart(blendingCart_Safepos).setJointVelocityRel(speed));
+			
+			// Anfahren des Referenzkoordinatensystems(grüne Legobasiskoordinatensystem) auf der Safeposhöhe
+			getLogger().info("Anfahren des Referenzkoordinatensystems(grüne Legobasiskoordinatensystem) auf der Safeposhöhe");
+			TCP.move(ptp(getApplicationData().getFrame("/A_Lego_Base/E1/vE1")).setJointVelocityRel(speed));
+			
+			// if Abfragen ob die Paletten nochBausteine einthalten --> wenn NEIN, dann wird eine Meldung ausgegeben, dass diese nachgefüllt werden sollen.
+			if (Zaehler4 == 7){
+				getLogger().info("Show modal dialog and wait for user to confirm");
+		        
+				// Benutzerabfrage ob die Palette wieder befüllt wurde
+				int isCancel = getApplicationUI().displayModalDialog(ApplicationDialogType.QUESTION, informationTextvierer, "OK", "Cancel");
+		        if (isCancel == 1)
+		        {
+		            return;
+		        }
+		        
+		        // Zähler Rücksetzen
+		        getLogger().info("Vierer Zähler zurrückgesetzt");
+				Zaehler4 = 0;
+			}
+			
+			// if Abfragen ob die Paletten nochBausteine einthalten --> wenn NEIN, dann wird eine Meldung ausgegeben, dass diese nachgefüllt werden sollen.
+			if (Zaehler8 == 7){
+				getLogger().info("Show modal dialog and wait for user to confirm");
+				
+				// Benutzerabfrage ob die Palette wieder befüllt wurde
+		        int isCancel = getApplicationUI().displayModalDialog(ApplicationDialogType.QUESTION, informationTextachter, "OK", "Cancel");
+		        if (isCancel == 1)
+		        {
+		            return;
+		        }
+		     
+		        
+		        // Zähler Rücksetzen
+		        getLogger().info("Achter Zähler zurrückgesetzt");
+				Zaehler8 = 0;
+			}
+			// Stein Nummer
+			getLogger().info("SteinNummmer"+i);
+	
+			// Ablegen des bausteins auf Variable Positionen
+			// Relative Bewegung auf der Sicherheitshöhe von 100 mm auf die Ablageposition
+			getLogger().info("Relative Bewegung auf der Sicherheitshöhe von 100 mm auf die Ablageposition");
+			TCP.moveAsync(linRel(Transformation.ofDeg(BSB*(BSList[i+3]),-(BSB*(BSList[i+4])+0.4),0,90-BSList[i+2]-2,0,0),getApplicationData().getFrame("/A_Lego_Base/E1")).setBlendingCart(blendingCart));
+			
+			// Relative Bewegung auf die Ablageposition Abzüglich der Distanz die für die ImpendanzBewegug vorgesehen war
+			getLogger().info("Relative Bewegung auf die Ablageposition Abzüglich der Distanz die für die ImpendanzBewegug vorgesehen war");
+			TCP.move(linRel(Transformation.ofDeg(0,0,(safePos-(BSList[i+5]*BSH)-impendance_distance_vabl),0,0,0),getApplicationData().getFrame("/A_Lego_Base/E1")).setJointVelocityRel(0.3));
+			
+			// Relative Bewegung in die Ablage hinein mit Impendanz Modus --> Erzeugte Federkraft ist 3+1* Federkonstante
+			getLogger().info("Relative Bewegung in die Ablage hinein mit Impendanz Modus");
+			TCP.move(linRel(Transformation.ofDeg(0,0,(impendance_distance_abl),0,0,0),getApplicationData().getFrame("/A_Lego_Base/E1")).setJointVelocityRel(0.1).setMode(impedanceControlMode));
+			
+			// Abschalten des Vakuums
+			getLogger().info("Abschalten des Vakuums");
+			try {
+				CVakuum.setVakuumON(false);
+				
+				// Warten
+				Thread.sleep(1500);
+			} catch (InterruptedException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+			
+			// Relative Bewegung um 100 mm on der Fügeposition nach oben
+			getLogger().info("Relative Bewegung um 100 mm on der Fügeposition nach oben");
+			TCP.move(linRel(Transformation.ofDeg(0,0,-safePos,0,0,0),getApplicationData().getFrame("/A_Lego_Base/E1")).setJointVelocityRel(0.3).setMode(impedanceControlMode));	
+			
+			// i Zähler hochzählen
+			//i = i+4;
+		
+		}
+		
+		// Relative Bewegung um 100 mm on der Fügeposition nach oben
+		getLogger().info("Relative Bewegung um 100 mm on der Fügeposition nach oben");
+		TCP.move(linRel(Transformation.ofDeg(0,0,-safePos,0,0,0),getApplicationData().getFrame("/A_Lego_Base/E1")).setJointVelocityRel(0.3));
 
 	}
 	

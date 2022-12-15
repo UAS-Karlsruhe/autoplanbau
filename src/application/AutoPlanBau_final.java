@@ -321,38 +321,6 @@ public class AutoPlanBau_final extends RoboticsAPIApplication {
 //			getLogger().info("Anfahren und Verschleifen der SafePos zwischen Palette und der Ablage");
 //			TCP.moveAsync(ptp(getApplicationData().getFrame("/A_Lego_SavePos")).setBlendingCart(blendingCart_Safepos).setJointVelocityRel(speed));
 			
-			// if Abfragen ob die Paletten nochBausteine einthalten --> wenn NEIN, dann wird eine Meldung ausgegeben, dass diese nachgefüllt werden sollen.
-			if (Zaehler4 == 7){
-				getLogger().info("Show modal dialog and wait for user to confirm");
-		        
-				// Benutzerabfrage ob die Palette wieder befüllt wurde
-				int isCancel = getApplicationUI().displayModalDialog(ApplicationDialogType.QUESTION, informationTextvierer, "OK", "Cancel");
-		        if (isCancel == 1)
-		        {
-		            return;
-		        }
-		        
-		        // Zähler Rücksetzen
-		        getLogger().info("Vierer Zähler zurrückgesetzt");
-				Zaehler4 = 0;
-			}
-			
-			// if Abfragen ob die Paletten nochBausteine einthalten --> wenn NEIN, dann wird eine Meldung ausgegeben, dass diese nachgefüllt werden sollen.
-			if (Zaehler8 == 7){
-				getLogger().info("Show modal dialog and wait for user to confirm");
-				
-				// Benutzerabfrage ob die Palette wieder befüllt wurde
-		        int isCancel = getApplicationUI().displayModalDialog(ApplicationDialogType.QUESTION, informationTextachter, "OK", "Cancel");
-		        if (isCancel == 1)
-		        {
-		            return;
-		        }
-		     
-		        
-		        // Zähler Rücksetzen
-		        getLogger().info("Achter Zähler zurrückgesetzt");
-				Zaehler8 = 0;
-			}
 			// Stein Nummer
 			getLogger().info("SteinNummmer"+i);
 	
@@ -372,23 +340,55 @@ public class AutoPlanBau_final extends RoboticsAPIApplication {
 			TCP.move(linRel(Transformation.ofDeg(0,0,(impendance_distance_abl),0,0,0),getApplicationData().getFrame("/A_Lego_Base/E1")).setJointVelocityRel(0.1).setMode(impedanceControlMode));
 			
 			// Abschalten des Vakuums
-			getLogger().info("Abschalten des Vakuums");
-			try {
-				CVakuum.setVakuumON(false);
-				
-				// Warten
-				Thread.sleep(250);
-			} catch (InterruptedException e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
-			}
+//			getLogger().info("Abschalten des Vakuums");
+//			try {
+//				CVakuum.setVakuumON(false);
+//				
+//				// Warten
+//				Thread.sleep(250);
+//			} catch (InterruptedException e) {
+//				// TODO Auto-generated catch block
+//				e.printStackTrace();
+//			}
+			CVakuum.setVakuumON(false);
 			
 			// Relative Bewegung um 100 mm on der Fügeposition nach oben
 			getLogger().info("Relative Bewegung um 100 mm on der Fügeposition nach oben");
 			TCP.move(linRel(Transformation.ofDeg(0,0,-safePos,0,0,0),getApplicationData().getFrame("/A_Lego_Base/E1")).setJointVelocityRel(0.5).setMode(impedanceControlMode));	
 			
-			// i Zähler hochzählen
-			//i = i+4;
+			
+			// if Abfragen ob die Paletten nochBausteine einthalten --> wenn NEIN, dann wird eine Meldung ausgegeben, dass diese nachgefüllt werden sollen.
+						if (Zaehler4 == 7){
+							getLogger().info("Show modal dialog and wait for user to confirm");
+					        
+							// Benutzerabfrage ob die Palette wieder befüllt wurde
+							int isCancel = getApplicationUI().displayModalDialog(ApplicationDialogType.QUESTION, informationTextvierer, "OK", "Cancel");
+					        if (isCancel == 1)
+					        {
+					            return;
+					        }
+					        
+					        // Zähler Rücksetzen
+					        getLogger().info("Vierer Zähler zurrückgesetzt");
+							Zaehler4 = 0;
+						}
+						
+						// if Abfragen ob die Paletten nochBausteine einthalten --> wenn NEIN, dann wird eine Meldung ausgegeben, dass diese nachgefüllt werden sollen.
+						if (Zaehler8 == 7){
+							getLogger().info("Show modal dialog and wait for user to confirm");
+							
+							// Benutzerabfrage ob die Palette wieder befüllt wurde
+					        int isCancel = getApplicationUI().displayModalDialog(ApplicationDialogType.QUESTION, informationTextachter, "OK", "Cancel");
+					        if (isCancel == 1)
+					        {
+					            return;
+					        }
+					     
+					        
+					        // Zähler Rücksetzen
+					        getLogger().info("Achter Zähler zurrückgesetzt");
+							Zaehler8 = 0;
+						}
 		
 		}
 		

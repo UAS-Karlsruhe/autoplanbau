@@ -359,10 +359,6 @@ public class AutoPlanBau_test extends RoboticsAPIApplication {
 			// Ablegen des bausteins auf Variable Positionen
 			
 			
-			// Relative Bewegung auf der Sicherheitshöhe von 100 mm auf die Ablageposition
-			getLogger().info("Relative Bewegung auf der Sicherheitshöhe von 100 mm auf die Ablageposition");
-			TCP.moveAsync(linRel(Transformation.ofDeg(BSB*(BSList[i+3]),-(BSB*(BSList[i+4])+0.4),0,90-BSList[i+2]-2,0,0),getApplicationData().getFrame("/A_Lego_Base/E1")).setBlendingCart(blendingCart));
-			
 			//  Relative Bewegung zu dem nächsten 4er Baustein
 			ObjectFrame vPosAblObjectFrame = getApplicationData().getFrame("/A_Lego_Base/E1");
 			Frame vPosAblFrame = vPosAblObjectFrame.copyWithRedundancy(vPosAblObjectFrame);

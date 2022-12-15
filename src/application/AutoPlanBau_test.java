@@ -110,8 +110,9 @@ public class AutoPlanBau_test extends RoboticsAPIApplication {
 //		someBasicFrame2.setX(someBasicFrame2.getX() + 200);
 //		someBasicFrame2.setY(someBasicFrame2.getY() - 200);
 //		someBasicFrame2.setZ(someBasicFrame2.getZ() - 200);	
-		Frame transformationFrame = new Frame(200,-200, -200, 0, 0, 0);
-		someBasicFrame2.transformationTo(transformationFrame);
+		//Frame transformationFrame = new Frame(200,-200, -200, 0, 0, 0);
+		Transformation trafo = Transformation.ofDeg(200, -200, -100, 0, 0, 0); 
+		someBasicFrame2.transform(trafo);
 		TCP.move(ptp(someBasicFrame2));
 		
 		getLogger().info("Relative Bewegung in den Baustein hinein mit Impendanz Modus");

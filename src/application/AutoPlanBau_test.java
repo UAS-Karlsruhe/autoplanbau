@@ -97,7 +97,7 @@ public class AutoPlanBau_test extends RoboticsAPIApplication {
 		TCP.attachTo(lbr.getFlange());
 		
 		//TCP.move(ptp(getApplicationData().getFrame("/A_Lego_SavePos")).setJointVelocityRel(speed));
-		TCP.move(ptp(getApplicationData().getFrame("/A_Lego_Base/E1/vE1")).setJointVelocityRel(speed));
+		TCP.move(ptp(getApplicationData().getFrame("/A_Lego_SavePos")).setJointVelocityRel(speed));
 		
 //		ObjectFrame someFrame = getApplicationData().getFrame("/A_Lego_Base/E1");
 //		Frame someBasicFrame = someFrame.copyWithRedundancy(someFrame);

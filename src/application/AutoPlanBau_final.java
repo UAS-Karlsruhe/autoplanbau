@@ -268,7 +268,7 @@ public class AutoPlanBau_final extends RoboticsAPIApplication {
 					
 					// Relative Bewegung um 100 mm on der Fügeposition nach oben
 					getLogger().info("Relative Bewegung um 100 mm on der Fügeposition nach oben");
-					TCP.moveAsync(linRel(Transformation.ofDeg(0,0,-safePos,0,0,0),getApplicationData().getFrame("/A_Lego_Pal_test/Lego")).setJointVelocityRel(0.5).setBlendingCart(blendingCart).setMode(impedanceControlMode));	
+					TCP.move(linRel(Transformation.ofDeg(0,0,-safePos,0,0,0),getApplicationData().getFrame("/A_Lego_Pal_test/Lego")).setJointVelocityRel(0.5).setMode(impedanceControlMode));	
 					
 					// Zählerwert um 1 erhöhen
 					getLogger().info("Zählerwert um 1 erhöhen");
@@ -359,7 +359,7 @@ public class AutoPlanBau_final extends RoboticsAPIApplication {
 			// Ablegen des bausteins auf Variable Positionen
 			ObjectFrame vPosAblObjectFrame = getApplicationData().getFrame("/A_Lego_Base/E1");
 			Frame vPosAblFrame = vPosAblObjectFrame.copyWithRedundancy(vPosAblObjectFrame);
-			Transformation vPosAbltrafo = Transformation.ofDeg(BSB*(BSList[i+3]),-(BSB*(BSList[i+4])+0.4),-safePos-(BSList[i+5]*BSH), 90-BSList[i+2]-2, 0, 0); 
+			Transformation vPosAbltrafo = Transformation.ofDeg(BSB*(BSList[i+3]),-(BSB*(BSList[i+4])+0.4),-(safePos+(BSList[i+5]*BSH)), 90-BSList[i+2]-2, 0, 0); 
 			vPosAblFrame.transform(vPosAbltrafo);
 			TCP.moveAsync(ptp(vPosAblFrame).setBlendingCart(blendingCart).setJointVelocityRel(speed));
 			
@@ -385,7 +385,7 @@ public class AutoPlanBau_final extends RoboticsAPIApplication {
 			
 			// Relative Bewegung um 100 mm on der Fügeposition nach oben
 			getLogger().info("Relative Bewegung um 100 mm on der Fügeposition nach oben");
-			TCP.move(linRel(Transformation.ofDeg(0,0,-safePos,0,0,0),getApplicationData().getFrame("/A_Lego_Base/E1")).setJointVelocityRel(0.5).setMode(impedanceControlMode));	
+			TCP.move(linRel(Transformation.ofDeg(0,0,-safePos,0,0,0),getApplicationData().getFrame("/A_Lego_Base/E1")).setJointVelocityRel(speed).setMode(impedanceControlMode));	
 			
 			// i Zähler hochzählen
 			//i = i+4;

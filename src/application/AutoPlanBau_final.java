@@ -260,7 +260,7 @@ public class AutoPlanBau_final extends RoboticsAPIApplication {
 					// Warten
 					getLogger().info("Warten 1500 ms");
 					try {
-						Thread.sleep(500);
+						Thread.sleep(100);
 					} catch (InterruptedException e) {
 						// TODO Auto-generated catch block
 						e.printStackTrace();
@@ -302,7 +302,7 @@ public class AutoPlanBau_final extends RoboticsAPIApplication {
 					// Warten
 					getLogger().info("Warten 1500 ms");
 					try {
-						Thread.sleep(500);
+						Thread.sleep(100);
 					} catch (InterruptedException e) {
 						// TODO Auto-generated catch block
 						e.printStackTrace();

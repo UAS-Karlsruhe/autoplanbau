@@ -101,9 +101,33 @@ public class AutoPlanBau_test extends RoboticsAPIApplication {
 		
 		ObjectFrame someFrame = getApplicationData().getFrame("/A_Lego_Base/E1");
 		Frame someBasicFrame = someFrame.copyWithRedundancy(someFrame);
-		someBasicFrame.setX(someBasicFrame.getX() + 50);
+		someBasicFrame.setX(someBasicFrame.getX() + 24*BSB);
 		TCP.move(ptp(someBasicFrame));
 		
+		
+		ObjectFrame someFrame2 = getApplicationData().getFrame("/A_Lego_Base/E1");
+		Frame someBasicFrame2 = someFrame2.copyWithRedundancy(someFrame);
+		someBasicFrame.setX(someBasicFrame.getY() + 24*BSB);
+		TCP.move(ptp(someBasicFrame2));
+		
+//		
+//		ObjectFrame someFrame3 = getApplicationData().getFrame("/A_Lego_Base/E1");
+//		Frame someBasicFrame3 = someFrame.copyWithRedundancy(someFrame);
+//		someBasicFrame.setX(someBasicFrame.getX() + 50);
+//		TCP.move(ptp(someBasicFrame));
+//		
+//		
+//		ObjectFrame someFrame4 = getApplicationData().getFrame("/A_Lego_Base/E1");
+//		Frame someBasicFrame4 = someFrame.copyWithRedundancy(someFrame);
+//		someBasicFrame.setX(someBasicFrame.getX() + 50);
+//		TCP.move(ptp(someBasicFrame));
+//		
+//		
+//		ObjectFrame someFrame5 = getApplicationData().getFrame("/A_Lego_Base/E1");
+//		Frame someBasicFrame5 = someFrame.copyWithRedundancy(someFrame);
+//		someBasicFrame.setX(someBasicFrame.getX() + 50);
+//		TCP.move(ptp(someBasicFrame));
+//		
 		
 		
 	}

@@ -107,7 +107,7 @@ public class AutoPlanBau_test extends RoboticsAPIApplication {
 		
 		ObjectFrame someFrame2 = getApplicationData().getFrame("/A_Lego_Base/E1");
 		Frame someBasicFrame2 = someFrame2.copyWithRedundancy(someFrame);
-		someBasicFrame2.setY(someBasicFrame2.getY() + -200);
+		someBasicFrame2.setY(someBasicFrame2.getY() - 200);
 		TCP.move(ptp(someBasicFrame2));
 		
 //		

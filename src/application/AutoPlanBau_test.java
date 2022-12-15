@@ -247,11 +247,11 @@ public class AutoPlanBau_test extends RoboticsAPIApplication {
 	@Override
 	public void run() {
 		
-		
-		if (CVakuum.getVakuumON() == true){
-			CVakuum.setVakuumON(false);
-			getLogger().info("Setze Output auf False");
-		}
+//		
+//		if (CVakuum.getVakuumON() == true){
+//			CVakuum.setVakuumON(false);
+//			getLogger().info("Setze Output auf False");
+//		}
 
 //		TCP.attachTo(lbr.getFlange());
 //		

@@ -365,7 +365,7 @@ public class AutoPlanBau_final extends RoboticsAPIApplication {
 			
 			// Relative Bewegung auf die Ablageposition Abzüglich der Distanz die für die ImpendanzBewegug vorgesehen war
 			getLogger().info("Relative Bewegung auf die Ablageposition Abzüglich der Distanz die für die ImpendanzBewegug vorgesehen war");
-			TCP.move(linRel(Transformation.ofDeg(0,0,(safePos-(BSList[i+5]*BSH)-impendance_distance_vabl),0,0,0),getApplicationData().getFrame("/A_Lego_Base/E1")).setJointVelocityRel(0.5));
+			TCP.move(linRel(Transformation.ofDeg(0,0,(safePos-(BSList[i+5]*BSH)-impendance_distance_vabl),0,0,0),getApplicationData().getFrame("/A_Lego_Base/E1")).setJointVelocityRel(0.3));
 			
 			// Relative Bewegung in die Ablage hinein mit Impendanz Modus --> Erzeugte Federkraft ist 3+1* Federkonstante
 			getLogger().info("Relative Bewegung in die Ablage hinein mit Impendanz Modus");
@@ -385,7 +385,7 @@ public class AutoPlanBau_final extends RoboticsAPIApplication {
 			
 			// Relative Bewegung um 100 mm on der Fügeposition nach oben
 			getLogger().info("Relative Bewegung um 100 mm on der Fügeposition nach oben");
-			TCP.move(linRel(Transformation.ofDeg(0,0,-safePos,0,0,0),getApplicationData().getFrame("/A_Lego_Base/E1")).setJointVelocityRel(speed).setMode(impedanceControlMode));	
+			TCP.move(linRel(Transformation.ofDeg(0,0,-safePos,0,0,0),getApplicationData().getFrame("/A_Lego_Base/E1")).setJointVelocityRel(0.5).setMode(impedanceControlMode));	
 			
 			// i Zähler hochzählen
 			//i = i+4;

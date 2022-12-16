@@ -13,14 +13,19 @@ import com.kuka.roboticsAPI.motionModel.PositionHold;
 import com.kuka.roboticsAPI.motionModel.controlModeModel.CartesianImpedanceControlMode;
 import com.kuka.roboticsAPI.uiModel.ApplicationDialogType;
 
-public class Impedance extends RoboticsAPIApplication {
+public class TeachImpendanceMode extends RoboticsAPIApplication {
 
 	final static double offsetAxis2And4=Math.toRadians(10);
 
-	private static final int stiffnessZ = 2500;
-	private static final int stiffnessY = 700;
-	private static final int stiffnessX = 1500;
+//	private static final int stiffnessZ = 0;
+//	private static final int stiffnessY = 0;
+//	private static final int stiffnessX = 0;
 
+	private static final int stiffnessZ = 0;
+	private static final int stiffnessY = 0;
+	private static final int stiffnessX = 0;
+	private static final int stiffnessA = 0;
+	
 	
 	
 	@Inject
@@ -56,6 +61,7 @@ public class Impedance extends RoboticsAPIApplication {
 		impedanceControlMode.parametrize(CartDOF.X).setStiffness(stiffnessX);
 		impedanceControlMode.parametrize(CartDOF.Y).setStiffness(stiffnessY);
 		impedanceControlMode.parametrize(CartDOF.Z).setStiffness(stiffnessZ);
+		impedanceControlMode.parametrize(CartDOF.A).setStiffness(stiffnessA);
 
 		// The robot is set to position hold and impedance control mode gets activated without a timeout. 
 		IMotionContainer positionHoldContainer = lbr.moveAsync((new PositionHold(impedanceControlMode, -1, null)));

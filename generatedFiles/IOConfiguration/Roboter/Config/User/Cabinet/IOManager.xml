@@ -44,6 +44,12 @@
         <DigitalIO Name="Python.Winkel_Teil_degree" Type="INPUT" Scope="USER_IO" StartBit="200" BitSize="16" Signed="true">
           <Description />
         </DigitalIO>
+        <DigitalIO Name="Vakuum.VakuumON" Type="OUTPUT" Scope="USER_IO" StartBit="2322" BitSize="1" Signed="false">
+          <Description />
+        </DigitalIO>
+        <DigitalIO Name="Vakuum.VakuumOFF" Type="OUTPUT" Scope="USER_IO" StartBit="2323" BitSize="1" Signed="false">
+          <Description />
+        </DigitalIO>
       </IOList>
     </Bus>
   </BusList>

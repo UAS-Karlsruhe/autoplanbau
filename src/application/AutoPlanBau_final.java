@@ -328,9 +328,9 @@ public class AutoPlanBau_final extends RoboticsAPIApplication {
 					Zaehler8 = Zaehler8+1;
 			}
 			
-//			// Anfahren und Verschleifen der SafePos zwischen Palette und der Ablage
-//			getLogger().info("Anfahren und Verschleifen der SafePos zwischen Palette und der Ablage");
-//			TCP.moveAsync(ptp(getApplicationData().getFrame("/A_Lego_SavePos")).setBlendingCart(blendingCart_Safepos).setJointVelocityRel(speed));
+			// Anfahren und Verschleifen der SafePos zwischen Palette und der Ablage
+			getLogger().info("Anfahren und Verschleifen der SafePos zwischen Palette und der Ablage");
+			TCP.moveAsync(ptp(getApplicationData().getFrame("/A_Lego_SavePos")).setBlendingCart(blendingCart_Safepos).setJointVelocityRel(speed));
 			
 			// Stein Nummer
 			getLogger().info("SteinNummmer"+i);

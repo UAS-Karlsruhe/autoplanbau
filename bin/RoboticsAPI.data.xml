@@ -933,9 +933,9 @@
             </additionalInformation>
         </frame>
         <frame id="_abd9e372-c182-4fc5-8f53-8cd517cf3646" name="A_Lego_SavePos">
-            <transformation a="-0.764113474805668" b="0.00907410125981728" c="-3.132562391902793" x="492.460235086304" y="49.3784544109612" z="519.499348756663"/>
+            <transformation a="-0.3155238942902645" b="0.005803155284555373" c="-3.14135621485162" x="266.0860186813344" y="156.88239979035444" z="555.284480475106"/>
             <additionalInformation>
-                <info key="LastModificationTime" type="java.lang.Long" value="1671204696898"/>
+                <info key="LastModificationTime" type="java.lang.Long" value="1670348663693"/>
                 <info base="LBR_iiwa_7_R800_1" controller="Mirko_Sunrise_FRI_Cabinet" device="LBR_iiwa_7_R800_1" tcpName="Flange" tool="Flange" type="com.kuka.roboticsAPI.deviceModel.TeachInformation">
                     <tcpTransformation a="0.0" b="0.0" c="0.0" x="0.0" y="0.0" z="0.0"/>
                 </info>
@@ -943,8 +943,8 @@
             <redundancyData>
                 <redundancy transformationProviderName="Mirko_Sunrise_FRI_Cabinet/LBR_iiwa_7_R800_1" type="com.kuka.roboticsAPI.deviceModel.LBRE1Redundancy">
                     <info type="com.kuka.roboticsAPI.deviceModel.StatusTurnRedundancy$StatusParameter" value="2" valueType="java.lang.Integer"/>
-                    <info type="com.kuka.roboticsAPI.deviceModel.StatusTurnRedundancy$TurnParameter" value="72" valueType="java.lang.Integer"/>
-                    <info type="com.kuka.roboticsAPI.deviceModel.LBRE1Redundancy$E1Parameter" value="0.022581155928851373" valueType="java.lang.Double"/>
+                    <info type="com.kuka.roboticsAPI.deviceModel.StatusTurnRedundancy$TurnParameter" value="74" valueType="java.lang.Integer"/>
+                    <info type="com.kuka.roboticsAPI.deviceModel.LBRE1Redundancy$E1Parameter" value="0.02268416035256556" valueType="java.lang.Double"/>
                 </redundancy>
             </redundancyData>
         </frame>

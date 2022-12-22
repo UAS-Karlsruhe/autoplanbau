@@ -36,6 +36,7 @@ public class Testprogram extends RoboticsAPIApplication {
 	@Override
 	public void run() {
 		// your application execution starts here
-		lbr.move(ptp(getApplicationData().getFrame("/Kreis_Tisch_2")));
+		lbr.move(ptp(0.0,0.0,0.0,0.0,0.0,0.0,0.0));
+		lbr.move(lin(getApplicationData().getFrame("/Kreis_Tisch_1")).setCartVelocity(150.0));
 	}
 }

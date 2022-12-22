@@ -36,6 +36,6 @@ public class Testprogram extends RoboticsAPIApplication {
 	@Override
 	public void run() {
 		// your application execution starts here
-		lbr.move(ptp(0.0,0.0,0.0,0.0,0.0,0.0,0.0));
+		lbr.move(ptp(getApplicationData().getFrame("/Kreis_Tisch_2")));
 	}
 }

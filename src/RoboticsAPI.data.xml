@@ -910,7 +910,7 @@
         <frame id="_4a6f9db4-9d94-4f1b-a8ee-aaee858078f8" name="A_Lego_Pal">
             <transformation a="3.1415" b="0.0" c="0.0" x="125.64094540446952" y="-609.8765277510071" z="-1.3936133953012728"/>
             <additionalInformation>
-                <info key="LastModificationTime" type="java.lang.Long" value="1681403917478"/>
+                <info key="LastModificationTime" type="java.lang.Long" value="1681403917524"/>
                 <info key="UseAsBaseForJogging" type="java.lang.Boolean" value="true"/>
             </additionalInformation>
             <frame id="_1f1433fc-4546-4019-a101-f7583cd64670" name="Lego">
@@ -1023,7 +1023,7 @@
         <toolTemplate class="" defaultMotionFrameRef="/TCP_Lego_Sauger" name="Lego_Sauger">
             <frames>
                 <frame id="_69d77f58-0f4f-48de-ba68-9c9b74a07b0d" name="TCP_Lego_Sauger">
-                    <transformation a="0.5" b="0.0" c="0.0" x="0.0" y="0.0" z="75.0"/>
+                    <transformation a="0.5235" b="0.0" c="0.0" x="0.0" y="0.0" z="75.0"/>
                 </frame>
             </frames>
             <additionalInformation>

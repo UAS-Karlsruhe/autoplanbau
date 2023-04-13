@@ -969,6 +969,13 @@
                 </frame>
             </frame>
         </frame>
+        <frame id="_b2c9fb6b-242a-4c76-9a40-16ca5f42c1a2" name="A_Lego_Pal_new">
+            <transformation a="0.0" b="0.0" c="0.0" x="0.0" y="0.0" z="0.0"/>
+            <additionalInformation>
+                <info key="LastModificationTime" type="java.lang.Long" value="1681402690869"/>
+                <info key="UseAsBaseForJogging" type="java.lang.Boolean" value="true"/>
+            </additionalInformation>
+        </frame>
     </world>
     <objectTemplates>
         <workpieceTemplate class="" name="Item">

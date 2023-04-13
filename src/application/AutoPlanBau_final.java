@@ -266,7 +266,8 @@ public class AutoPlanBau_final extends RoboticsAPIApplication {
 					
 					// Relative Bewegung um 100 mm on der Fügeposition nach oben
 					getLogger().info("Relative Bewegung um 100 mm on der Fügeposition nach oben");
-					TCP.move(linRel(Transformation.ofDeg(0,0,-safePos,0,0,0),getApplicationData().getFrame("/A_Lego_Pal/Lego")).setJointVelocityRel(0.5).setMode(impedanceControlMode));	
+					// TCP.move(linRel(Transformation.ofDeg(0,0,-safePos,0,0,0),getApplicationData().getFrame("/A_Lego_Pal/Lego")).setJointVelocityRel(0.5).setMode(impedanceControlMode));	
+					TCP.move(linRel(Transformation.ofDeg(0,0,-safePos,0,0,0),getApplicationData().getFrame("/A_Lego_Pal/Lego")).setJointVelocityRel(0.5));	
 					
 					// Zählerwert um 1 erhöhen
 					getLogger().info("Zählerwert um 1 erhöhen");
@@ -307,7 +308,8 @@ public class AutoPlanBau_final extends RoboticsAPIApplication {
 					}
 					
 					// Relative Bewegung um 100 mm on der Abholposition nach oben
-					TCP.move(linRel(Transformation.ofDeg(0,0,-safePos,0,0,0),getApplicationData().getFrame("/A_Lego_Pal/Lego")).setJointVelocityRel(0.1).setMode(impedanceControlMode));	
+					//TCP.move(linRel(Transformation.ofDeg(0,0,-safePos,0,0,0),getApplicationData().getFrame("/A_Lego_Pal/Lego")).setJointVelocityRel(0.1).setMode(impedanceControlMode));	
+					TCP.move(linRel(Transformation.ofDeg(0,0,-safePos,0,0,0),getApplicationData().getFrame("/A_Lego_Pal/Lego")).setJointVelocityRel(0.1));	
 					getLogger().info("Relative Bewegung um 100 mm on der Fügeposition nach oben");
 					
 					// Zählerwert um 1 erhöhen

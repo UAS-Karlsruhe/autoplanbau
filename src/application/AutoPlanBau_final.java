@@ -76,8 +76,8 @@ public class AutoPlanBau_final extends RoboticsAPIApplication {
 	
 	// stiffness for impednace mode
 	private static final int stiffnessZ = 5000;
-	private static final int stiffnessY = 3000;
-	private static final int stiffnessX = 3000;
+	private static final int stiffnessY = 4000;
+	private static final int stiffnessX = 4000;
 			
 	// list of brick coordinates that are sent 
 	double[] positionenx;

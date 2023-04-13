@@ -75,7 +75,7 @@ public class AutoPlanBau_final extends RoboticsAPIApplication {
 	double BSH;
 	
 	// stiffness for impednace mode
-	private static final int stiffnessZ = 3000;
+	private static final int stiffnessZ = 5000;
 	private static final int stiffnessY = 4000;
 	private static final int stiffnessX = 4000;
 			

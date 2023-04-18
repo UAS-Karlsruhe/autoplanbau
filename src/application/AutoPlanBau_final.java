@@ -112,7 +112,7 @@ public class AutoPlanBau_final extends RoboticsAPIApplication {
 		// Inizialisieren der Impendance Distanz 
 		impendance_distance_vhol = 2;
 		impendance_distance_vabl = 2;
-		impendance_distance_hol = 6*impendance_distance_vhol;
+		impendance_distance_hol = 2*impendance_distance_vhol;
 		impendance_distance_abl = 12*impendance_distance_vabl;
 		
 		// Initialisieren der Bausteinbreite und Bausteinhöhe

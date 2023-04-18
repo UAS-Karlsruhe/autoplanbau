@@ -135,7 +135,7 @@ public class AutoPlanBau_final extends RoboticsAPIApplication {
 				try {
 					int serverPort = 30001;
 					ServerSocket serverSocket = new ServerSocket(serverPort);
-					serverSocket.setSoTimeout(100000); 
+					serverSocket.setSoTimeout(10000000); 
 					while(true) {
 						System.out.println("Waiting for client on port " + serverSocket.getLocalPort() + "..."); 
 

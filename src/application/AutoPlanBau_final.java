@@ -296,7 +296,8 @@ public class AutoPlanBau_final extends RoboticsAPIApplication {
 					
 					// Relative Bewegung in den Baustein hinein mit Impendanz Modus --> Erzeugte Federkraft ist 3+1* Federkonstante
 					getLogger().info("Relative Bewegung in den Baustein hinein mit Impendanz Modus");
-					TCP.move(linRel(Transformation.ofDeg(0,0,impendance_distance_hol,0,0,0),getApplicationData().getFrame("/A_Lego_Pal/Lego")).setJointVelocityRel(0.5).setMode(impedanceControlMode));
+					//TCP.move(linRel(Transformation.ofDeg(0,0,impendance_distance_hol,0,0,0),getApplicationData().getFrame("/A_Lego_Pal/Lego")).setJointVelocityRel(0.5).setMode(impedanceControlMode));
+					TCP.move(linRel(Transformation.ofDeg(0,0,impendance_distance_hol,0,0,0),getApplicationData().getFrame("/A_Lego_Pal/Lego")).setJointVelocityRel(0.5));
 					
 					// Warten
 					getLogger().info("Warten 1500 ms");
